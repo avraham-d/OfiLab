@@ -1,6 +1,6 @@
 /**
  * HEXACO-H 16-Item Micro-Questionnaire Codec & Scoring Engine
- * Model: Honesty-Humility factor from HEXACO-PI-R (Lee & Ashton, 2004)
+ * Model: Honesty-Humility factor of the HEXACO model (Lee & Ashton, 2004); items from the public-domain IPIP-HEXACO scales (Ashton, Lee & Goldberg, 2007)
  * URL hash format: &h=<7 Base64URL characters>
  */
 (function(root){

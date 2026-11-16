@@ -31,14 +31,14 @@ THIRD-PARTY NOTICES — ofiLab
    assets/profile-links-data.js) are aggregate statistics computed from the same sources.
 
 3. Supplementary questionnaires
-   These items are not covered by the ofiLab license; each remains subject to its
-   authors' terms.
-   - Honesty-Humility (16 items): after the Honesty-Humility factor of the HEXACO model
-     (Lee, K., & Ashton, M. C. (2004). Psychometric properties of the HEXACO Personality
-     Inventory. Multivariate Behavioral Research, 39, 329–358). Several items follow
-     items of the HEXACO-PI-R, which is copyrighted by its authors (https://hexaco.org);
-     this site is not affiliated with them.
-   - ECR-RS (9 items): Hebrew translation of the items of Fraley, R. C., Heffernan, M. E.,
+   - Honesty-Humility (16 items): items of the public-domain IPIP-HEXACO scales,
+     https://ipip.ori.org/newHEXACO_PI_key.htm — Ashton, M. C., Lee, K., & Goldberg, L. R.
+     (2007). The IPIP–HEXACO scales: An alternative, public-domain measure of the
+     personality constructs in the HEXACO model. Personality and Individual Differences,
+     42, 1515–1526. The HEXACO model: Lee, K., & Ashton, M. C. (2004). Multivariate
+     Behavioral Research, 39, 329–358. Not the HEXACO-PI-R.
+   - ECR-RS (9 items): not covered by the ofiLab license; it remains subject to its
+     authors' terms. Hebrew translation of the items of Fraley, R. C., Heffernan, M. E.,
      Vicary, A. M., & Brumbaugh, C. C. (2011). The Experiences in Close Relationships —
      Relationship Structures questionnaire. Psychological Assessment, 23, 615–625.
    - Character strengths (60 items): written for this site, inspired by the public-domain

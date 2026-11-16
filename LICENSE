@@ -8,11 +8,11 @@ pages) and the content (the Hebrew item translations, answer scales, explanation
 and texts), together "the Work". It does not cover:
   - the original English items of the International Personality Item Pool (IPIP)
     and their scoring keys, which are in the public domain;
-  - the items of two supplementary questionnaires that come from other
-    authors' instruments: the Honesty-Humility items, several of which follow
-    items of the HEXACO-PI-R (Lee & Ashton), and the ECR-RS items (Fraley et al.,
-    2011). They remain subject to their authors' terms, and this license grants no
-    rights in them;
+  - the original English items of the IPIP-HEXACO scales used for the
+    Honesty-Humility questionnaire, which are in the public domain;
+  - the items of the ECR-RS questionnaire (Fraley et al., 2011), which come from
+    another author's instrument, remain subject to its authors' terms, and are
+    not licensed here;
   - third-party components listed in THIRD_PARTY_LICENSES.txt, which keep their
     own licenses;
   - the name "ofiLab" and its logo (see section 6).

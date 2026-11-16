@@ -1,13 +1,28 @@
 {
-  "version": "hexaco-h-16-he-1.1.0",
-  "name": "שאלון מיקרו: כנות וענווה (HEXACO-H)",
-  "description": "שאלון ממוקד בן 16 היגדים למדידה ישירה ומלאה של ממד הכנות והענווה (Honesty-Humility) מתוך מודל HEXACO (Lee & Ashton, 2004).",
+  "version": "hexaco-h-16-he-2.0.0",
+  "name": "שאלון מיקרו: כנות וענווה (IPIP-HEXACO)",
+  "description": "16 היגדים מתוך סולמות IPIP המקבילים לממד הכנות והענווה (Honesty-Humility) של מודל HEXACO: 4 לכל תת־סולם. ההיגדים בנחלת הכלל (Ashton, Lee & Goldberg, 2007), והתרגום לעברית ניסיוני.",
   "scale": [
-    {"value": 1, "label": "בכלל לא מתאר אותי"},
-    {"value": 2, "label": "מתאר אותי מעט"},
-    {"value": 3, "label": "במידה בינונית"},
-    {"value": 4, "label": "מתאר אותי במידה רבה"},
-    {"value": 5, "label": "מתאר אותי מאוד"}
+    {
+      "value": 1,
+      "label": "בכלל לא מתאר אותי"
+    },
+    {
+      "value": 2,
+      "label": "מתאר אותי מעט"
+    },
+    {
+      "value": 3,
+      "label": "במידה בינונית"
+    },
+    {
+      "value": 4,
+      "label": "מתאר אותי במידה רבה"
+    },
+    {
+      "value": 5,
+      "label": "מתאר אותי מאוד"
+    }
   ],
   "facets": {
     "sincerity": {
@@ -37,112 +52,133 @@
       "number": 1,
       "facet": "sincerity",
       "key": "-",
-      "text": "אין לי בעיה להחמיא למישהו רק כדי לקדם אינטרס אישי או לקבל קידום בעבודה."
+      "source_en": "Use flattery to get ahead.",
+      "text": "אני משתמש בחנופה כדי להתקדם."
     },
     {
       "id": 2,
       "number": 2,
       "facet": "sincerity",
       "key": "-",
-      "text": "כשחשוב לי להשיג משהו ממישהו, קל לי לזייף נחמדות מיוחדת רק כדי להגיע למטרה."
+      "source_en": "Tell other people what they want to hear so that they will do what I want them to do.",
+      "text": "אני אומר לאנשים את מה שהם רוצים לשמוע, כדי שיעשו את מה שאני רוצה."
     },
     {
       "id": 3,
       "number": 3,
       "facet": "sincerity",
       "key": "+",
-      "text": "חשוב לי להתנהג בצורה אמיתית וכנה עם אנשים, בלי להעמיד פנים כדי להשיג טובות."
+      "source_en": "Don't pretend to be more than I am.",
+      "text": "אני לא מעמיד פנים שאני יותר ממה שאני."
     },
     {
       "id": 4,
       "number": 4,
       "facet": "sincerity",
-      "key": "+",
-      "text": "עדיף בעיניי לומר את האמת בכנות מאשר לזייף חמימות או חנופה."
+      "key": "-",
+      "source_en": "Put on a show to impress people.",
+      "text": "אני עושה הצגה כדי להרשים אנשים."
     },
     {
       "id": 5,
       "number": 5,
       "facet": "fairness",
       "key": "+",
-      "text": "אשמור על יושר מוחלט ואסרב לרווח לא הוגן, גם אם יוצע לי סכום כסף גדול מאוד."
+      "source_en": "Would never take things that aren't mine.",
+      "text": "לעולם לא הייתי לוקח דברים שאינם שלי."
     },
     {
       "id": 6,
       "number": 6,
       "facet": "fairness",
       "key": "+",
-      "text": "כשנופלת טעות לטובתי בחשבון או בעסקה, אעדכן על כך מיד ולא אנצל אותה לרווח אישי."
+      "source_en": "Return extra change when a cashier makes a mistake.",
+      "text": "כשקופאי טועה ונותן לי עודף מיותר, אני מחזיר אותו."
     },
     {
       "id": 7,
       "number": 7,
       "facet": "fairness",
       "key": "-",
-      "text": "אילו הייתה לי ודאות מוחלטת שלעולם לא אתפס, הייתי מתפתה לקחת סכום כסף גדול שלא שייך לי."
+      "source_en": "Admire a really clever scam.",
+      "text": "אני מעריך תרמית מתוחכמת באמת."
     },
     {
       "id": 8,
       "number": 8,
       "facet": "fairness",
       "key": "-",
-      "text": "בעיניי זה לגיטימי לעגל פינות או לעקוף את הכללים כשזה משרת את האינטרס האישי שלי."
+      "source_en": "Cheat to get ahead.",
+      "text": "אני מרמה כדי להתקדם."
     },
     {
       "id": 9,
       "number": 9,
       "facet": "greedAvoidance",
       "key": "+",
-      "text": "חיים פשוטים ונוחים מספיקים לי בהחלט, ואין לי שאיפה לצבור עושר מופלג."
+      "source_en": "Would not enjoy being a famous celebrity.",
+      "text": "לא הייתי נהנה להיות סלבריטי מפורסם."
     },
     {
       "id": 10,
       "number": 10,
       "facet": "greedAvoidance",
       "key": "-",
-      "text": "קוסם לי מאוד לחיות חיי פאר ולהקיף את עצמי במוצרי יוקרה ובסמלי מעמד."
+      "source_en": "Love luxury.",
+      "text": "אני אוהב מותרות."
     },
     {
       "id": 11,
       "number": 11,
       "facet": "greedAvoidance",
       "key": "+",
-      "text": "ערך שימושי ואיכות פשוטה חשובים לי הרבה יותר ממותגי יוקרה או מרכב מרשים."
+      "source_en": "Don't strive for elegance in my appearance.",
+      "text": "אני לא משקיע מאמץ להיראות אלגנטי."
     },
     {
       "id": 12,
       "number": 12,
       "facet": "greedAvoidance",
       "key": "-",
-      "text": "בעיניי, המדד המרכזי להצלחה בחיים הוא כמות הכסף, הנכסים והיוקרה שאדם צובר."
+      "source_en": "Am mainly interested in money.",
+      "text": "מה שמעניין אותי בעיקר הוא כסף."
     },
     {
       "id": 13,
       "number": 13,
       "facet": "modesty",
       "key": "-",
-      "text": "מגיע לי לקבל יותר הערכה ויחס מועדף בהשוואה לרוב האנשים."
+      "source_en": "Believe that I am better than others.",
+      "text": "אני מאמין שאני טוב יותר מאחרים."
     },
     {
       "id": 14,
       "number": 14,
       "facet": "modesty",
       "key": "+",
-      "text": "אני רואה את עצמי כאדם רגיל ושווה בין שווים, בלי תחושת עליונות על אחרים."
+      "source_en": "See myself as an average person.",
+      "text": "אני רואה את עצמי כאדם ממוצע."
     },
     {
       "id": 15,
       "number": 15,
       "facet": "modesty",
       "key": "+",
-      "text": "חשוב לי שיתייחסו אליי בגובה העיניים כמו לכל אדם אחר, בלי זכויות יתר או יחס מיוחד."
+      "source_en": "Am just an ordinary person.",
+      "text": "אני פשוט אדם רגיל."
     },
     {
       "id": 16,
       "number": 16,
       "facet": "modesty",
       "key": "-",
-      "text": "חשוב לי שאנשים סביבי יכירו בייחודיות שלי ויפגינו כלפיי יראת כבוד."
+      "source_en": "Boast about my virtues.",
+      "text": "אני מתפאר במעלות שלי."
     }
-  ]
+  ],
+  "source": {
+    "name": "IPIP-HEXACO scales (public domain)",
+    "url": "https://ipip.ori.org/newHEXACO_PI_key.htm",
+    "reference": "Ashton, M. C., Lee, K., & Goldberg, L. R. (2007). The IPIP–HEXACO scales: An alternative, public-domain measure of the personality constructs in the HEXACO model. Personality and Individual Differences, 42, 1515–1526."
+  }
 }

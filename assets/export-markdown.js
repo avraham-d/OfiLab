@@ -229,7 +229,7 @@
           if (Object.keys(pw).length) md += '- **מקדמי הנוסחה המלאה (' + Object.keys(pw).length + ' תחומי משנה):** ' + Object.entries(pw).map(([k, v]) => facetName(k) + ' (' + k + ') ' + (v >= 0 ? '+' : '−') + Math.abs(Number(v)).toFixed(2).replace(/^0/, '')).join(' · ') + '\n';
         }
       }
-      if (isDirectH) md += '- *האחוזון משוער מהתפלגות מדומה לפי ממוצעים שפורסמו ל־HEXACO-100; חלק מההיגדים מבוססים על HEXACO-PI-R (Lee & Ashton). אינו השוואה למדגם אמיתי.*\n';
+      if (isDirectH) md += '- *האחוזון משוער מהתפלגות מדומה לפי ממוצעים שפורסמו ל־HEXACO-100; ההיגדים מסולמות IPIP-HEXACO, בנחלת הכלל. אינו השוואה למדגם אמיתי.*\n';
       md += '\n';
     }
 
