@@ -1,0 +1,605 @@
+/* ofiLab Calm V2 — Amber Crystal / Violet Smoke. Independent canonical design language.
+   No V1 visual selectors; V1 layout-only structural compatibility stays in a lower cascade layer. */
+html[data-ofilab-design="calm-v2"] {
+  --calm-palette:"Amber Crystal";--calm-motion: cubic-bezier(.22,1,.36,1);
+  --bg-canvas:#F8F5FA;--bg-card:#FFFCFB;--bg-card-glass:rgba(255,252,251,.96);
+  --bg-subtle:#F0EAF4;--bg-track:#E4DCEA;
+  --text-primary:#30263B;--text-secondary:#6F6379;--text-muted:#716778;
+  --brand-accent:#BD834C;--brand-primary:#6F508A;--brand-primary-soft:#EFE5F5;--on-brand:#fff;
+  --border-hairline:rgba(28,27,25,.06);
+  --shadow-bento:0 4px 24px -4px rgba(28,27,25,.04),0 1px 3px rgba(28,27,25,.02);
+  --radius-card:24px;--radius-inner:16px;--radius-pill:9999px;
+  --trait-emotional:#912061;--trait-emotional-soft:#F5E8ED;--trait-emotional-band:rgba(145,32,97,.18);
+  --trait-extraversion:#BB6802;--trait-extraversion-soft:#F9EFE5;--trait-extraversion-band:rgba(187,104,2,.18);
+  --trait-openness:#9878E5;--trait-openness-soft:#F6F0F9;--trait-openness-band:rgba(152,120,229,.18);
+  --trait-agreeableness:#11A68B;--trait-agreeableness-soft:#EAF4F1;--trait-agreeableness-band:rgba(17,166,139,.18);
+  --trait-conscientiousness:#0850AB;--trait-conscientiousness-soft:#E9EDF4;--trait-conscientiousness-band:rgba(8,80,171,.18);
+  --calm-canvas:var(--bg-canvas);--calm-surface:var(--bg-card);
+  --calm-surface-soft:var(--bg-subtle);--calm-surface-raised:var(--bg-card);
+  --calm-ink:var(--text-primary);--calm-ink-strong:var(--text-primary);
+  --calm-muted:var(--text-secondary);--calm-soft:var(--text-muted);
+  --calm-accent:var(--brand-primary);--calm-accent-hover:var(--brand-primary);
+  --calm-accent-soft:var(--brand-primary-soft);--calm-on-accent:var(--on-brand);
+  --calm-line:var(--border-hairline);--calm-line-strong:rgba(28,27,25,.12);
+  --calm-shadow-1:var(--shadow-bento);--calm-shadow-2:var(--shadow-bento);
+  --milk-card:var(--bg-card);--milk-edge:var(--border-hairline);
+  --font-sans:"ofiLab Heebo","Noto Sans Hebrew",Arial,sans-serif;
+  --font-mono:"JetBrains Mono","Geist Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+  color-scheme:light;
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] {
+  --calm-palette:"Violet Amber";--brand-accent:#F0BD7B;
+  --bg-canvas:#19151F;--bg-card:#27212E;--bg-card-glass:rgba(39,33,46,.97);
+  --bg-subtle:#352B3E;--bg-track:#46394F;
+  --text-primary:#F9F2FC;--text-secondary:#D0C0D9;--text-muted:#AFA0BA;
+  --brand-primary:#E7B67B;--brand-primary-soft:rgba(205,157,236,.19);--on-brand:#261B2D;
+  --border-hairline:rgba(242,239,233,.07);
+  --shadow-bento:0 8px 32px -4px rgba(0,0,0,.45);
+  --trait-emotional:#D4609D;--trait-emotional-soft:rgba(212,96,157,.16);--trait-emotional-band:rgba(212,96,157,.26);
+  --trait-extraversion:#B58629;--trait-extraversion-soft:rgba(181,134,41,.16);--trait-extraversion-band:rgba(181,134,41,.26);
+  --trait-openness:#7A59C3;--trait-openness-soft:rgba(122,89,195,.16);--trait-openness-band:rgba(122,89,195,.26);
+  --trait-agreeableness:#288463;--trait-agreeableness-soft:rgba(40,132,99,.16);--trait-agreeableness-band:rgba(40,132,99,.26);
+  --trait-conscientiousness:#2098DB;--trait-conscientiousness-soft:rgba(32,152,219,.16);--trait-conscientiousness-band:rgba(32,152,219,.26);
+  --calm-line-strong:rgba(242,239,233,.15);
+  color-scheme:dark;
+}
+html[data-ofilab-design="calm-v2"] body{background:var(--bg-canvas);color:var(--text-primary);font-family:var(--font-sans);}
+html[data-ofilab-design="calm-v2"] :is(.site-header,.results-journey,.results-mobile-picker-trigger){
+  /* Solid paper is a material decision, not a late-stage blur override. */
+  background:var(--bg-card);backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header {border-bottom:1px solid var(--border-hairline);box-shadow:none;}
+html[data-ofilab-design="calm-v2"] :is(.brand-type,.hero-copy h1,.results-heading h1,.question-heading h2){color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] :is(.hero-copy h1 em){background:none;-webkit-text-fill-color:var(--brand-primary);color:var(--brand-primary);filter:none;}
+html[data-ofilab-design="calm-v2"] :is(.lede,.body-copy,.question-invitation,.results-heading .lede){color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] :is(.primary,.start-form-btn.primary){background:var(--brand-primary);color:var(--on-brand);border-color:transparent;box-shadow:none;}
+html[data-ofilab-design="calm-v2"] :is(.primary,.secondary,.ghost,.theme-toggle,.header-share,.header-settings-btn,.quiz-settings-pill){min-width:44px;min-height:44px;}
+html[data-ofilab-design="calm-v2"] :is(.primary,.secondary,.ghost){border-radius:var(--radius-inner);}
+html[data-ofilab-design="calm-v2"] :is(.theme-toggle,.header-share,.header-settings-btn){background:var(--bg-subtle);border-color:transparent;box-shadow:none;}
+html[data-ofilab-design="calm-v2"] :is(.version-option,.question-card,.radar-panel,.domain-card,.big-five-cards-shell,.home-preview-paper,.home-report-preview,.results-profile-summary,.facet-explorer,.norm-panel,.mbti-section,.results-report-footer,.additional-quizzes-section,.result-disclosure,.snapshot-tile) {
+ background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hairline);
+ border-radius:var(--radius-card);box-shadow:var(--shadow-bento);filter:none;
+ backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.version-option,.domain-card,.question-card):hover{box-shadow:var(--shadow-bento);}
+html[data-ofilab-design="calm-v2"] .version-option.recommended{border-color:color-mix(in srgb,var(--brand-primary) 20%,transparent);background:var(--bg-card);}
+html[data-ofilab-design="calm-v2"] .version-option .version-size strong{font-variant-numeric:tabular-nums;letter-spacing:-.03em;}
+html[data-ofilab-design="calm-v2"] .home-preview-paper{background:var(--bg-card);}
+/* Own the preview structure here: its V1 stylesheet is no longer bundled. */
+html[data-ofilab-design="calm-v2"] .home-preview-paper-head{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:24px;
+}
+html[data-ofilab-design="calm-v2"] .home-preview-paper-head>span{font-size:12px;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .home-preview-bars{list-style:none;display:grid;gap:24px;padding:0;margin:0;}
+html[data-ofilab-design="calm-v2"] .home-preview-trait-caption{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;margin-bottom:12px;
+}
+html[data-ofilab-design="calm-v2"] .home-preview-trait-caption>span{font-size:14px;font-weight:650;}
+html[data-ofilab-design="calm-v2"] .home-preview-trait-caption strong{font-size:12px;white-space:nowrap;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .home-preview-track.ofi-spectrum{min-height:0;margin-inline:8px;}
+html[data-ofilab-design="calm-v2"] .home-preview-fill{display:block;width:var(--preview-value);}
+html[data-ofilab-design="calm-v2"] .home-preview-insight{display:flex;align-items:flex-start;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border-hairline);}
+html[data-ofilab-design="calm-v2"] .home-preview-insight>.icon{flex:none;color:var(--brand-primary);}
+html[data-ofilab-design="calm-v2"] .home-preview-insight p{font-size:14px;line-height:1.8;margin:6px 0 0;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .question-card{max-width:920px;margin-inline:auto;}
+html[data-ofilab-design="calm-v2"] .answer-btn{min-height:54px;border-radius:var(--radius-inner);background:var(--bg-card);border:1px solid var(--border-hairline);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .answer-btn.selected,html[data-ofilab-design="calm-v2"] .answer-btn[aria-pressed="true"]{border-color:var(--brand-primary);background:var(--brand-primary-soft);box-shadow:inset 0 0 0 1px var(--brand-primary);}
+html[data-ofilab-design="calm-v2"] .progress-meta,html[data-ofilab-design="calm-v2"] .quiz-milestones{color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .meter{background:var(--bg-track);}
+html[data-ofilab-design="calm-v2"] .meter>div{background:var(--brand-primary);}
+/* Trait hues: berry, amber, violet, teal, blue. Chosen by search and checked with the
+   data-viz palette validator for EVERY pair (the traits meet as ring neighbours in the crystal
+   and side by side in the card grid): colour-vision-deficiency separation >= 8 and normal-vision
+   separation >= 15 (OKLab x100), contrast >= 3:1 on the card surface, in both themes.
+   Light worst pair: CVD 13.0 / normal 22.5. Dark worst pair: CVD 9.3 / normal 17.1.
+   Do not re-tint one hue alone; re-run the validator on all five. */
+html[data-ofilab-design="calm-v2"] .domain-card[data-trait="N"],html[data-ofilab-design="calm-v2"] [data-trait="N"]{--ofi-trait:var(--trait-emotional);--ofi-trait-soft:var(--trait-emotional-soft);}
+html[data-ofilab-design="calm-v2"] .domain-card[data-trait="E"],html[data-ofilab-design="calm-v2"] [data-trait="E"]{--ofi-trait:var(--trait-extraversion);--ofi-trait-soft:var(--trait-extraversion-soft);}
+html[data-ofilab-design="calm-v2"] .domain-card[data-trait="O"],html[data-ofilab-design="calm-v2"] [data-trait="O"]{--ofi-trait:var(--trait-openness);--ofi-trait-soft:var(--trait-openness-soft);}
+html[data-ofilab-design="calm-v2"] .domain-card[data-trait="A"],html[data-ofilab-design="calm-v2"] [data-trait="A"]{--ofi-trait:var(--trait-agreeableness);--ofi-trait-soft:var(--trait-agreeableness-soft);}
+html[data-ofilab-design="calm-v2"] .domain-card[data-trait="C"],html[data-ofilab-design="calm-v2"] [data-trait="C"]{--ofi-trait:var(--trait-conscientiousness);--ofi-trait-soft:var(--trait-conscientiousness-soft);}
+html[data-ofilab-design="calm-v2"] .domain-card-header .score,html[data-ofilab-design="calm-v2"] .facet-explorer-score{font-variant-numeric:tabular-nums;letter-spacing:-.03em;font-weight:750;color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .domain-level-badge{color:var(--ofi-trait);background:var(--ofi-trait-soft);border:0;}
+html[data-ofilab-design="calm-v2"] :is(.facet-item,.facet-explorer-card,.facet-domain-group){border-color:var(--border-hairline);}
+html[data-ofilab-design="calm-v2"] :is(.facet-interpretation,.domain-interpretation,.profile-summary-guide,.results-quick-guide,.norm-context,.insight-callout){background:var(--bg-subtle);border-color:transparent;border-radius:var(--radius-inner);}
+html[data-ofilab-design="calm-v2"] :is(.results-file-actions,.results-footer-grid){gap:14px;}
+/* Spectrum: legacy fill remains in DOM for existing metric switching but becomes a marker, not a progress fill. */
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track,.facet-item .track,.facet-explorer-track,.home-preview-track.ofi-spectrum){
+ direction:ltr;position:relative;background:var(--bg-track);border:0;border-radius:999px;height:8px;overflow:visible;
+}
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track > div,.facet-item .track > div,.facet-explorer-fill,.home-preview-track.ofi-spectrum .home-preview-fill) {
+ position:relative;height:100%;background:transparent;box-shadow:none;overflow:visible;border:0;border-radius:0;transition:width .35s cubic-bezier(.22,1,.36,1);
+}
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track > div,.facet-item .track > div,.facet-explorer-fill,.home-preview-track.ofi-spectrum .home-preview-fill)::after {
+ content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);width:14px;height:14px;
+ background:var(--ofi-trait,var(--brand-primary));border:2px solid var(--bg-card);border-radius:50%;
+ box-shadow:0 2px 7px rgba(0,0,0,.16);
+}
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track,.facet-item .track,.facet-explorer-track)::before{
+ content:"0";position:absolute;right:100%;margin-right:8px;top:-7px;color:var(--text-muted);font:10px var(--font-mono);
+}
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track,.facet-item .track,.facet-explorer-track) {
+ margin-inline:16px 24px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum{--scale-color:var(--ofi-trait,var(--brand-primary));display:block;position:relative;min-height:34px;direction:ltr;}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__line{position:absolute;left:0;right:0;top:13px;height:8px;background:var(--bg-track);border-radius:999px;}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__band{position:absolute;top:9px;height:16px;border-radius:999px;background:var(--scale-band);min-width:0;}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__thumb{position:absolute;top:7px;width:20px;height:20px;transform:translateX(-50%);border-radius:50%;background:var(--scale-color);border:3px solid var(--bg-card);box-shadow:0 2px 8px rgba(0,0,0,.15);}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__ends{display:flex;justify-content:space-between;color:var(--text-muted);font:11px var(--font-mono);padding-top:27px;}
+html[data-ofilab-design="calm-v2"] .ofi-glyph{display:block;width:100%;height:auto;max-width:380px;margin:auto;overflow:visible;}
+html[data-ofilab-design="calm-v2"] .ofi-glyph.is-interactive [data-glyph-trait]{cursor:pointer;outline:0;transition:opacity .2s,filter .2s;}
+html[data-ofilab-design="calm-v2"] .ofi-glyph.is-interactive [data-glyph-trait]:is(:hover,:focus-visible){opacity:1;filter:none;}
+
+html[data-ofilab-design="calm-v2"] .ofi-stat{font-family:var(--font-mono);font-size:11px;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;color:var(--text-muted);}
+html[data-ofilab-design="calm-v2"] .ofi-dist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-block:20px;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card{padding:20px;background:var(--bg-card);border-radius:var(--radius-card);box-shadow:var(--shadow-bento);min-width:0;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__head strong{font-size:17px;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__value{font-weight:750;font-size:32px;font-variant-numeric:tabular-nums;letter-spacing:-.03em;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card svg{width:100%;height:auto;display:block;overflow:visible;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+html[data-ofilab-design="calm-v2"] .ofi-dist-title{font-size:24px;margin:18px 0 2px;}
+html[data-ofilab-design="calm-v2"] :is(dialog,.ai-dialog,.results-share-dialog,.protected-save-dialog,.settings-dialog){background:var(--bg-card);color:var(--text-primary);border-color:var(--border-hairline);}
+html[data-ofilab-design="calm-v2"] :is(dialog,.ai-dialog,.results-share-dialog,.protected-save-dialog) :is(input,textarea,select){background:var(--bg-subtle);color:var(--text-primary);border-color:var(--border-hairline);min-height:44px;}
+html[data-ofilab-design="calm-v2"] :is(.page-footer,.results-report-footer,.results-journey){color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] button:focus-visible,html[data-ofilab-design="calm-v2"] a:focus-visible,html[data-ofilab-design="calm-v2"] [data-glyph-trait]:focus-visible{outline:3px solid var(--brand-primary);outline-offset:3px;}
+@media(max-width:650px){
+ html[data-ofilab-design="calm-v2"] main{padding-inline:16px;}
+ html[data-ofilab-design="calm-v2"] :is(.hero-grid,.results-layout,.results-main-content){min-width:0;}
+
+ html[data-ofilab-design="calm-v2"] .ofi-dist-grid{grid-template-columns:1fr;gap:14px;}
+ html[data-ofilab-design="calm-v2"] .domain-card,html[data-ofilab-design="calm-v2"] .big-five-cards-shell{border-radius:20px;}
+ html[data-ofilab-design="calm-v2"] .answer-btn{min-height:54px;}
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-ofilab-design="calm-v2"] .ofi-spectrum__thumb,html[data-ofilab-design="calm-v2"] .ofi-glyph *,html[data-ofilab-design="calm-v2"] .ofi-dist-card *{animation:none;transition:none;}
+}
+@media(prefers-reduced-transparency:reduce){
+ html[data-ofilab-design="calm-v2"] :is(.site-header,.results-journey,.results-mobile-picker-trigger){background:var(--bg-card);backdrop-filter:none;-webkit-backdrop-filter:none;}
+}
+@media(forced-colors:active){
+ html[data-ofilab-design="calm-v2"] .ofi-spectrum__thumb{background:Highlight;border-color:Canvas;}
+ html[data-ofilab-design="calm-v2"] .ofi-spectrum__line{background:GrayText;}
+ html[data-ofilab-design="calm-v2"] .ofi-dist-card{border:1px solid CanvasText;}
+}
+
+/* Replace the legacy illustrative Gaussian preview only when true empirical charts exist. */
+@media screen { html[data-ofilab-design="calm-v2"] #normPanel.ofi-has-empirical #normSummary{display:none;} }
+
+/* The home report mockup is a percentile spectrum, never task completion. */
+html[data-ofilab-design="calm-v2"] .home-preview-trait:nth-child(1){--ofi-trait:var(--trait-openness)}
+html[data-ofilab-design="calm-v2"] .home-preview-trait:nth-child(2){--ofi-trait:var(--trait-conscientiousness)}
+html[data-ofilab-design="calm-v2"] .home-preview-trait:nth-child(3){--ofi-trait:var(--trait-extraversion)}
+html[data-ofilab-design="calm-v2"] .home-preview-trait:nth-child(4){--ofi-trait:var(--trait-agreeableness)}
+html[data-ofilab-design="calm-v2"] .home-preview-trait:nth-child(5){--ofi-trait:var(--trait-emotional)}
+html[data-ofilab-design="calm-v2"] :is(.domain-summary .track,.facet-item .track,.facet-explorer-track)::after{content:"100";position:absolute;left:100%;margin-left:8px;top:-7px;color:var(--text-muted);font:10px var(--font-mono);}
+
+/* V2 editorial layout — signature shares the summary footprint; no extra hero block. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary{
+  padding:clamp(18px,2vw,28px);
+  border:1px solid var(--border-hairline);
+  border-radius:var(--radius-card);
+  background:var(--bg-card);
+  box-shadow:var(--shadow-bento);
+  margin-block:0 18px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 174px;
+  align-items:center;
+  column-gap:26px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-header,
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-narrative{grid-column:1;min-width:0;}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset{
+  grid-column:2;grid-row:1/span 2;align-self:center;justify-self:center;
+  width:min(100%,174px);padding:0;margin:0;text-align:center;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+  width:100%;height:auto;max-width:174px;aspect-ratio:1;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset figcaption{
+  font-size:11px;line-height:1.4;color:var(--text-muted);margin-top:2px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-shell>:not(.profile-summary-header):not(.profile-summary-narrative):not(.ofi-signature-inset){
+  grid-column:1/-1;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-title{
+  color:var(--text-primary);font-weight:730;letter-spacing:-.015em;
+  font-size:clamp(20px,2vw,25px);line-height:1.35;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-narrative{
+  color:var(--text-secondary);line-height:1.8;font-size:14px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-chips{gap:10px;margin-top:10px;}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{
+  border:0;border-radius:var(--radius-inner);box-shadow:none;
+  background:var(--bg-subtle);color:var(--text-primary);
+  min-height:68px;transition:background-color .18s ease;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip:is(button):is(:hover,:focus-visible){
+  background:var(--brand-primary-soft);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary :is(.profile-summary-guide,.profile-cyber-teaser){
+  border:0;border-radius:var(--radius-inner);background:var(--bg-subtle);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-nav{
+  border-top:1px solid var(--border-hairline);justify-content:flex-start;gap:7px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-nav-pill{
+  border:0;border-radius:999px;background:var(--bg-subtle);color:var(--text-secondary);
+  min-height:44px;padding:9px 13px;font-size:12px;box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-nav-pill:is(:hover,:focus-visible){
+  background:var(--brand-primary-soft);color:var(--brand-primary);
+}
+/* Unified low-noise facet and norm cards. */
+html[data-ofilab-design="calm-v2"] :is(.norm-domain-card,.norm-scale-section,.facet-explorer-card,.facet-domain-group){
+  background:var(--bg-card);border:1px solid var(--border-hairline);
+  box-shadow:none;border-radius:var(--radius-inner);
+}
+html[data-ofilab-design="calm-v2"] .norm-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+html[data-ofilab-design="calm-v2"] .norm-context>div{
+  background:var(--bg-subtle);border:0;border-radius:var(--radius-inner);
+  padding:16px;min-width:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .norm-context #normStudySize{
+  direction:rtl;unicode-bidi:isolate;font-variant-numeric:tabular-nums;
+}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card{border:1px solid var(--border-hairline);}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__axis{
+  color:var(--text-secondary);font-size:12px;margin:6px 0 10px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__value{
+  color:var(--ofi-trait);line-height:1.05;white-space:nowrap;
+}
+html[data-ofilab-design="calm-v2"] .ofi-dist-card__foot{
+  padding-top:10px;border-top:1px solid var(--border-hairline);
+}
+html[data-ofilab-design="calm-v2"] .ofi-stat{
+  display:inline-block;white-space:nowrap;
+  border-radius:7px;padding:5px 7px;background:var(--bg-subtle);
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;direction:ltr;
+}
+/* Respect content hierarchy: the decorative preview is secondary to inventory choice. */
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{align-items:center;}
+html[data-ofilab-design="calm-v2"] :is(.version-option,.question-card,.domain-card,.results-profile-summary,.norm-panel){
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+/* Inputs, tooltips and overlays follow the same warm surface hierarchy. */
+html[data-ofilab-design="calm-v2"] :is(.sparkline-tooltip,.facet-tooltip,.results-share-shell,.ai-chat-shell,.popover,[role="tooltip"]){
+  background:var(--bg-card);color:var(--text-primary);
+  border:1px solid var(--border-hairline);box-shadow:var(--shadow-bento);
+}
+html[data-ofilab-design="calm-v2"] :is(input,textarea,select){
+  accent-color:var(--brand-primary);caret-color:var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] :is(input,textarea,select):focus-visible{
+  outline:2px solid var(--brand-primary);outline-offset:2px;
+}
+html[data-ofilab-design="calm-v2"] :is(button,[role="button"],a,summary){touch-action:manipulation;}
+html[data-ofilab-design="calm-v2"] :is(.results-share-opt,.dialog-close,.results-share-close,.results-mobile-picker-trigger){
+  min-height:44px;min-width:44px;
+}
+html[data-ofilab-design="calm-v2"] .answer-btn{transition:background-color .16s ease,border-color .16s ease;}
+html[data-ofilab-design="calm-v2"] .answer-btn:hover{background:var(--bg-subtle);transform:none;}
+html[data-ofilab-design="calm-v2"] .answer-btn[aria-pressed="true"]{background:var(--brand-primary-soft);}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary{padding:16px;border-radius:20px;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-shell{
+    grid-template-columns:minmax(0,1fr) 100px;
+    column-gap:8px;align-items:start;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-header{grid-column:1;grid-row:1;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset{
+    grid-column:2;grid-row:1;width:100px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+    width:100px;max-width:none;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset figcaption{display:none;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-narrative{
+    grid-column:1/-1;grid-row:2;font-size:13.5px;margin-top:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-title{font-size:19px;line-height:1.38;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-chips{gap:8px;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{flex:1 1 100%;min-height:56px;}
+  html[data-ofilab-design="calm-v2"] .norm-context{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-ofilab-design="calm-v2"] :is(.answer-btn,.profile-nav-pill,.profile-chip){transition:none;}
+}
+
+/* Actual, bounded confidence intervals overlay the dot without replacing the
+   persisted score DOM used by existing metric-change handlers. */
+html[data-ofilab-design="calm-v2"] .ofi-spectrum-track{
+  position:relative;isolation:isolate;overflow:visible;
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum-track>.ofi-spectrum__band{
+  position:absolute;left:0;top:-4px;height:16px;z-index:0;
+  border-radius:999px;background:var(--scale-band);
+  pointer-events:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum-track> :is(div,.facet-explorer-fill){
+  position:relative;z-index:1;
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum-track .ofi-spectrum__band[hidden]{display:none;}
+
+/* Actual browser QA pass: remove V1 violet/orange controls and ghost header.
+   In V2, the neutral shell carries hierarchy; trait colors carry measurements. */
+html[data-ofilab-design="calm-v2"] #card-300,
+html[data-ofilab-design="calm-v2"] #versions.version-choice #card-300{
+  background:var(--bg-card);
+  border:1px solid var(--border-hairline);
+  box-shadow:var(--shadow-bento);
+}
+html[data-ofilab-design="calm-v2"] #card-300 :is(.version-size strong,.version-top h2){
+  color:var(--text-primary);-webkit-text-fill-color:var(--text-primary);
+}
+html[data-ofilab-design="calm-v2"] #card-300 :is(.secondary,.start-form-btn.secondary){
+  color:var(--text-primary);-webkit-text-fill-color:var(--text-primary);
+  background:var(--bg-subtle);border:1px solid var(--border-hairline);
+  box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] #card-300 :is(.secondary,.start-form-btn.secondary):hover{
+  color:var(--brand-primary);background:var(--brand-primary-soft);
+  border-color:var(--border-hairline);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header #resultsShareTop,
+html[data-ofilab-design="calm-v2"] .site-header .results-share-top{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:44px;min-width:44px;padding:8px 14px;
+  border:0;border-radius:var(--radius-pill);
+  background:var(--brand-primary);color:var(--on-brand);
+  -webkit-text-fill-color:var(--on-brand);
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header .results-share-top:is(:hover,:focus-visible){
+  background:var(--brand-primary);color:var(--on-brand);
+  -webkit-text-fill-color:var(--on-brand);
+  box-shadow:0 2px 9px rgba(0,0,0,.10);transform:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header :is(.theme-toggle,.header-settings-btn,.header-share:not(.results-share-top)){
+  color:var(--text-primary);background:var(--bg-subtle);
+  border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+  min-height:44px;min-width:44px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-bar{
+  display:flex;gap:12px;padding:16px;margin-block:14px;
+  background:var(--bg-subtle);color:var(--text-primary);
+  border:0;border-radius:var(--radius-inner);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-title{
+  color:var(--text-primary);font-size:14px;font-weight:730;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-desc{
+  color:var(--text-secondary);font-size:12.5px;line-height:1.7;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-actions{
+  display:flex;align-items:stretch;gap:8px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-cta{
+  min-height:44px;min-width:44px;padding:10px 16px;
+  border:0;border-radius:var(--radius-inner);
+  color:var(--on-brand);-webkit-text-fill-color:var(--on-brand);
+  background:var(--brand-primary);box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-cta:is(:hover,:focus-visible){
+  background:var(--brand-primary);box-shadow:0 2px 9px rgba(0,0,0,.1);transform:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-sub{
+  min-height:44px;border:1px solid var(--border-hairline);
+  border-radius:var(--radius-inner);
+  color:var(--text-secondary);background:var(--bg-card);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-sub:is(:hover,:focus-visible){
+  background:var(--brand-primary-soft);
+  border-color:var(--border-hairline);color:var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-nav{
+  padding-block:14px 4px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip strong{
+  color:var(--text-secondary);font-size:11px;letter-spacing:0;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip span{
+  color:var(--text-primary);line-height:1.4;
+}
+html[data-ofilab-design="calm-v2"] .profile-summary-guide :is(.guide-icon,.guide-item-title),
+html[data-ofilab-design="calm-v2"] .profile-summary-kicker{
+  color:var(--brand-primary);
+}
+/* Navigation is already present in the desktop rail and mobile section picker.
+   Keep inline chips only at widths where neither alternative is available. */
+@media(max-width:899px),(min-width:1400px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-nav{display:none;}
+}
+@media(min-width:351px) and (max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-chips{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{
+    width:100%;min-width:0;flex:auto;min-height:70px;
+    padding:10px 11px;align-items:flex-start;text-align:start;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip strong{
+    font-size:11px;line-height:1.25;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip span{
+    font-size:12px;overflow-wrap:anywhere;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip:last-child:nth-child(odd){
+    grid-column:1/-1;
+  }
+}
+@media(max-width:350px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-chips{display:grid;grid-template-columns:1fr;}
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-bar{
+    padding:12px;margin-top:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-actions{display:grid;grid-template-columns:1fr;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-cta,
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-sub{width:100%;text-align:center;}
+}
+@media(prefers-reduced-motion:no-preference){
+  html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]{
+    transform-origin:160px 160px;
+    animation:ofi-glyph-enter .44s cubic-bezier(.22,1,.36,1) both;
+  }
+  html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]:nth-of-type(2){animation-delay:50ms;}
+  html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]:nth-of-type(3){animation-delay:100ms;}
+  html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]:nth-of-type(4){animation-delay:150ms;}
+  html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]:nth-of-type(5){animation-delay:200ms;}
+}
+@keyframes ofi-glyph-enter{
+  from{opacity:0;transform:scale(.94);}
+  to{opacity:1;transform:scale(1);}
+}
+/* OfiOrbit mini map: focus dimming, facet contrast per theme, entrance.
+   --f is each facet's score (0..1); --map-i is the domain index (0..4). */
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-trait]{transition:opacity .2s ease;}
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-trait][data-map-dimmed]{opacity:.34;}
+/* A single facet in focus: its tick thickens, its five siblings recede. */
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-facet]{transition:opacity .18s ease,stroke-width .18s ease;}
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-facet-mode] [data-map-facet]:not([data-map-facet-active]){opacity:.35;}
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-facet][data-map-facet-active]{stroke-width:4.4;stroke-opacity:1;}
+html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-facet]{stroke-opacity:calc(.28 + .65 * var(--f,.5));}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] .ofi-personality-map [data-map-facet]{stroke-opacity:calc(.46 + .54 * var(--f,.5));}
+@media(prefers-reduced-motion:no-preference){
+  html[data-ofilab-design="calm-v2"] .ofi-personality-map .ofi-personality-map__value{
+    stroke-dasharray:100 101;
+    animation:ofi-map-draw .9s cubic-bezier(.22,1,.36,1) backwards;
+    animation-delay:calc(var(--map-i,0) * 70ms + 120ms);
+  }
+  html[data-ofilab-design="calm-v2"] .ofi-personality-map [data-map-facet]{
+    animation:ofi-map-fade .5s ease backwards;
+    animation-delay:calc(var(--map-i,0) * 70ms + 300ms);
+  }
+}
+@keyframes ofi-map-draw{from{stroke-dashoffset:100;}to{stroke-dashoffset:0;}}
+@keyframes ofi-map-fade{from{opacity:0;}to{opacity:1;}}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] :is(.ofi-stat,.ofi-spectrum__ends,.ofi-dist-card__axis,.ofi-signature-inset figcaption){
+  color:var(--text-secondary);
+}
+
+/* Composite and supplemental score components also express position, never
+   "completion". They use the neutral brand marker unless tied to a Big Five trait. */
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter-track,.cyber-aspect-row-track,.lab-track,.hexaco-facet-track,.neo-style-trait-bar){
+  position:relative;direction:ltr;
+  overflow:visible;background:var(--bg-track);
+  border:0;border-radius:999px;height:8px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter-fill,.cyber-aspect-row-fill,.lab-track-fill,.hexaco-facet-fill,.neo-style-trait-fill){
+  position:relative;display:block;height:100%;min-width:0;
+  background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible;
+  direction:ltr;
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter-fill,.cyber-aspect-row-fill,.lab-track-fill,.hexaco-facet-fill,.neo-style-trait-fill)::after{
+  content:"";position:absolute;right:-7px;top:50%;
+  width:14px;height:14px;transform:translateY(-50%);
+  border:2px solid var(--bg-card);border-radius:50%;
+  background:var(--ofi-trait,var(--brand-primary));
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter,.cyber-aspect,.lab-data-tile){
+  --viz-point:var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter-scale,.cyber-meter-value,.neo-style-desc){
+  color:var(--text-secondary);
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-insight-card,.cyber-detail-card,.upps-card,.upps-trait-card,.neo-style-card,.lab-card,.ipc-wheel-wrap){
+  border:1px solid var(--border-hairline);
+  border-radius:var(--radius-inner);
+  background:var(--bg-card);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .ipc-wheel-wrap{background:var(--bg-subtle);}
+html[data-ofilab-design="calm-v2"] :is(.cyber-science-notice,.upps-notice,.cyber-note){
+  color:var(--text-secondary);background:var(--bg-subtle);
+  border-color:var(--border-hairline);border-radius:var(--radius-inner);
+}
+html[data-ofilab-design="calm-v2"] :is(.cyber-meter-badge,.cyber-accuracy-note,.upps-score-badge){
+  border:1px solid var(--border-hairline);background:var(--bg-subtle);
+  color:var(--text-secondary);box-shadow:none;
+}
+/* V2 buttons keep a semantic action accent but never apply yellow/orange alerts
+   to ordinary informational or AI content. */
+html[data-ofilab-design="calm-v2"] :is(.cyber-return-top,.cyber-teaser-jump,.upps-detail-toggle,.lab-insight-tools button){
+  color:var(--brand-primary);background:var(--bg-subtle);
+  border:1px solid var(--border-hairline);
+  box-shadow:none;min-height:44px;
+}
+
+/* Personality Signature Aura: the only subtly individualized shell background. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary{
+  background:
+    radial-gradient(ellipse 240px 180px at 8% 11%,
+      color-mix(in srgb,var(--aura-primary,var(--brand-primary)) 9%,transparent),
+      transparent 85%),
+    radial-gradient(ellipse 270px 150px at 32% 0%,
+      color-mix(in srgb,var(--aura-secondary,var(--brand-primary)) 5%,transparent),
+      transparent 85%),
+    var(--bg-card);
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] #resultsProfileSummary{
+  background:
+    radial-gradient(ellipse 260px 180px at 8% 11%,
+      color-mix(in srgb,var(--aura-primary,var(--brand-primary)) 13%,transparent),
+      transparent 85%),
+    radial-gradient(ellipse 270px 150px at 32% 0%,
+      color-mix(in srgb,var(--aura-secondary,var(--brand-primary)) 8%,transparent),
+      transparent 85%),
+    var(--bg-card);
+}
+html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]>path:first-child{
+  stroke-width:2.2px;fill-opacity:.20;
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] .ofi-glyph [data-glyph-trait]>path:first-child{
+  stroke-width:2.5px;fill-opacity:.26;
+}
+html[data-ofilab-design="calm-v2"] .ofi-glyph.is-interactive [data-glyph-trait]:focus-visible{
+  outline:2px solid var(--brand-primary);outline-offset:3px;filter:none;
+}
+
+/* Layout that used to sit in style="" attributes in index.php. Values that are
+   data (bar widths, preview percentages) stay inline in the markup. */
+html[data-ofilab-design="calm-v2"] #legacy50Banner{margin:12px 0 18px;padding:14px 18px;border-radius:14px;border:1px solid rgba(217,119,6,0.38);background:rgba(245,158,11,0.09);display:flex;flex-direction:column;gap:10px;}
+html[data-ofilab-design="calm-v2"] #legacy50Banner .legacy-banner__text{margin:0;font-size:.94rem;line-height:1.55;}
+html[data-ofilab-design="calm-v2"] #legacy50Banner .legacy-banner__actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+html[data-ofilab-design="calm-v2"] [data-icon-button]{display:inline-flex;align-items:center;justify-content:center;gap:8px;}
+html[data-ofilab-design="calm-v2"] label.file-picker{cursor:pointer;text-align:center;}
+html[data-ofilab-design="calm-v2"] label.file-picker input[type="file"]{display:none;}
+html[data-ofilab-design="calm-v2"] .ofi-modal-container.ofi-modal-container--wide{max-width:700px;}
+html[data-ofilab-design="calm-v2"] #rciCompareResults{margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem;}
+html[data-ofilab-design="calm-v2"] .settings-hint.settings-hint--tight{margin-top:6px;}
+html[data-ofilab-design="calm-v2"] .settings-subrow.settings-subrow--review{margin-top:4px;}
+html[data-ofilab-design="calm-v2"] #reviewBtn.review-entry{width:100%;}
+
+/* Support pointer beside emotional stability, shown only for very heavy N3/N6 answers. */
+html[data-ofilab-design="calm-v2"] #resultScreen .support-note{
+  margin:0 0 clamp(22px,3vw,34px);padding:18px 20px;border-radius:18px;
+  border:1px solid var(--calm-line);border-inline-start:4px solid var(--brand-primary);
+  background:var(--calm-paper);color:var(--text-primary);line-height:1.6;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .support-note p{margin:6px 0 8px;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] #resultScreen .support-note-list{margin:0;padding-inline-start:20px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .support-note a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+
+/* Offer on the 120 results: continue to the 300 form with the answers already given. */
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  margin:clamp(22px,3vw,34px) 0;padding:clamp(18px,2.4vw,28px);border-radius:22px;
+  border:1px solid var(--calm-line);background:var(--calm-paper);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300[hidden]{display:none;}
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300-copy{flex:1 1 320px;min-width:0;}
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300-copy .section-title{margin:4px 0 6px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300-copy .body-copy{margin:0;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] #resultScreen .continue-300 .primary{flex:0 0 auto;}
+
+/* No AI server configured (ai-config.php): hide every assistant control. */
+html[data-ai="off"] :is(.ai-inline-action,#resultsAiFab,#openResultsAiMain,#resultsFooterAi,.profile-ai-summary-bar,#aiDialog){display:none!important;}

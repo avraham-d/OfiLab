@@ -1,0 +1,3030 @@
+{
+  "instrument": "IPIP-NEO-300",
+  "version": "he-avd-ipip300-1.0.0",
+  "status": "experimental-Hebrew-translation-not-validated",
+  "source": {
+    "url": "https://ipip.ori.org/newNEOKey.htm",
+    "license": "Public domain",
+    "permission": "https://ipip.ori.org/newPermission.htm"
+  },
+  "scale": [
+    "בכלל לא מתאר אותי",
+    "מתאר אותי מעט",
+    "מתאר אותי במידה בינונית",
+    "מתאר אותי במידה רבה",
+    "מתאר אותי מאוד"
+  ],
+  "notes": "Independent Hebrew translation; ten items per facet. Original political/religious O6 wording retained. Empirical percentiles come from the full 300-item Johnson cohort (N=145,388; data/empirical-norms-300.json). Presentation interleaves domains and facets; source_id identifies official key position.",
+  "items": [
+    {
+      "source_en": "Worry about things.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "N1-01",
+      "he": "אני נוטה לדאוג לגבי דברים רבים.",
+      "id": "ipip300-N1-01",
+      "number": 1
+    },
+    {
+      "source_en": "Make friends easily.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "E1-01",
+      "he": "קל לי לרכוש חברים חדשים.",
+      "id": "ipip300-E1-01",
+      "number": 2
+    },
+    {
+      "source_en": "Have a vivid imagination.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-01",
+      "he": "יש לי דמיון חי ועשיר.",
+      "id": "ipip300-O1-01",
+      "number": 3
+    },
+    {
+      "source_en": "Trust others.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-01",
+      "he": "אני נותן אמון באחרים.",
+      "id": "ipip300-A1-01",
+      "number": 4
+    },
+    {
+      "source_en": "Complete tasks successfully.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-01",
+      "he": "אני משלים משימות בהצלחה.",
+      "id": "ipip300-C1-01",
+      "number": 5
+    },
+    {
+      "source_en": "Get angry easily.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "N2-01",
+      "he": "אני כועס בקלות.",
+      "id": "ipip300-N2-01",
+      "number": 6
+    },
+    {
+      "source_en": "Love large parties.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "E2-01",
+      "he": "אני אוהב מסיבות גדולות.",
+      "id": "ipip300-E2-01",
+      "number": 7
+    },
+    {
+      "source_en": "Believe in the importance of art.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "O2-01",
+      "he": "אני מאמין בחשיבותה של האמנות.",
+      "id": "ipip300-O2-01",
+      "number": 8
+    },
+    {
+      "source_en": "Would never cheat on my taxes.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "A2-01",
+      "he": "לעולם לא הייתי מרמה בדיווחי המס שלי.",
+      "id": "ipip300-A2-01",
+      "number": 9
+    },
+    {
+      "source_en": "Like order.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "C2-01",
+      "he": "אני אוהב סדר.",
+      "id": "ipip300-C2-01",
+      "number": 10
+    },
+    {
+      "source_en": "Often feel blue.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-01",
+      "he": "לעיתים קרובות אני מרגיש מדוכדך.",
+      "id": "ipip300-N3-01",
+      "number": 11
+    },
+    {
+      "source_en": "Take charge.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "E3-01",
+      "he": "אני לוקח פיקוד.",
+      "id": "ipip300-E3-01",
+      "number": 12
+    },
+    {
+      "source_en": "Experience my emotions intensely.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "O3-01",
+      "he": "אני חווה את הרגשות שלי בעוצמה רבה.",
+      "id": "ipip300-O3-01",
+      "number": 13
+    },
+    {
+      "source_en": "Make people feel welcome.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "A3-01",
+      "he": "אני נותן לאנשים תחושה שהם רצויים.",
+      "id": "ipip300-A3-01",
+      "number": 14
+    },
+    {
+      "source_en": "Try to follow the rules.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "C3-01",
+      "he": "אני משתדל לפעול לפי הכללים.",
+      "id": "ipip300-C3-01",
+      "number": 15
+    },
+    {
+      "source_en": "Am easily intimidated.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-01",
+      "he": "קל לגרום לי להרגיש מאוים.",
+      "id": "ipip300-N4-01",
+      "number": 16
+    },
+    {
+      "source_en": "Am always busy.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "E4-01",
+      "he": "אני תמיד עסוק.",
+      "id": "ipip300-E4-01",
+      "number": 17
+    },
+    {
+      "source_en": "Prefer variety to routine.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "O4-01",
+      "he": "אני מעדיף גיוון על פני שגרה.",
+      "id": "ipip300-O4-01",
+      "number": 18
+    },
+    {
+      "source_en": "Am easy to satisfy.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "A4-01",
+      "he": "אני לא תובעני ומסתפק בקלות.",
+      "id": "ipip300-A4-01",
+      "number": 19
+    },
+    {
+      "source_en": "Go straight for the goal.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-01",
+      "he": "אני מתקדם ישר אל המטרה.",
+      "id": "ipip300-C4-01",
+      "number": 20
+    },
+    {
+      "source_en": "Often eat too much.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "N5-01",
+      "he": "לעיתים קרובות אני אוכל יותר מדי.",
+      "id": "ipip300-N5-01",
+      "number": 21
+    },
+    {
+      "source_en": "Love excitement.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-01",
+      "he": "אני אוהב ריגושים.",
+      "id": "ipip300-E5-01",
+      "number": 22
+    },
+    {
+      "source_en": "Like to solve complex problems.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "O5-01",
+      "he": "אני אוהב לפתור בעיות מורכבות.",
+      "id": "ipip300-O5-01",
+      "number": 23
+    },
+    {
+      "source_en": "Dislike being the center of attention.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "A5-01",
+      "he": "אני לא אוהב להיות במרכז תשומת הלב.",
+      "id": "ipip300-A5-01",
+      "number": 24
+    },
+    {
+      "source_en": "Get chores done right away.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "C5-01",
+      "he": "אני מבצע מטלות שגרתיות מיד.",
+      "id": "ipip300-C5-01",
+      "number": 25
+    },
+    {
+      "source_en": "Panic easily.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "N6-01",
+      "he": "אני נכנס לפאניקה בקלות.",
+      "id": "ipip300-N6-01",
+      "number": 26
+    },
+    {
+      "source_en": "Radiate joy.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-01",
+      "he": "אני מקרין שמחה.",
+      "id": "ipip300-E6-01",
+      "number": 27
+    },
+    {
+      "source_en": "Tend to vote for liberal political candidates.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "O6-01",
+      "he": "אני נוטה להצביע למועמדים פוליטיים ליברליים.",
+      "id": "ipip300-O6-01",
+      "number": 28,
+      "adaptation": "התאמה תרבותית: בוחן פתיחות לרפורמות חברתיות ולשינוי, להבדיל מהזדהות עם מפלגה פוליטית מקומית מסוימת."
+    },
+    {
+      "source_en": "Sympathize with the homeless.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "A6-01",
+      "he": "אני חש חמלה כלפי חסרי בית.",
+      "id": "ipip300-A6-01",
+      "number": 29
+    },
+    {
+      "source_en": "Avoid mistakes.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "C6-01",
+      "he": "אני פועל בזהירות כדי להימנע מטעויות.",
+      "id": "ipip300-C6-01",
+      "number": 30
+    },
+    {
+      "source_en": "Fear for the worst.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "N1-02",
+      "he": "אני חושש שהגרוע מכול יקרה.",
+      "id": "ipip300-N1-02",
+      "number": 31
+    },
+    {
+      "source_en": "Warm up quickly to others.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "E1-02",
+      "he": "אני נפתח במהירות לאנשים אחרים.",
+      "id": "ipip300-E1-02",
+      "number": 32
+    },
+    {
+      "source_en": "Enjoy wild flights of fantasy.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-02",
+      "he": "אני נהנה להפליג בדמיונות פרועים.",
+      "id": "ipip300-O1-02",
+      "number": 33
+    },
+    {
+      "source_en": "Believe that others have good intentions.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-02",
+      "he": "אני מאמין שלאחרים יש כוונות טובות.",
+      "id": "ipip300-A1-02",
+      "number": 34
+    },
+    {
+      "source_en": "Excel in what I do.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-02",
+      "he": "אני מצטיין במה שאני עושה.",
+      "id": "ipip300-C1-02",
+      "number": 35
+    },
+    {
+      "source_en": "Get irritated easily.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "N2-02",
+      "he": "אני מתרגז בקלות.",
+      "id": "ipip300-N2-02",
+      "number": 36
+    },
+    {
+      "source_en": "Talk to a lot of different people at parties.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "E2-02",
+      "he": "במסיבות אני מדבר עם הרבה אנשים שונים.",
+      "id": "ipip300-E2-02",
+      "number": 37
+    },
+    {
+      "source_en": "Like music.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "O2-02",
+      "he": "אני אוהב מוזיקה.",
+      "id": "ipip300-O2-02",
+      "number": 38
+    },
+    {
+      "source_en": "Stick to the rules.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "A2-02",
+      "he": "אני מקפיד על הכללים.",
+      "id": "ipip300-A2-02",
+      "number": 39
+    },
+    {
+      "source_en": "Like to tidy up.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "C2-02",
+      "he": "אני אוהב לסדר.",
+      "id": "ipip300-C2-02",
+      "number": 40
+    },
+    {
+      "source_en": "Dislike myself.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-02",
+      "he": "אני לא אוהב את עצמי.",
+      "id": "ipip300-N3-02",
+      "number": 41
+    },
+    {
+      "source_en": "Try to lead others.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "E3-02",
+      "he": "אני מנסה להוביל אחרים.",
+      "id": "ipip300-E3-02",
+      "number": 42
+    },
+    {
+      "source_en": "Feel others' emotions.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "O3-02",
+      "he": "אני חש את הרגשות של אחרים.",
+      "id": "ipip300-O3-02",
+      "number": 43
+    },
+    {
+      "source_en": "Anticipate the needs of others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "A3-02",
+      "he": "אני מזהה מראש את הצרכים של אחרים.",
+      "id": "ipip300-A3-02",
+      "number": 44
+    },
+    {
+      "source_en": "Keep my promises.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "C3-02",
+      "he": "אני מקיים את ההבטחות שלי.",
+      "id": "ipip300-C3-02",
+      "number": 45
+    },
+    {
+      "source_en": "Am afraid that I will do the wrong thing.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-02",
+      "he": "אני חושש שאעשה משהו לא נכון.",
+      "id": "ipip300-N4-02",
+      "number": 46
+    },
+    {
+      "source_en": "Am always on the go.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "E4-02",
+      "he": "אני תמיד בתנועה ובעשייה.",
+      "id": "ipip300-E4-02",
+      "number": 47
+    },
+    {
+      "source_en": "Like to visit new places.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "O4-02",
+      "he": "אני אוהב לבקר במקומות חדשים.",
+      "id": "ipip300-O4-02",
+      "number": 48
+    },
+    {
+      "source_en": "Can't stand confrontations.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "A4-02",
+      "he": "אני לא יכול לסבול עימותים.",
+      "id": "ipip300-A4-02",
+      "number": 49
+    },
+    {
+      "source_en": "Work hard.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-02",
+      "he": "אני עובד קשה.",
+      "id": "ipip300-C4-02",
+      "number": 50
+    },
+    {
+      "source_en": "Don't know why I do some of the things I do.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "N5-02",
+      "he": "איני יודע מדוע אני עושה חלק מהדברים שאני עושה.",
+      "id": "ipip300-N5-02",
+      "number": 51
+    },
+    {
+      "source_en": "Seek adventure.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-02",
+      "he": "אני מחפש הרפתקאות.",
+      "id": "ipip300-E5-02",
+      "number": 52
+    },
+    {
+      "source_en": "Love to read challenging material.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "O5-02",
+      "he": "אני אוהב לקרוא חומר שמאתגר את החשיבה שלי.",
+      "id": "ipip300-O5-02",
+      "number": 53
+    },
+    {
+      "source_en": "Dislike talking about myself.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "A5-02",
+      "he": "אני לא אוהב לדבר על עצמי.",
+      "id": "ipip300-A5-02",
+      "number": 54
+    },
+    {
+      "source_en": "Am always prepared.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "C5-02",
+      "he": "אני תמיד מוכן.",
+      "id": "ipip300-C5-02",
+      "number": 55
+    },
+    {
+      "source_en": "Become overwhelmed by events.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "N6-02",
+      "he": "אני מרגיש מוצף ממה שקורה.",
+      "id": "ipip300-N6-02",
+      "number": 56
+    },
+    {
+      "source_en": "Have a lot of fun.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-02",
+      "he": "יש לי הרבה רגעים של הנאה וכיף.",
+      "id": "ipip300-E6-02",
+      "number": 57
+    },
+    {
+      "source_en": "Believe that there is no absolute right or wrong.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "O6-02",
+      "he": "אני מאמין שאין דבר שהוא נכון או פסול באופן מוחלט.",
+      "id": "ipip300-O6-02",
+      "number": 58,
+      "adaptation": "התאמה תרבותית: בוחן פלורליזם תפיסתי וחוסר דוגמטיות מול מוסר מוחלט."
+    },
+    {
+      "source_en": "Feel sympathy for those who are worse off than myself.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "A6-02",
+      "he": "אני חש חמלה כלפי מי שמצבם גרוע משלי.",
+      "id": "ipip300-A6-02",
+      "number": 59
+    },
+    {
+      "source_en": "Choose my words with care.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "C6-02",
+      "he": "אני בוחר את המילים שלי בקפידה.",
+      "id": "ipip300-C6-02",
+      "number": 60
+    },
+    {
+      "source_en": "Am afraid of many things.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "N1-03",
+      "he": "אני פוחד מדברים רבים.",
+      "id": "ipip300-N1-03",
+      "number": 61
+    },
+    {
+      "source_en": "Feel comfortable around people.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "E1-03",
+      "he": "אני מרגיש בנוח בחברת אנשים.",
+      "id": "ipip300-E1-03",
+      "number": 62
+    },
+    {
+      "source_en": "Love to daydream.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-03",
+      "he": "אני אוהב לחלום בהקיץ.",
+      "id": "ipip300-O1-03",
+      "number": 63
+    },
+    {
+      "source_en": "Trust what people say.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-03",
+      "he": "אני מאמין למה שאנשים אומרים.",
+      "id": "ipip300-A1-03",
+      "number": 64
+    },
+    {
+      "source_en": "Handle tasks smoothly.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-03",
+      "he": "אני מבצע משימות בצורה חלקה.",
+      "id": "ipip300-C1-03",
+      "number": 65
+    },
+    {
+      "source_en": "Get upset easily.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "N2-03",
+      "he": "אני נסער בקלות.",
+      "id": "ipip300-N2-03",
+      "number": 66
+    },
+    {
+      "source_en": "Enjoy being part of a group.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "E2-03",
+      "he": "אני נהנה להיות חלק מקבוצה.",
+      "id": "ipip300-E2-03",
+      "number": 67
+    },
+    {
+      "source_en": "See beauty in things that others might not notice.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "O2-03",
+      "he": "אני רואה יופי בדברים שאחרים עשויים לא להבחין בהם.",
+      "id": "ipip300-O2-03",
+      "number": 68
+    },
+    {
+      "source_en": "Use flattery to get ahead.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-03",
+      "he": "אני משתמש בחנופה כדי להתקדם.",
+      "id": "ipip300-A2-03",
+      "number": 69
+    },
+    {
+      "source_en": "Want everything to be \"just right.\"",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "C2-03",
+      "he": "אני רוצה שהכול יהיה בדיוק כמו שצריך.",
+      "id": "ipip300-C2-03",
+      "number": 70
+    },
+    {
+      "source_en": "Am often down in the dumps.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-03",
+      "he": "לעיתים קרובות אני מרגיש שפוף וחסר מצב רוח.",
+      "id": "ipip300-N3-03",
+      "number": 71
+    },
+    {
+      "source_en": "Can talk others into doing things.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "E3-03",
+      "he": "אני מסוגל לשכנע אנשים לעשות דברים.",
+      "id": "ipip300-E3-03",
+      "number": 72
+    },
+    {
+      "source_en": "Am passionate about causes.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "O3-03",
+      "he": "אני נלהב ממטרות שאני מאמין בהן.",
+      "id": "ipip300-O3-03",
+      "number": 73
+    },
+    {
+      "source_en": "Love to help others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "A3-03",
+      "he": "אני אוהב לעזור לאחרים.",
+      "id": "ipip300-A3-03",
+      "number": 74
+    },
+    {
+      "source_en": "Pay my bills on time.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "C3-03",
+      "he": "אני משלם את החשבונות שלי בזמן.",
+      "id": "ipip300-C3-03",
+      "number": 75
+    },
+    {
+      "source_en": "Find it difficult to approach others.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-03",
+      "he": "קשה לי לגשת לאנשים אחרים.",
+      "id": "ipip300-N4-03",
+      "number": 76
+    },
+    {
+      "source_en": "Do a lot in my spare time.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "E4-03",
+      "he": "אני עושה הרבה דברים בזמני הפנוי.",
+      "id": "ipip300-E4-03",
+      "number": 77
+    },
+    {
+      "source_en": "Interested in many things.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "O4-03",
+      "he": "אני מתעניין בדברים רבים.",
+      "id": "ipip300-O4-03",
+      "number": 78
+    },
+    {
+      "source_en": "Hate to seem pushy.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "A4-03",
+      "he": "אני שונא להיתפס כמי שכופה את רצונו על אחרים.",
+      "id": "ipip300-A4-03",
+      "number": 79
+    },
+    {
+      "source_en": "Turn plans into actions.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-03",
+      "he": "אני הופך תוכניות למעשים.",
+      "id": "ipip300-C4-03",
+      "number": 80
+    },
+    {
+      "source_en": "Do things I later regret.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "N5-03",
+      "he": "אני עושה דברים שאני מתחרט עליהם אחר כך.",
+      "id": "ipip300-N5-03",
+      "number": 81
+    },
+    {
+      "source_en": "Love action.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-03",
+      "he": "אני אוהב אקשן.",
+      "id": "ipip300-E5-03",
+      "number": 82
+    },
+    {
+      "source_en": "Have a rich vocabulary.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "O5-03",
+      "he": "יש לי אוצר מילים עשיר.",
+      "id": "ipip300-O5-03",
+      "number": 83
+    },
+    {
+      "source_en": "Consider myself an average person.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "A5-03",
+      "he": "אני מחשיב את עצמי לאדם ממוצע.",
+      "id": "ipip300-A5-03",
+      "number": 84
+    },
+    {
+      "source_en": "Start tasks right away.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "C5-03",
+      "he": "אני מתחיל משימות מיד.",
+      "id": "ipip300-C5-03",
+      "number": 85
+    },
+    {
+      "source_en": "Feel that I'm unable to deal with things.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "N6-03",
+      "he": "אני מרגיש שאיני מסוגל להתמודד עם דברים.",
+      "id": "ipip300-N6-03",
+      "number": 86
+    },
+    {
+      "source_en": "Express childlike joy.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-03",
+      "he": "אני מביע שמחה ספונטנית, כמו של ילד.",
+      "id": "ipip300-E6-03",
+      "number": 87
+    },
+    {
+      "source_en": "Believe that criminals should receive help rather than punishment.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "O6-03",
+      "he": "אני מאמין שעבריינים צריכים לקבל עזרה במקום עונש.",
+      "id": "ipip300-O6-03",
+      "number": 88,
+      "adaptation": "התאמה תרבותית: בוחן תמיכה בשיקום הומניסטי מול ענישה גמולית."
+    },
+    {
+      "source_en": "Value cooperation over competition.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "A6-03",
+      "he": "אני מעריך שיתוף פעולה יותר מתחרות.",
+      "id": "ipip300-A6-03",
+      "number": 89
+    },
+    {
+      "source_en": "Stick to my chosen path.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "C6-03",
+      "he": "אני מתמיד בדרך שבחרתי.",
+      "id": "ipip300-C6-03",
+      "number": 90
+    },
+    {
+      "source_en": "Get stressed out easily.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "N1-04",
+      "he": "אני נלחץ בקלות.",
+      "id": "ipip300-N1-04",
+      "number": 91
+    },
+    {
+      "source_en": "Act comfortably with others.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "E1-04",
+      "he": "אני מתנהג בטבעיות ובנינוחות עם אחרים.",
+      "id": "ipip300-E1-04",
+      "number": 92
+    },
+    {
+      "source_en": "Like to get lost in thought.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-04",
+      "he": "אני אוהב לשקוע במחשבות.",
+      "id": "ipip300-O1-04",
+      "number": 93
+    },
+    {
+      "source_en": "Believe that people are basically moral.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-04",
+      "he": "אני מאמין שבני אדם הם מוסריים ביסודם.",
+      "id": "ipip300-A1-04",
+      "number": 94
+    },
+    {
+      "source_en": "Am sure of my ground.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-04",
+      "he": "אני מרגיש בטוח במה שאני עושה או אומר.",
+      "id": "ipip300-C1-04",
+      "number": 95
+    },
+    {
+      "source_en": "Am often in a bad mood.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "N2-04",
+      "he": "לעיתים קרובות אני במצב רוח רע.",
+      "id": "ipip300-N2-04",
+      "number": 96
+    },
+    {
+      "source_en": "Involve others in what I am doing.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "E2-04",
+      "he": "אני משתף אחרים במה שאני עושה.",
+      "id": "ipip300-E2-04",
+      "number": 97
+    },
+    {
+      "source_en": "Love flowers.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "O2-04",
+      "he": "אני אוהב פרחים.",
+      "id": "ipip300-O2-04",
+      "number": 98
+    },
+    {
+      "source_en": "Use others for my own ends.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-04",
+      "he": "אני משתמש באחרים כדי להשיג את מטרותיי.",
+      "id": "ipip300-A2-04",
+      "number": 99
+    },
+    {
+      "source_en": "Love order and regularity.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "C2-04",
+      "he": "אני אוהב סדר וקביעות.",
+      "id": "ipip300-C2-04",
+      "number": 100
+    },
+    {
+      "source_en": "Have a low opinion of myself.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-04",
+      "he": "אני רואה את עצמי באור שלילי.",
+      "id": "ipip300-N3-04",
+      "number": 101
+    },
+    {
+      "source_en": "Seek to influence others.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "E3-04",
+      "he": "אני שואף להשפיע על אחרים.",
+      "id": "ipip300-E3-04",
+      "number": 102
+    },
+    {
+      "source_en": "Enjoy examining myself and my life.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "O3-04",
+      "he": "אני נהנה לבחון את עצמי ואת חיי.",
+      "id": "ipip300-O3-04",
+      "number": 103
+    },
+    {
+      "source_en": "Am concerned about others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "A3-04",
+      "he": "אכפת לי מאנשים אחרים.",
+      "id": "ipip300-A3-04",
+      "number": 104
+    },
+    {
+      "source_en": "Tell the truth.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "C3-04",
+      "he": "אני אומר את האמת.",
+      "id": "ipip300-C3-04",
+      "number": 105
+    },
+    {
+      "source_en": "Am afraid to draw attention to myself.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-04",
+      "he": "אני חושש למשוך תשומת לב לעצמי.",
+      "id": "ipip300-N4-04",
+      "number": 106
+    },
+    {
+      "source_en": "Can manage many things at the same time.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "E4-04",
+      "he": "אני מסוגל לנהל דברים רבים בו־זמנית.",
+      "id": "ipip300-E4-04",
+      "number": 107
+    },
+    {
+      "source_en": "Like to begin new things.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "O4-04",
+      "he": "אני אוהב להתחיל דברים חדשים.",
+      "id": "ipip300-O4-04",
+      "number": 108
+    },
+    {
+      "source_en": "Have a sharp tongue.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-04",
+      "he": "יש לי לשון עוקצנית.",
+      "id": "ipip300-A4-04",
+      "number": 109
+    },
+    {
+      "source_en": "Plunge into tasks with all my heart.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-04",
+      "he": "אני מתמסר למשימות מכל הלב.",
+      "id": "ipip300-C4-04",
+      "number": 110
+    },
+    {
+      "source_en": "Go on binges.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "N5-04",
+      "he": "אני נסחף לבולמוסים (למשל של אכילה או קניות).",
+      "id": "ipip300-N5-04",
+      "number": 111
+    },
+    {
+      "source_en": "Enjoy being part of a loud crowd.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-04",
+      "he": "אני נהנה להיות חלק מקהל רועש.",
+      "id": "ipip300-E5-04",
+      "number": 112
+    },
+    {
+      "source_en": "Can handle a lot of information.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "O5-04",
+      "he": "אני מסוגל להתמודד עם מידע רב.",
+      "id": "ipip300-O5-04",
+      "number": 113
+    },
+    {
+      "source_en": "Seldom toot my own horn.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "A5-04",
+      "he": "לעיתים רחוקות אני מתפאר בעצמי.",
+      "id": "ipip300-A5-04",
+      "number": 114
+    },
+    {
+      "source_en": "Get to work at once.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "C5-04",
+      "he": "אני ניגש לעבודה בלי דיחוי.",
+      "id": "ipip300-C5-04",
+      "number": 115
+    },
+    {
+      "source_en": "Can't make up my mind.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "N6-04",
+      "he": "אני לא מצליח להחליט.",
+      "id": "ipip300-N6-04",
+      "number": 116
+    },
+    {
+      "source_en": "Laugh my way through life.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-04",
+      "he": "אני עובר את החיים עם הרבה צחוק.",
+      "id": "ipip300-E6-04",
+      "number": 117
+    },
+    {
+      "source_en": "Believe in one true religion.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-04",
+      "he": "אני מאמין שיש דת אמת אחת.",
+      "id": "ipip300-O6-04",
+      "number": 118,
+      "adaptation": "התאמה תרבותית: בוחן בלעדיות דתית מול פלורליזם דתי ואמוני, להבדיל מזיקה למסורת או זהות לאומית."
+    },
+    {
+      "source_en": "Suffer from others' sorrows.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "A6-04",
+      "he": "הצער של אחרים מכאיב לי.",
+      "id": "ipip300-A6-04",
+      "number": 119
+    },
+    {
+      "source_en": "Jump into things without thinking.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-04",
+      "he": "אני ניגש לדברים בלי לחשוב קודם.",
+      "id": "ipip300-C6-04",
+      "number": 120
+    },
+    {
+      "source_en": "Get caught up in my problems.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "N1-05",
+      "he": "אני נשאב לעיסוק בבעיות שלי.",
+      "id": "ipip300-N1-05",
+      "number": 121
+    },
+    {
+      "source_en": "Cheer people up.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "E1-05",
+      "he": "אני מעודד אנשים ומשפר את מצב רוחם.",
+      "id": "ipip300-E1-05",
+      "number": 122
+    },
+    {
+      "source_en": "Indulge in my fantasies.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-05",
+      "he": "אני מתמסר לעולמות הדמיון שלי.",
+      "id": "ipip300-O1-05",
+      "number": 123
+    },
+    {
+      "source_en": "Believe in human goodness.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-05",
+      "he": "אני מאמין בטוב שבבני האדם.",
+      "id": "ipip300-A1-05",
+      "number": 124
+    },
+    {
+      "source_en": "Come up with good solutions.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-05",
+      "he": "אני מוצא פתרונות טובים.",
+      "id": "ipip300-C1-05",
+      "number": 125
+    },
+    {
+      "source_en": "Lose my temper.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "N2-05",
+      "he": "אני מאבד שליטה בכעס שלי.",
+      "id": "ipip300-N2-05",
+      "number": 126
+    },
+    {
+      "source_en": "Love surprise parties.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "E2-05",
+      "he": "אני אוהב מסיבות הפתעה.",
+      "id": "ipip300-E2-05",
+      "number": 127
+    },
+    {
+      "source_en": "Enjoy the beauty of nature.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "O2-05",
+      "he": "אני נהנה מיופיו של הטבע.",
+      "id": "ipip300-O2-05",
+      "number": 128
+    },
+    {
+      "source_en": "Know how to get around the rules.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-05",
+      "he": "אני יודע איך לעקוף את הכללים.",
+      "id": "ipip300-A2-05",
+      "number": 129
+    },
+    {
+      "source_en": "Do things according to a plan.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "plus",
+      "source_id": "C2-05",
+      "he": "אני פועל לפי תוכנית.",
+      "id": "ipip300-C2-05",
+      "number": 130
+    },
+    {
+      "source_en": "Have frequent mood swings.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-05",
+      "he": "מצב הרוח שלי משתנה לעיתים קרובות.",
+      "id": "ipip300-N3-05",
+      "number": 131
+    },
+    {
+      "source_en": "Take control of things.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "E3-05",
+      "he": "אני לוקח את השליטה לידיים.",
+      "id": "ipip300-E3-05",
+      "number": 132
+    },
+    {
+      "source_en": "Try to understand myself.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "O3-05",
+      "he": "אני מנסה להבין את עצמי.",
+      "id": "ipip300-O3-05",
+      "number": 133
+    },
+    {
+      "source_en": "Have a good word for everyone.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "A3-05",
+      "he": "יש לי מילה טובה על כל אחד.",
+      "id": "ipip300-A3-05",
+      "number": 134
+    },
+    {
+      "source_en": "Listen to my conscience.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "C3-05",
+      "he": "אני מקשיב למצפון שלי.",
+      "id": "ipip300-C3-05",
+      "number": 135
+    },
+    {
+      "source_en": "Only feel comfortable with friends.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-05",
+      "he": "אני מרגיש בנוח רק עם חברים.",
+      "id": "ipip300-N4-05",
+      "number": 136
+    },
+    {
+      "source_en": "React quickly.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "E4-05",
+      "he": "אני מגיב במהירות.",
+      "id": "ipip300-E4-05",
+      "number": 137
+    },
+    {
+      "source_en": "Prefer to stick with things that I know.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-05",
+      "he": "אני מעדיף להיצמד לדברים שאני מכיר.",
+      "id": "ipip300-O4-05",
+      "number": 138
+    },
+    {
+      "source_en": "Contradict others.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-05",
+      "he": "אני חולק על דברים שאחרים אומרים.",
+      "id": "ipip300-A4-05",
+      "number": 139
+    },
+    {
+      "source_en": "Do more than what's expected of me.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-05",
+      "he": "אני עושה יותר ממה שמצפים ממני.",
+      "id": "ipip300-C4-05",
+      "number": 140
+    },
+    {
+      "source_en": "Love to eat.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "N5-05",
+      "he": "אני אוהב לאכול.",
+      "id": "ipip300-N5-05",
+      "number": 141
+    },
+    {
+      "source_en": "Enjoy being reckless.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-05",
+      "he": "אני נהנה להיות פזיז ונועז.",
+      "id": "ipip300-E5-05",
+      "number": 142
+    },
+    {
+      "source_en": "Enjoy thinking about things.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "O5-05",
+      "he": "אני נהנה לחשוב על דברים.",
+      "id": "ipip300-O5-05",
+      "number": 143
+    },
+    {
+      "source_en": "Believe that I am better than others.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-05",
+      "he": "אני מאמין שאני טוב יותר מאחרים.",
+      "id": "ipip300-A5-05",
+      "number": 144
+    },
+    {
+      "source_en": "Carry out my plans.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "C5-05",
+      "he": "אני מוציא לפועל את התוכניות שלי.",
+      "id": "ipip300-C5-05",
+      "number": 145
+    },
+    {
+      "source_en": "Get overwhelmed by emotions.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "N6-05",
+      "he": "הרגשות שלי מציפים אותי.",
+      "id": "ipip300-N6-05",
+      "number": 146
+    },
+    {
+      "source_en": "Love life.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-05",
+      "he": "אני אוהב את החיים.",
+      "id": "ipip300-E6-05",
+      "number": 147
+    },
+    {
+      "source_en": "Tend to vote for conservative political candidates.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-05",
+      "he": "אני נוטה להצביע למועמדים פוליטיים שמרניים.",
+      "id": "ipip300-O6-05",
+      "number": 148,
+      "adaptation": "התאמה תרבותית: בוחן העדפת שימור הסדר המוכר והמוסדות הקיימים, ולא הצבעה לגוש פוליטי מסוים."
+    },
+    {
+      "source_en": "Am not interested in other people's problems.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-05",
+      "he": "אני לא מתעניין בבעיות של אנשים אחרים.",
+      "id": "ipip300-A6-05",
+      "number": 149
+    },
+    {
+      "source_en": "Make rash decisions.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-05",
+      "he": "אני מקבל החלטות פזיזות.",
+      "id": "ipip300-C6-05",
+      "number": 150
+    },
+    {
+      "source_en": "Am not easily bothered by things.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "N1-06",
+      "he": "דברים אינם מטרידים אותי בקלות.",
+      "id": "ipip300-N1-06",
+      "number": 151
+    },
+    {
+      "source_en": "Am hard to get to know.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "E1-06",
+      "he": "קשה לאחרים להכיר אותי היטב.",
+      "id": "ipip300-E1-06",
+      "number": 152
+    },
+    {
+      "source_en": "Spend time reflecting on things.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "O1-06",
+      "he": "אני מקדיש זמן להרהורים על דברים.",
+      "id": "ipip300-O1-06",
+      "number": 153
+    },
+    {
+      "source_en": "Think that all will be well.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "A1-06",
+      "he": "אני חושב שהכול יהיה בסדר.",
+      "id": "ipip300-A1-06",
+      "number": 154
+    },
+    {
+      "source_en": "Know how to get things done.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "plus",
+      "source_id": "C1-06",
+      "he": "אני יודע איך להביא דברים לידי ביצוע.",
+      "id": "ipip300-C1-06",
+      "number": 155
+    },
+    {
+      "source_en": "Rarely get irritated.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "N2-06",
+      "he": "לעיתים רחוקות אני מתרגז.",
+      "id": "ipip300-N2-06",
+      "number": 156
+    },
+    {
+      "source_en": "Prefer to be alone.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "E2-06",
+      "he": "אני מעדיף להיות לבד.",
+      "id": "ipip300-E2-06",
+      "number": 157
+    },
+    {
+      "source_en": "Do not like art.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "O2-06",
+      "he": "אני לא אוהב אמנות.",
+      "id": "ipip300-O2-06",
+      "number": 158
+    },
+    {
+      "source_en": "Cheat to get ahead.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-06",
+      "he": "אני מרמה כדי להתקדם.",
+      "id": "ipip300-A2-06",
+      "number": 159
+    },
+    {
+      "source_en": "Often forget to put things back in their proper place.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "C2-06",
+      "he": "לעיתים קרובות אני שוכח להחזיר דברים למקומם.",
+      "id": "ipip300-C2-06",
+      "number": 160
+    },
+    {
+      "source_en": "Feel desperate.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-06",
+      "he": "אני חש ייאוש.",
+      "id": "ipip300-N3-06",
+      "number": 161
+    },
+    {
+      "source_en": "Wait for others to lead the way.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "E3-06",
+      "he": "אני מחכה שאחרים יובילו את הדרך.",
+      "id": "ipip300-E3-06",
+      "number": 162
+    },
+    {
+      "source_en": "Seldom get emotional.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "O3-06",
+      "he": "לעיתים רחוקות אני מגיב ברגש חזק.",
+      "id": "ipip300-O3-06",
+      "number": 163
+    },
+    {
+      "source_en": "Look down on others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "A3-06",
+      "he": "אני מתייחס לאחרים בזלזול.",
+      "id": "ipip300-A3-06",
+      "number": 164
+    },
+    {
+      "source_en": "Break rules.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "C3-06",
+      "he": "אני מפר את הכללים.",
+      "id": "ipip300-C3-06",
+      "number": 165
+    },
+    {
+      "source_en": "Stumble over my words.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "N4-06",
+      "he": "אני מסתבך במילים כשאני מדבר.",
+      "id": "ipip300-N4-06",
+      "number": 166
+    },
+    {
+      "source_en": "Like to take it easy.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "E4-06",
+      "he": "אני אוהב לקחת את הדברים בנחת.",
+      "id": "ipip300-E4-06",
+      "number": 167
+    },
+    {
+      "source_en": "Dislike changes.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-06",
+      "he": "אני לא אוהב שינויים.",
+      "id": "ipip300-O4-06",
+      "number": 168
+    },
+    {
+      "source_en": "Love a good fight.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-06",
+      "he": "אני נהנה ממריבות ומעימותים.",
+      "id": "ipip300-A4-06",
+      "number": 169
+    },
+    {
+      "source_en": "Set high standards for myself and others.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-06",
+      "he": "אני מציב רף גבוה לעצמי ולאחרים.",
+      "id": "ipip300-C4-06",
+      "number": 170
+    },
+    {
+      "source_en": "Rarely overindulge.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "N5-06",
+      "he": "לעיתים רחוקות אני מגזים בפינוקים או בהנאות.",
+      "id": "ipip300-N5-06",
+      "number": 171
+    },
+    {
+      "source_en": "Act wild and crazy.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-06",
+      "he": "אני מתנהג בפראות ומשתולל.",
+      "id": "ipip300-E5-06",
+      "number": 172
+    },
+    {
+      "source_en": "Am not interested in abstract ideas.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "O5-06",
+      "he": "אני לא מתעניין ברעיונות מופשטים.",
+      "id": "ipip300-O5-06",
+      "number": 173
+    },
+    {
+      "source_en": "Think highly of myself.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-06",
+      "he": "אני תופס מעצמי הרבה.",
+      "id": "ipip300-A5-06",
+      "number": 174
+    },
+    {
+      "source_en": "Find it difficult to get down to work.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "C5-06",
+      "he": "קשה לי לגשת לעבודה ולהתחיל בה.",
+      "id": "ipip300-C5-06",
+      "number": 175
+    },
+    {
+      "source_en": "Remain calm under pressure.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "N6-06",
+      "he": "אני נשאר רגוע תחת לחץ.",
+      "id": "ipip300-N6-06",
+      "number": 176
+    },
+    {
+      "source_en": "Look at the bright side of life.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-06",
+      "he": "אני מסתכל על הצד החיובי של החיים.",
+      "id": "ipip300-E6-06",
+      "number": 177
+    },
+    {
+      "source_en": "Believe that too much tax money goes to support artists.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-06",
+      "he": "אני מאמין שחלק גדול מדי מכספי המסים מופנה לתמיכה באמנים.",
+      "id": "ipip300-O6-06",
+      "number": 178,
+      "adaptation": "התאמה תרבותית: בוחן תמיכה בביטוי יצירתי ואמנותי לעומת תעדוף תקציבי של צרכים בסיסיים."
+    },
+    {
+      "source_en": "Tend to dislike soft-hearted people.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-06",
+      "he": "אני נוטה לא לחבב אנשים רכי לב.",
+      "id": "ipip300-A6-06",
+      "number": 179
+    },
+    {
+      "source_en": "Like to act on a whim.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-06",
+      "he": "אני אוהב לפעול לפי חשק פתאומי.",
+      "id": "ipip300-C6-06",
+      "number": 180
+    },
+    {
+      "source_en": "Am relaxed most of the time.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "N1-07",
+      "he": "אני רגוע רוב הזמן.",
+      "id": "ipip300-N1-07",
+      "number": 181
+    },
+    {
+      "source_en": "Often feel uncomfortable around others.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "E1-07",
+      "he": "לעיתים קרובות אני מרגיש לא בנוח בחברת אחרים.",
+      "id": "ipip300-E1-07",
+      "number": 182
+    },
+    {
+      "source_en": "Seldom daydream.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "O1-07",
+      "he": "לעיתים רחוקות אני חולם בהקיץ.",
+      "id": "ipip300-O1-07",
+      "number": 183
+    },
+    {
+      "source_en": "Distrust people.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "A1-07",
+      "he": "אני לא נותן אמון באנשים.",
+      "id": "ipip300-A1-07",
+      "number": 184
+    },
+    {
+      "source_en": "Misjudge situations.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "C1-07",
+      "he": "אני מעריך מצבים בצורה שגויה.",
+      "id": "ipip300-C1-07",
+      "number": 185
+    },
+    {
+      "source_en": "Seldom get mad.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "N2-07",
+      "he": "לעיתים רחוקות אני כועס.",
+      "id": "ipip300-N2-07",
+      "number": 186
+    },
+    {
+      "source_en": "Want to be left alone.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "E2-07",
+      "he": "אני רוצה שיניחו לי להיות לבד.",
+      "id": "ipip300-E2-07",
+      "number": 187
+    },
+    {
+      "source_en": "Do not like poetry.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "O2-07",
+      "he": "אני לא אוהב לקרוא שירה.",
+      "id": "ipip300-O2-07",
+      "number": 188
+    },
+    {
+      "source_en": "Put people under pressure.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-07",
+      "he": "אני מפעיל לחץ על אנשים.",
+      "id": "ipip300-A2-07",
+      "number": 189
+    },
+    {
+      "source_en": "Leave a mess in my room.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "C2-07",
+      "he": "אני משאיר בלגן בחדר שלי.",
+      "id": "ipip300-C2-07",
+      "number": 190
+    },
+    {
+      "source_en": "Feel that my life lacks direction.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "plus",
+      "source_id": "N3-07",
+      "he": "אני מרגיש שחיי חסרים כיוון.",
+      "id": "ipip300-N3-07",
+      "number": 191
+    },
+    {
+      "source_en": "Keep in the background.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "E3-07",
+      "he": "אני נשאר ברקע.",
+      "id": "ipip300-E3-07",
+      "number": 192
+    },
+    {
+      "source_en": "Am not easily affected by my emotions.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "O3-07",
+      "he": "הרגשות שלי אינם משפיעים עליי בקלות.",
+      "id": "ipip300-O3-07",
+      "number": 193
+    },
+    {
+      "source_en": "Am indifferent to the feelings of others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "A3-07",
+      "he": "אני אדיש לרגשות של אחרים.",
+      "id": "ipip300-A3-07",
+      "number": 194
+    },
+    {
+      "source_en": "Break my promises.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "C3-07",
+      "he": "אני מפר את ההבטחות שלי.",
+      "id": "ipip300-C3-07",
+      "number": 195
+    },
+    {
+      "source_en": "Am not embarrassed easily.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "N4-07",
+      "he": "אני לא נבוך בקלות.",
+      "id": "ipip300-N4-07",
+      "number": 196
+    },
+    {
+      "source_en": "Like to take my time.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "E4-07",
+      "he": "אני אוהב לעשות דברים בלי למהר.",
+      "id": "ipip300-E4-07",
+      "number": 197
+    },
+    {
+      "source_en": "Don't like the idea of change.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-07",
+      "he": "אני לא אוהב את עצם הרעיון של שינוי.",
+      "id": "ipip300-O4-07",
+      "number": 198
+    },
+    {
+      "source_en": "Yell at people.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-07",
+      "he": "אני צועק על אנשים.",
+      "id": "ipip300-A4-07",
+      "number": 199
+    },
+    {
+      "source_en": "Demand quality.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "plus",
+      "source_id": "C4-07",
+      "he": "אני דורש איכות.",
+      "id": "ipip300-C4-07",
+      "number": 200
+    },
+    {
+      "source_en": "Easily resist temptations.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "N5-07",
+      "he": "קל לי לעמוד בפיתויים.",
+      "id": "ipip300-N5-07",
+      "number": 201
+    },
+    {
+      "source_en": "Willing to try anything once.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-07",
+      "he": "אני מוכן לנסות כל דבר לפחות פעם אחת.",
+      "id": "ipip300-E5-07",
+      "number": 202
+    },
+    {
+      "source_en": "Avoid philosophical discussions.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "O5-07",
+      "he": "אני נמנע מדיונים פילוסופיים.",
+      "id": "ipip300-O5-07",
+      "number": 203
+    },
+    {
+      "source_en": "Have a high opinion of myself.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-07",
+      "he": "יש לי דעה גבוהה מאוד על עצמי.",
+      "id": "ipip300-A5-07",
+      "number": 204
+    },
+    {
+      "source_en": "Waste my time.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "C5-07",
+      "he": "אני מבזבז את הזמן שלי.",
+      "id": "ipip300-C5-07",
+      "number": 205
+    },
+    {
+      "source_en": "Can handle complex problems.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "N6-07",
+      "he": "אני מסוגל להתמודד עם בעיות מורכבות.",
+      "id": "ipip300-N6-07",
+      "number": 206
+    },
+    {
+      "source_en": "Laugh aloud.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-07",
+      "he": "אני צוחק בקול.",
+      "id": "ipip300-E6-07",
+      "number": 207
+    },
+    {
+      "source_en": "Believe laws should be strictly enforced.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-07",
+      "he": "אני מאמין שצריך לאכוף חוקים בקפדנות.",
+      "id": "ipip300-O6-07",
+      "number": 208,
+      "adaptation": "התאמה תרבותית: בוחן קפדנות אכיפתית וציות לחוק מול גמישות והתחשבות בנסיבות."
+    },
+    {
+      "source_en": "Believe in an eye for an eye.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-07",
+      "he": "אני מאמין בעיקרון של עין תחת עין.",
+      "id": "ipip300-A6-07",
+      "number": 209
+    },
+    {
+      "source_en": "Rush into things.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-07",
+      "he": "אני נחפז לפעול.",
+      "id": "ipip300-C6-07",
+      "number": 210
+    },
+    {
+      "source_en": "Am not easily disturbed by events.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "N1-08",
+      "he": "אירועים אינם מערערים את שלוותי בקלות.",
+      "id": "ipip300-N1-08",
+      "number": 211
+    },
+    {
+      "source_en": "Avoid contacts with others.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "E1-08",
+      "he": "אני נמנע מקשר עם אחרים.",
+      "id": "ipip300-E1-08",
+      "number": 212
+    },
+    {
+      "source_en": "Do not have a good imagination.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "O1-08",
+      "he": "אין לי דמיון מפותח.",
+      "id": "ipip300-O1-08",
+      "number": 213
+    },
+    {
+      "source_en": "Suspect hidden motives in others.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "A1-08",
+      "he": "אני חושד שלאחרים יש מניעים נסתרים.",
+      "id": "ipip300-A1-08",
+      "number": 214
+    },
+    {
+      "source_en": "Don't understand things.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "C1-08",
+      "he": "קשה לי להבין דברים.",
+      "id": "ipip300-C1-08",
+      "number": 215
+    },
+    {
+      "source_en": "Am not easily annoyed.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "N2-08",
+      "he": "לא קל לעצבן אותי.",
+      "id": "ipip300-N2-08",
+      "number": 216
+    },
+    {
+      "source_en": "Don't like crowded events.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "E2-08",
+      "he": "אני לא אוהב אירועים צפופים.",
+      "id": "ipip300-E2-08",
+      "number": 217
+    },
+    {
+      "source_en": "Do not enjoy going to art museums.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "O2-08",
+      "he": "אני לא נהנה לבקר במוזיאונים לאמנות.",
+      "id": "ipip300-O2-08",
+      "number": 218
+    },
+    {
+      "source_en": "Pretend to be concerned for others.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-08",
+      "he": "אני מעמיד פנים שאכפת לי מאחרים.",
+      "id": "ipip300-A2-08",
+      "number": 219
+    },
+    {
+      "source_en": "Leave my belongings around.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "C2-08",
+      "he": "אני משאיר את החפצים שלי מפוזרים.",
+      "id": "ipip300-C2-08",
+      "number": 220
+    },
+    {
+      "source_en": "Seldom feel blue.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "N3-08",
+      "he": "לעיתים רחוקות אני מרגיש מדוכדך.",
+      "id": "ipip300-N3-08",
+      "number": 221
+    },
+    {
+      "source_en": "Have little to say.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "E3-08",
+      "he": "אין לי הרבה מה לומר.",
+      "id": "ipip300-E3-08",
+      "number": 222
+    },
+    {
+      "source_en": "Rarely notice my emotional reactions.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "O3-08",
+      "he": "לעיתים רחוקות אני מבחין בתגובות הרגשיות שלי.",
+      "id": "ipip300-O3-08",
+      "number": 223
+    },
+    {
+      "source_en": "Make people feel uncomfortable.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "A3-08",
+      "he": "אני גורם לאנשים להרגיש לא בנוח.",
+      "id": "ipip300-A3-08",
+      "number": 224
+    },
+    {
+      "source_en": "Get others to do my duties.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "C3-08",
+      "he": "אני גורם לאחרים לבצע את החובות שלי.",
+      "id": "ipip300-C3-08",
+      "number": 225
+    },
+    {
+      "source_en": "Am comfortable in unfamiliar situations.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "N4-08",
+      "he": "אני מרגיש בנוח במצבים לא מוכרים.",
+      "id": "ipip300-N4-08",
+      "number": 226
+    },
+    {
+      "source_en": "Like a leisurely lifestyle.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "E4-08",
+      "he": "אני אוהב אורח חיים נינוח.",
+      "id": "ipip300-E4-08",
+      "number": 227
+    },
+    {
+      "source_en": "Am a creature of habit.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-08",
+      "he": "אני אדם של הרגלים.",
+      "id": "ipip300-O4-08",
+      "number": 228
+    },
+    {
+      "source_en": "Insult people.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-08",
+      "he": "אני מעליב אנשים.",
+      "id": "ipip300-A4-08",
+      "number": 229
+    },
+    {
+      "source_en": "Am not highly motivated to succeed.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "C4-08",
+      "he": "אין לי מוטיבציה גבוהה להצליח.",
+      "id": "ipip300-C4-08",
+      "number": 230
+    },
+    {
+      "source_en": "Am able to control my cravings.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "N5-08",
+      "he": "אני מסוגל לשלוט בדחפים ובפיתויים שלי.",
+      "id": "ipip300-N5-08",
+      "number": 231
+    },
+    {
+      "source_en": "Seek danger.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "plus",
+      "source_id": "E5-08",
+      "he": "אני מחפש סכנה.",
+      "id": "ipip300-E5-08",
+      "number": 232
+    },
+    {
+      "source_en": "Have difficulty understanding abstract ideas.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "O5-08",
+      "he": "קשה לי להבין רעיונות מופשטים.",
+      "id": "ipip300-O5-08",
+      "number": 233
+    },
+    {
+      "source_en": "Know the answers to many questions.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-08",
+      "he": "אני מרגיש שיש לי תשובה כמעט לכל שאלה.",
+      "id": "ipip300-A5-08",
+      "number": 234
+    },
+    {
+      "source_en": "Need a push to get started.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "C5-08",
+      "he": "אני זקוק לדחיפה כדי להתחיל.",
+      "id": "ipip300-C5-08",
+      "number": 235
+    },
+    {
+      "source_en": "Know how to cope.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "N6-08",
+      "he": "אני יודע איך להתמודד.",
+      "id": "ipip300-N6-08",
+      "number": 236
+    },
+    {
+      "source_en": "Amuse my friends.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "plus",
+      "source_id": "E6-08",
+      "he": "אני משעשע את החברים שלי.",
+      "id": "ipip300-E6-08",
+      "number": 237
+    },
+    {
+      "source_en": "Believe that we coddle criminals too much.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-08",
+      "he": "אני מאמין שהיחס שלנו לעבריינים רך מדי.",
+      "id": "ipip300-O6-08",
+      "number": 238,
+      "adaptation": "התאמה תרבותית: בוחן עמדה כלפי רמת הענישה והביטחון האישי במערכת המשפט."
+    },
+    {
+      "source_en": "Try not to think about the needy.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-08",
+      "he": "אני משתדל לא לחשוב על אנשים נזקקים.",
+      "id": "ipip300-A6-08",
+      "number": 239
+    },
+    {
+      "source_en": "Do crazy things.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-08",
+      "he": "אני עושה דברים פרועים.",
+      "id": "ipip300-C6-08",
+      "number": 240
+    },
+    {
+      "source_en": "Don't worry about things that have already happened.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "N1-09",
+      "he": "אני לא דואג לגבי דברים שכבר קרו.",
+      "id": "ipip300-N1-09",
+      "number": 241
+    },
+    {
+      "source_en": "Am not really interested in others.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "E1-09",
+      "he": "אני לא ממש מתעניין באנשים אחרים.",
+      "id": "ipip300-E1-09",
+      "number": 242
+    },
+    {
+      "source_en": "Seldom get lost in thought.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "O1-09",
+      "he": "לעיתים רחוקות אני שוקע במחשבות.",
+      "id": "ipip300-O1-09",
+      "number": 243
+    },
+    {
+      "source_en": "Am wary of others.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "A1-09",
+      "he": "אני נזהר מאנשים אחרים.",
+      "id": "ipip300-A1-09",
+      "number": 244
+    },
+    {
+      "source_en": "Have little to contribute.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "C1-09",
+      "he": "אין לי הרבה מה לתרום.",
+      "id": "ipip300-C1-09",
+      "number": 245
+    },
+    {
+      "source_en": "Keep my cool.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "N2-09",
+      "he": "אני שומר על קור רוח.",
+      "id": "ipip300-N2-09",
+      "number": 246
+    },
+    {
+      "source_en": "Avoid crowds.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "E2-09",
+      "he": "אני נמנע מהמונים.",
+      "id": "ipip300-E2-09",
+      "number": 247
+    },
+    {
+      "source_en": "Do not like concerts.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "O2-09",
+      "he": "אני לא אוהב הופעות מוזיקה חיות.",
+      "id": "ipip300-O2-09",
+      "number": 248
+    },
+    {
+      "source_en": "Take advantage of others.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-09",
+      "he": "אני מנצל אחרים.",
+      "id": "ipip300-A2-09",
+      "number": 249
+    },
+    {
+      "source_en": "Am not bothered by messy people.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "C2-09",
+      "he": "אנשים לא מסודרים אינם מפריעים לי.",
+      "id": "ipip300-C2-09",
+      "number": 250
+    },
+    {
+      "source_en": "Feel comfortable with myself.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "N3-09",
+      "he": "אני מרגיש בנוח עם עצמי.",
+      "id": "ipip300-N3-09",
+      "number": 251
+    },
+    {
+      "source_en": "Don't like to draw attention to myself.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "E3-09",
+      "he": "אני לא אוהב למשוך תשומת לב לעצמי.",
+      "id": "ipip300-E3-09",
+      "number": 252
+    },
+    {
+      "source_en": "Experience very few emotional highs and lows.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "O3-09",
+      "he": "אני חווה מעט מאוד עליות וירידות חדות במצב הרוח.",
+      "id": "ipip300-O3-09",
+      "number": 253
+    },
+    {
+      "source_en": "Turn my back on others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "A3-09",
+      "he": "אני מפנה עורף לאחרים.",
+      "id": "ipip300-A3-09",
+      "number": 254
+    },
+    {
+      "source_en": "Do the opposite of what is asked.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "C3-09",
+      "he": "אני עושה את ההפך ממה שמבקשים ממני.",
+      "id": "ipip300-C3-09",
+      "number": 255
+    },
+    {
+      "source_en": "Am not bothered by difficult social situations.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "N4-09",
+      "he": "מצבים חברתיים קשים אינם מטרידים אותי.",
+      "id": "ipip300-N4-09",
+      "number": 256
+    },
+    {
+      "source_en": "Let things proceed at their own pace.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "E4-09",
+      "he": "אני נותן לדברים להתקדם בקצב שלהם.",
+      "id": "ipip300-E4-09",
+      "number": 257
+    },
+    {
+      "source_en": "Dislike new foods.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-09",
+      "he": "אני לא אוהב מאכלים חדשים.",
+      "id": "ipip300-O4-09",
+      "number": 258
+    },
+    {
+      "source_en": "Get back at others.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-09",
+      "he": "אני מחזיר לאחרים על פגיעה שפגעו בי.",
+      "id": "ipip300-A4-09",
+      "number": 259
+    },
+    {
+      "source_en": "Do just enough work to get by.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "C4-09",
+      "he": "אני עושה רק את המינימום הדרוש כדי להסתדר.",
+      "id": "ipip300-C4-09",
+      "number": 260
+    },
+    {
+      "source_en": "Never spend more than I can afford.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "N5-09",
+      "he": "אני אף פעם לא מוציא יותר כסף ממה שאני יכול להרשות לעצמי.",
+      "id": "ipip300-N5-09",
+      "number": 261
+    },
+    {
+      "source_en": "Would never go hang gliding or bungee jumping.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "E5-09",
+      "he": "לעולם לא הייתי מנסה רחיפה בגלשן או קפיצת בנג׳י.",
+      "id": "ipip300-E5-09",
+      "number": 262
+    },
+    {
+      "source_en": "Am not interested in theoretical discussions.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "O5-09",
+      "he": "אני לא מתעניין בדיונים תאורטיים.",
+      "id": "ipip300-O5-09",
+      "number": 263
+    },
+    {
+      "source_en": "Boast about my virtues.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-09",
+      "he": "אני מתפאר במעלות שלי.",
+      "id": "ipip300-A5-09",
+      "number": 264
+    },
+    {
+      "source_en": "Have difficulty starting tasks.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "C5-09",
+      "he": "קשה לי להתחיל משימות.",
+      "id": "ipip300-C5-09",
+      "number": 265
+    },
+    {
+      "source_en": "Readily overcome setbacks.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "N6-09",
+      "he": "אני מתגבר בקלות על אכזבות ומכשולים.",
+      "id": "ipip300-N6-09",
+      "number": 266
+    },
+    {
+      "source_en": "Am not easily amused.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "E6-09",
+      "he": "לא קל לשעשע אותי.",
+      "id": "ipip300-E6-09",
+      "number": 267
+    },
+    {
+      "source_en": "Believe that we should be tough on crime.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-09",
+      "he": "אני מאמין שצריך לנקוט יד קשה נגד פשיעה.",
+      "id": "ipip300-O6-09",
+      "number": 268,
+      "adaptation": "התאמה תרבותית: בוחן דרישה ליד קשה נגד פשיעה לעומת התמקדות בשורשי המצוקה החברתית."
+    },
+    {
+      "source_en": "Believe people should fend for themselves.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-09",
+      "he": "אני מאמין שכל אדם צריך לדאוג לעצמו.",
+      "id": "ipip300-A6-09",
+      "number": 269
+    },
+    {
+      "source_en": "Act without thinking.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-09",
+      "he": "אני פועל בלי לחשוב.",
+      "id": "ipip300-C6-09",
+      "number": 270
+    },
+    {
+      "source_en": "Adapt easily to new situations.",
+      "domain": "N",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "N1-10",
+      "he": "אני מסתגל בקלות למצבים חדשים.",
+      "id": "ipip300-N1-10",
+      "number": 271
+    },
+    {
+      "source_en": "Keep others at a distance.",
+      "domain": "E",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "E1-10",
+      "he": "אני שומר מרחק מאנשים אחרים.",
+      "id": "ipip300-E1-10",
+      "number": 272
+    },
+    {
+      "source_en": "Have difficulty imagining things.",
+      "domain": "O",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "O1-10",
+      "he": "קשה לי לדמיין דברים.",
+      "id": "ipip300-O1-10",
+      "number": 273
+    },
+    {
+      "source_en": "Believe that people are essentially evil.",
+      "domain": "A",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "A1-10",
+      "he": "אני מאמין שבני אדם הם רעים ביסודם.",
+      "id": "ipip300-A1-10",
+      "number": 274
+    },
+    {
+      "source_en": "Don't see the consequences of things.",
+      "domain": "C",
+      "facet": 1,
+      "keyed": "minus",
+      "source_id": "C1-10",
+      "he": "אני מתקשה לראות מראש את ההשלכות של מעשיי.",
+      "id": "ipip300-C1-10",
+      "number": 275
+    },
+    {
+      "source_en": "Rarely complain.",
+      "domain": "N",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "N2-10",
+      "he": "לעיתים רחוקות אני מתלונן.",
+      "id": "ipip300-N2-10",
+      "number": 276
+    },
+    {
+      "source_en": "Seek quiet.",
+      "domain": "E",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "E2-10",
+      "he": "אני מחפש שקט.",
+      "id": "ipip300-E2-10",
+      "number": 277
+    },
+    {
+      "source_en": "Do not enjoy watching dance performances.",
+      "domain": "O",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "O2-10",
+      "he": "אני לא נהנה לצפות במופעי מחול.",
+      "id": "ipip300-O2-10",
+      "number": 278
+    },
+    {
+      "source_en": "Obstruct others' plans.",
+      "domain": "A",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "A2-10",
+      "he": "אני מפריע למימוש התוכניות של אחרים.",
+      "id": "ipip300-A2-10",
+      "number": 279
+    },
+    {
+      "source_en": "Am not bothered by disorder.",
+      "domain": "C",
+      "facet": 2,
+      "keyed": "minus",
+      "source_id": "C2-10",
+      "he": "אי־סדר אינו מפריע לי.",
+      "id": "ipip300-C2-10",
+      "number": 280
+    },
+    {
+      "source_en": "Am very pleased with myself.",
+      "domain": "N",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "N3-10",
+      "he": "אני מרוצה מאוד מעצמי.",
+      "id": "ipip300-N3-10",
+      "number": 281
+    },
+    {
+      "source_en": "Hold back my opinions.",
+      "domain": "E",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "E3-10",
+      "he": "אני נמנע מלהביע את הדעות שלי.",
+      "id": "ipip300-E3-10",
+      "number": 282
+    },
+    {
+      "source_en": "Don't understand people who get emotional.",
+      "domain": "O",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "O3-10",
+      "he": "אני לא מבין אנשים שמגיבים ברגש חזק.",
+      "id": "ipip300-O3-10",
+      "number": 283
+    },
+    {
+      "source_en": "Take no time for others.",
+      "domain": "A",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "A3-10",
+      "he": "אני לא מקדיש זמן לאחרים.",
+      "id": "ipip300-A3-10",
+      "number": 284
+    },
+    {
+      "source_en": "Misrepresent the facts.",
+      "domain": "C",
+      "facet": 3,
+      "keyed": "minus",
+      "source_id": "C3-10",
+      "he": "אני מציג את העובדות בצורה מטעה.",
+      "id": "ipip300-C3-10",
+      "number": 285
+    },
+    {
+      "source_en": "Am able to stand up for myself.",
+      "domain": "N",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "N4-10",
+      "he": "אני מסוגל לעמוד על שלי.",
+      "id": "ipip300-N4-10",
+      "number": 286
+    },
+    {
+      "source_en": "React slowly.",
+      "domain": "E",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "E4-10",
+      "he": "אני מגיב באיטיות.",
+      "id": "ipip300-E4-10",
+      "number": 287
+    },
+    {
+      "source_en": "Am attached to conventional ways.",
+      "domain": "O",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "O4-10",
+      "he": "אני קשור לדרכים המקובלות לעשות דברים.",
+      "id": "ipip300-O4-10",
+      "number": 288
+    },
+    {
+      "source_en": "Hold a grudge.",
+      "domain": "A",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "A4-10",
+      "he": "אני נוטר טינה.",
+      "id": "ipip300-A4-10",
+      "number": 289
+    },
+    {
+      "source_en": "Put little time and effort into my work.",
+      "domain": "C",
+      "facet": 4,
+      "keyed": "minus",
+      "source_id": "C4-10",
+      "he": "אני משקיע מעט זמן ומאמץ בעבודה שלי.",
+      "id": "ipip300-C4-10",
+      "number": 290
+    },
+    {
+      "source_en": "Never splurge.",
+      "domain": "N",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "N5-10",
+      "he": "אני אף פעם לא מוציא הרבה כסף על פינוקים ומותרות.",
+      "id": "ipip300-N5-10",
+      "number": 291
+    },
+    {
+      "source_en": "Dislike loud music.",
+      "domain": "E",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "E5-10",
+      "he": "אני לא אוהב מוזיקה רועשת.",
+      "id": "ipip300-E5-10",
+      "number": 292
+    },
+    {
+      "source_en": "Avoid difficult reading material.",
+      "domain": "O",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "O5-10",
+      "he": "אני נמנע מחומר קריאה קשה להבנה.",
+      "id": "ipip300-O5-10",
+      "number": 293
+    },
+    {
+      "source_en": "Make myself the center of attention.",
+      "domain": "A",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "A5-10",
+      "he": "אני מציב את עצמי במרכז תשומת הלב.",
+      "id": "ipip300-A5-10",
+      "number": 294
+    },
+    {
+      "source_en": "Postpone decisions.",
+      "domain": "C",
+      "facet": 5,
+      "keyed": "minus",
+      "source_id": "C5-10",
+      "he": "אני דוחה החלטות.",
+      "id": "ipip300-C5-10",
+      "number": 295
+    },
+    {
+      "source_en": "Am calm even in tense situations.",
+      "domain": "N",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "N6-10",
+      "he": "אני רגוע גם במצבים מתוחים.",
+      "id": "ipip300-N6-10",
+      "number": 296
+    },
+    {
+      "source_en": "Seldom joke around.",
+      "domain": "E",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "E6-10",
+      "he": "לעיתים רחוקות אני מתלוצץ.",
+      "id": "ipip300-E6-10",
+      "number": 297
+    },
+    {
+      "source_en": "Like to stand during the national anthem.",
+      "domain": "O",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "O6-10",
+      "he": "חשוב לי לעמוד מתוך כבוד בהמנון הלאומי.",
+      "id": "ipip300-O6-10",
+      "number": 298,
+      "adaptation": "התאמה תרבותית: בוחן במקור האמריקאי ציות לסמלים קולקטיביים ונורמות פטריוטיות מול עצמאות ונונ-קונפורמיזם אישי."
+    },
+    {
+      "source_en": "Can't stand weak people.",
+      "domain": "A",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "A6-10",
+      "he": "אני לא יכול לסבול אנשים חלשים.",
+      "id": "ipip300-A6-10",
+      "number": 299
+    },
+    {
+      "source_en": "Often make last-minute plans.",
+      "domain": "C",
+      "facet": 6,
+      "keyed": "minus",
+      "source_id": "C6-10",
+      "he": "לעיתים קרובות אני מתכנן דברים ברגע האחרון.",
+      "id": "ipip300-C6-10",
+      "number": 300
+    }
+  ]
+}

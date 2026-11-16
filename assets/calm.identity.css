@@ -1,0 +1,2327 @@
+/* ofiLab Calm V2 — Amber Crystal / Violet Smoke
+   CANONICAL visual identity. V1 material and glass files are NOT loaded.
+   All UI paint lives here or in calm.css; legacy CSS is isolated to a
+   lower-priority compatibility layer for interaction/layout only.
+   Graphic language: soft editorial typography, porcelain planes, prismatic
+   facets, crystal axes, scale points, and very deliberate negative space. */
+html[data-ofilab-design="calm-v2"]{
+  --calm-theme-name:"Amber Crystal";
+  --calm-bg:#F8F5FA;
+  --calm-paper:#FFFCFB;
+  --calm-mist:#F0EAF4;
+  --calm-ink:#30263B;
+  --calm-muted:#6F6379;
+  --calm-accent:#785494;
+  --calm-line:#E4DCE9;
+  --calm-glow:#E5D7F2;
+  --calm-ease:cubic-bezier(.22,1,.36,1);
+  --calm-content-width:1440px;
+  --calm-radius:24px;
+  --calm-radius-lg:34px;
+  --calm-radius-sm:14px;
+  --calm-space:clamp(18px,2.1vw,34px);
+  --calm-shadow:0 16px 44px -35px rgba(26,49,34,.23);
+  --qf-rule-emphasis:#D2BFDF;
+  --qf-surface-hover:#F5ECF8;
+  --calm-trait-n:#BB789F;
+  --calm-trait-e:#C78E4E;
+  --calm-trait-o:#8968BF;
+  --calm-trait-a:#9A80BE;
+  --calm-trait-c:#6883B2;
+  background:var(--calm-bg);color:var(--calm-ink);
+  color-scheme:light;
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"]{
+  --calm-theme-name:"Violet Amber";
+  --calm-bg:#19151F;
+  --calm-paper:#27212E;
+  --calm-mist:#352B3E;
+  --calm-ink:#F9F2FC;
+  --calm-muted:#D0C0D9;
+  --calm-accent:#E7B67B;
+  --calm-line:#53465C;
+  --calm-glow:#4A365B;
+  --calm-shadow:0 16px 44px -30px rgba(0,0,0,.45);
+  --qf-rule-emphasis:#725C80;
+  --qf-surface-hover:#413149;
+  --calm-trait-n:#E0A0C2;
+  --calm-trait-e:#F0BC78;
+  --calm-trait-o:#C1A2F0;
+  --calm-trait-a:#C7ACE5;
+  --calm-trait-c:#9FB3E2;
+  background:var(--calm-bg);color:var(--calm-ink);
+  color-scheme:dark;
+}
+html[data-ofilab-design="calm-v2"] :is([hidden],.hidden){display:none!important;}
+html[data-ofilab-design="calm-v2"] *{scroll-margin-top:110px;}
+html[data-ofilab-design="calm-v2"] body{
+  min-height:100vh;background:var(--calm-bg);color:var(--calm-ink);
+  font-family:"ofiLab Heebo","Noto Sans Hebrew",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+html[data-ofilab-design="calm-v2"] :is(h1,h2,h3,h4,.section-title){
+  color:var(--calm-ink);font-family:inherit;
+  letter-spacing:-.025em;line-height:1.26;
+}
+html[data-ofilab-design="calm-v2"] p{color:inherit;}
+html[data-ofilab-design="calm-v2"] :is(.body-copy,.lede,.version-description,.results-heading .lede){
+  color:var(--calm-muted);line-height:1.82;
+}
+html[data-ofilab-design="calm-v2"] :is(.section-title,.results-heading h1){
+  font-size:clamp(25px,2.9vw,41px);font-weight:730;
+}
+html[data-ofilab-design="calm-v2"] :is(.score,.snapshot-value,.ofi-dist-card__value,.norm-percentile-value,.version-size strong){
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-.04em;
+}
+html[data-ofilab-design="calm-v2"] :is(.profile-summary-title,.version-size strong){font-weight:740;}
+html[data-ofilab-design="calm-v2"] :is(button,a,input,select,textarea,summary){font-family:inherit;}
+html[data-ofilab-design="calm-v2"] :is(button,[role="button"],a,summary){touch-action:manipulation;}
+html[data-ofilab-design="calm-v2"] :is(button,a,input,select,textarea,[role="button"],summary):focus-visible{
+  outline:2px solid var(--calm-accent);outline-offset:3px;
+}
+html[data-ofilab-design="calm-v2"] :is(button,.primary,.secondary,.ghost){
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+html[data-ofilab-design="calm-v2"] :is(.primary,.start-form-btn.primary,.profile-ai-summary-cta){
+  background:var(--brand-primary);color:var(--on-brand);
+  border:1px solid transparent;box-shadow:none;
+  border-radius:999px;font-weight:700;
+}
+html[data-ofilab-design="calm-v2"] :is(.secondary,.ghost,.quiet-link){
+  color:var(--calm-ink);border:1px solid var(--calm-line);
+  background:var(--calm-paper);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.primary,.secondary,.ghost,.header-share,.theme-toggle){
+  min-width:44px;min-height:44px;
+}
+html[data-ofilab-design="calm-v2"] :is(.primary,.secondary,.ghost):is(:hover,:active){
+  transform:none;filter:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.secondary,.ghost):hover{
+  background:var(--calm-mist);border-color:var(--calm-line);
+}
+/* 01 — Floating porcelain editorial header, not glassmorphism. */
+html[data-ofilab-design="calm-v2"] .site-header{
+  position:sticky;top:0;z-index:55;
+  background:var(--calm-bg);border:0;
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] .header-inner{
+  width:min(calc(100% - 32px),var(--calm-content-width));
+  max-width:var(--calm-content-width);
+  margin:10px auto 9px;min-height:62px;
+  padding:9px clamp(12px,2vw,24px);
+  border:1px solid var(--calm-line);
+  background:var(--calm-paper);
+  border-radius:20px;box-shadow:var(--calm-shadow);
+}
+html[data-ofilab-design="calm-v2"] .brand{
+  gap:12px;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] .brand-mark{
+  flex:0 0 38px;width:38px;height:38px;
+  background:var(--calm-mist);border:0;
+  border-radius:14px;box-shadow:none;overflow:hidden;
+}
+html[data-ofilab-design="calm-v2"] .brand-type b{
+  color:var(--calm-ink);letter-spacing:-.045em;
+}
+/* One save entry per stage, with the existing questionnaire actions in a disclosure. */
+html[data-ofilab-design="calm-v2"] .header-save-menu{display:none;position:relative;flex:none;}
+html[data-ofilab-design="calm-v2"][data-stage="quiz"] .header-save-menu{display:block;}
+html[data-ofilab-design="calm-v2"]:not([data-stage="results"]) #resultsShareTop{display:none;}
+html[data-ofilab-design="calm-v2"] .header-save-menu>summary{
+  display:flex;align-items:center;justify-content:center;gap:8px;list-style:none;cursor:pointer;
+  min-width:44px;min-height:44px;padding:8px 12px;border-radius:999px;
+  background:var(--calm-mist);color:var(--calm-ink);font-size:13px;font-weight:650;
+}
+html[data-ofilab-design="calm-v2"] .header-save-menu>summary::-webkit-details-marker{display:none;}
+html[data-ofilab-design="calm-v2"] .header-save-menu[open]>summary{background:var(--brand-primary-soft);}
+html[data-ofilab-design="calm-v2"] .header-save-options{
+  position:absolute;inset-inline-end:0;top:calc(100% + 8px);z-index:60;
+  width:220px;max-width:calc(100vw - 32px);padding:8px;display:grid;gap:6px;
+  background:var(--calm-paper);border:1px solid var(--calm-line);border-radius:16px;box-shadow:var(--calm-shadow);
+}
+html[data-ofilab-design="calm-v2"] .header-save-options .header-share{
+  width:100%;justify-content:flex-start;gap:10px;min-height:44px;padding:10px 12px;border-radius:10px;
+}
+html[data-ofilab-design="calm-v2"] .header-save-options .header-share>span{display:inline;}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner{gap:8px;}
+  html[data-ofilab-design="calm-v2"] .site-header .brand{flex:none;gap:6px;}
+  html[data-ofilab-design="calm-v2"] .site-header .header-links{gap:4px;min-width:0;}
+  html[data-ofilab-design="calm-v2"] .header-save-menu>summary{padding:8px;}
+  html[data-ofilab-design="calm-v2"] .header-save-menu>summary>span{display:none;}
+}
+html[data-ofilab-design="calm-v2"] .brand-dot{color:var(--calm-accent);}
+html[data-ofilab-design="calm-v2"] .brand-type>span{color:var(--calm-muted);}
+html[data-ofilab-design="calm-v2"] .site-header :is(.theme-toggle,.header-settings-btn,.header-share:not(.results-share-top)){
+  min-width:44px;min-height:44px;padding:8px;
+  border:0;border-radius:50%;
+  background:var(--calm-mist);color:var(--calm-ink);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header .results-share-top{
+  min-width:44px;min-height:44px;
+  padding:8px 18px;border:0;border-radius:999px;
+  background:var(--brand-primary);color:var(--on-brand);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header .results-share-top:hover{
+  background:var(--brand-primary);box-shadow:none;transform:none;
+}
+/* 02 — Homepage: two strong editorial zones, a signature in a quiet field. */
+html[data-ofilab-design="calm-v2"] #introScreen{
+  max-width:var(--calm-content-width);
+  margin-inline:auto;
+  background:transparent;border:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+  position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(290px,.88fr);
+  gap:clamp(30px,6vw,100px);
+  align-items:center;margin:clamp(25px,5vw,72px) 0 clamp(46px,6vw,90px);
+  isolation:isolate;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy{
+  position:relative;z-index:2;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+  font-size:clamp(45px,5.7vw,83px);
+  line-height:1.07;letter-spacing:-.064em;
+  font-weight:770;max-width:9.5ch;
+  margin:22px 0 24px;
+  color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1 em{
+  font-style:normal;color:var(--calm-accent);
+  -webkit-text-fill-color:var(--calm-accent);
+  background:none;filter:none;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .lede{
+  color:var(--calm-muted);font-size:clamp(15px,1.45vw,18px);
+  line-height:1.88;max-width:52ch;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-trust{
+  padding:12px 0;margin-top:14px;
+  border-top:1px solid var(--calm-line);
+  color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] #versions.version-choice{
+  display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
+  gap:16px;
+  align-items:stretch;
+  margin-block:26px 18px;
+}
+html[data-ofilab-design="calm-v2"] #versions .version-option{
+  position:relative;display:flex;flex-direction:column;
+  gap:16px;min-width:0;
+  padding:clamp(22px,3vw,34px);
+  border:1px solid var(--calm-line);
+  border-radius:var(--calm-radius-lg);
+  background:var(--calm-paper);
+  box-shadow:none;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #versions #card-120{
+  background:var(--calm-mist);
+  border:1px solid transparent;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #versions #card-300{
+  background:var(--calm-paper);border:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #versions .version-top{
+  margin:0;display:flex;justify-content:space-between;gap:8px;
+}
+html[data-ofilab-design="calm-v2"] #versions .version-top h2{
+  color:var(--calm-ink);font-size:clamp(16px,1.7vw,20px);font-weight:720;
+}
+html[data-ofilab-design="calm-v2"] #versions .version-badge{
+  border:0;background:var(--calm-paper);
+  border-radius:999px;color:var(--calm-accent);
+}
+html[data-ofilab-design="calm-v2"] #versions .version-size{
+  margin:2px 0;line-height:1.4;
+}
+html[data-ofilab-design="calm-v2"] #versions .version-size strong{
+  font-size:clamp(46px,5vw,70px);line-height:1;font-weight:750;
+  color:var(--calm-ink);-webkit-text-fill-color:var(--calm-ink);
+  letter-spacing:-.075em;
+}
+html[data-ofilab-design="calm-v2"] #versions .version-time{
+  font-size:13px;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] #versions .version-description{
+  line-height:1.7;color:var(--calm-muted);font-size:13.5px;
+}
+html[data-ofilab-design="calm-v2"] #versions .start-form-btn{
+  margin-block-start:auto;min-height:52px;width:100%;
+  border-radius:15px;box-shadow:none;
+  font-weight:720;font-size:14px;transform:none;
+}
+html[data-ofilab-design="calm-v2"] #versions #card-120 .start-form-btn{
+  color:var(--on-brand);background:var(--brand-primary);border:0;
+}
+html[data-ofilab-design="calm-v2"] #versions #card-300 .start-form-btn{
+  color:var(--calm-ink);background:var(--calm-mist);
+  border:1px solid var(--calm-line);-webkit-text-fill-color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] :is(.home-report-preview,.home-restore,.home-preview-paper){
+  background:var(--calm-paper);
+  border:1px solid var(--calm-line);
+  border-radius:var(--calm-radius-lg);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.home-preview-trait,.home-preview-paper-head){
+  border-color:var(--calm-line);
+}
+/* Quiet Field II — measured editorial stems and restrained hover surfaces.
+   The same rule/point vocabulary flows from the home into the research report. */
+html[data-ofilab-design="calm-v2"] :is(#homePreviewTitle,#homeAdditionalQuizzesTitle,#resultScreen .big-five-cards-head .section-title,#resultScreen .facet-explorer .section-title,#resultScreen .norm-panel .section-title){text-wrap:balance;}
+html[data-ofilab-design="calm-v2"] :is(#homePreviewTitle,#homeAdditionalQuizzesTitle,#resultScreen .big-five-cards-head .section-title,#resultScreen .facet-explorer .section-title,#resultScreen .norm-panel .section-title)::before{
+  content:"";display:inline-block;vertical-align:middle;width:5px;height:.85em;
+  margin-inline-end:12px;border-radius:999px;background:var(--calm-accent);
+}
+html[data-ofilab-design="calm-v2"] #introScreen :is(.home-preview-head,.home-additional-head){
+  padding-bottom:clamp(14px,2vw,22px);margin-bottom:clamp(16px,2.5vw,26px);
+  border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #versions .version-option{
+  transition:border-color .18s ease,background-color .18s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  html[data-ofilab-design="calm-v2"] #versions .version-option:hover{border-color:var(--qf-rule-emphasis);}
+  html[data-ofilab-design="calm-v2"] #versions #card-120:hover{background:var(--qf-surface-hover);}
+}
+/* 03 — Questionnaire: calm text-first, not a glowing dashboard card. */
+html[data-ofilab-design="calm-v2"] #quizScreen{
+  background:transparent;max-width:1080px;
+  margin-inline:auto;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .quiz-shell{
+  background:transparent;border:0;
+  padding-inline:clamp(0px,3vw,20px);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .progress-meta{
+  color:var(--calm-muted);font-size:12px;
+  margin:8px 0 10px;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.chapter-pill,.quiz-settings-pill){
+  color:var(--calm-ink);background:var(--calm-mist);
+  border:0;border-radius:999px;box-shadow:none;
+  min-height:44px;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .meter{
+  background:var(--calm-mist);
+  border:0;height:5px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.meter>div,#meterFill){
+  background:var(--calm-accent);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .question-card{
+  background:transparent;
+  border:0;box-shadow:none;
+  padding:clamp(10px,2vw,24px) 0 0;
+  max-width:800px;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen #questionText{
+  color:var(--calm-ink);letter-spacing:-.018em;
+  font-size:clamp(23px,2.75vw,36px);
+  line-height:1.54;font-weight:670;
+  text-wrap:pretty;
+  padding-block:14px clamp(18px,2vw,32px);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-set{
+  display:grid;grid-template-columns:1fr;gap:10px;
+  padding:0;border:0;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn{
+  display:flex;align-items:center;gap:14px;
+  width:100%;min-height:58px;padding:12px 18px;
+  border:1px solid var(--calm-line);
+  border-radius:var(--calm-radius-sm);
+  background:var(--calm-paper);
+  box-shadow:none;color:var(--calm-ink);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  transform:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:hover{
+  background:var(--calm-mist);border-color:var(--calm-accent);
+  transform:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn.selected,
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn[aria-pressed="true"]{
+  background:var(--brand-primary-soft);
+  border:2px solid var(--calm-accent);
+  color:var(--calm-ink);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-bullet{
+  min-width:32px;min-height:32px;
+  background:var(--calm-mist);border:0;color:var(--calm-accent);
+  border-radius:50%;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn.selected .answer-bullet{
+  background:var(--brand-primary);color:var(--on-brand);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.quiz-controls,.quiz-quickbar,.quiz-settings-bar){
+  max-width:800px;margin-inline:auto;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .quiz-controls{
+  position:static;inset:auto;background:transparent;
+  padding-block:12px;
+  border-top:1px solid var(--calm-line);margin-top:16px;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.question-help,.question-assistance,.choice-feedback){
+  background:transparent;border-color:var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.question-invitation,.help){
+  color:var(--calm-muted);font-size:12px;
+}
+/* Question = one field line; answer = a directional selection edge,
+   never glass, glow or sliding decoration. */
+html[data-ofilab-design="calm-v2"] #quizScreen .question-card::before{
+  content:"";display:block;width:56px;height:2px;
+  background:var(--calm-accent);border-radius:999px;
+  margin-block:0 clamp(12px,1.4vw,18px);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn{
+  text-align:start;line-height:1.6;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:is(.selected,[aria-pressed="true"]){
+  border-inline-start:4px solid var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:focus-visible{
+  outline:3px solid var(--calm-accent);outline-offset:3px;
+}
+/* 04 — Report: editorial pages, not nested glass cards. */
+html[data-ofilab-design="calm-v2"] #resultScreen .results-layout{
+  max-width:var(--calm-content-width);margin-inline:auto;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading{
+  position:relative;
+  padding:clamp(18px,2vw,32px) 0 22px;
+  margin-bottom:12px;
+  border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading h1{
+  font-size:clamp(34px,4vw,56px);font-weight:750;letter-spacing:-.045em;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading .lede{
+  font-size:14px;max-width:82ch;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+  margin:24px 0 30px;
+  padding:clamp(24px,3vw,42px);
+  border:0;border-radius:34px;
+  box-shadow:none;
+  background:var(--calm-paper);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-shell{
+  grid-template-columns:minmax(0,1fr) clamp(150px,19vw,232px);
+  column-gap:clamp(14px,3vw,38px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-title{
+  font-size:clamp(23px,2.8vw,35px);
+  font-weight:740;line-height:1.38;letter-spacing:-.03em;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset{
+  grid-column:2;grid-row:1/span 2;
+  width:clamp(150px,19vw,232px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+  max-width:232px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-narrative{
+  font-size:14px;color:var(--calm-muted);line-height:1.88;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips{
+  margin-block:22px 8px;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-chip{
+  width:auto;flex:auto;
+  padding:16px 18px;
+  min-height:83px;
+  border-radius:17px;
+  background:var(--calm-mist);
+  border:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-chip strong{
+  font-size:11px;color:var(--calm-muted);font-weight:680;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-chip span{
+  font-size:14px;color:var(--calm-ink);font-weight:700;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.profile-summary-guide,.profile-cyber-teaser,.profile-ai-summary-bar){
+  border:0;border-radius:18px;
+  background:var(--calm-mist);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .profile-ai-summary-cta{
+  background:var(--brand-primary);color:var(--on-brand);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.big-five-cards-shell,.facet-explorer,.norm-panel,.mbti-section,.results-report-footer){
+  background:var(--calm-paper);
+  border:0;border-radius:var(--calm-radius-lg);
+  box-shadow:none;
+  padding:clamp(22px,3vw,42px);
+  margin-block:24px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .big-five-cards-head{
+  margin-bottom:clamp(24px,3vw,38px);
+  padding-bottom:20px;
+  border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 clamp(18px,3vw,44px);align-items:start;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card{
+  display:block;min-width:0;width:auto;max-width:none;
+  grid-column:auto;justify-self:stretch;
+  margin:0;padding:23px 0;
+  border:0;border-bottom:1px solid var(--calm-line);
+  border-radius:0;background:transparent;
+  box-shadow:none;transform:none;
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card:nth-child(5){
+  grid-column:1/-1;max-width:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card .domain-summary{
+  padding:0;min-height:0;box-shadow:none;background:transparent;border:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card :is(.domain-card-header,.domain-name){
+  color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card .score{
+  color:var(--calm-ink);font-size:clamp(32px,3vw,44px);font-weight:750;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-level-badge{
+  color:var(--calm-ink);background:var(--calm-mist);
+  border:0;border-radius:999px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-detail{
+  margin-block:18px 6px;padding:18px;border-radius:18px;
+  background:var(--calm-bg);box-shadow:none;border:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .facet-item{
+  padding:14px 0;border:0;border-bottom:1px solid var(--calm-line);
+  background:transparent;border-radius:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .facet-head b{
+  color:var(--calm-ink);font-size:15px;font-weight:700;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .facet-head span{
+  color:var(--calm-muted);font-size:12px;
+}
+/* One number line per card. The six facet dots share the trait marker's
+   left-to-right 0-100 axis and its exact horizontal extent, so a dot and the
+   marker above it at the same value sit at the same x. (The inherited strip
+   was right-to-left under a left-to-right marker.) */
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-track{
+  background:var(--bg-track);
+  direction:ltr;margin-inline:16px 24px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot{
+  background:var(--ofi-trait,var(--calm-accent));
+  border:2px solid var(--calm-paper);box-shadow:0 2px 6px rgba(0,0,0,.12);
+  transform:translate(-50%,-50%);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot:is(:hover,:focus-visible,.is-active){
+  transform:translate(-50%,-50%) scale(1.5);
+}
+/* Low values now sit at the left edge and high values at the right edge:
+   the tooltip opens inward from whichever edge the dot is near. */
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot.tooltip-align-start .sparkline-tooltip{
+  left:-4px;right:auto;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot.tooltip-align-start .sparkline-tooltip::after{
+  left:10px;right:auto;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot.tooltip-align-end .sparkline-tooltip{
+  right:-4px;left:auto;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-sparkline-dot.tooltip-align-end .sparkline-tooltip::after{
+  right:10px;left:auto;
+}
+/* Norms are a research chart, not five competing decorative cards. */
+html[data-ofilab-design="calm-v2"] #resultScreen .norm-context{
+  gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .norm-context>div{
+  background:var(--calm-mist);
+  border:0;border-radius:18px;
+  padding:18px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #ofiEmpiricalDistributions{
+  margin-block:32px 12px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 clamp(20px,3vw,40px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-card{
+  padding:22px 0 26px;
+  border:0;border-bottom:1px solid var(--calm-line);
+  border-radius:0;background:transparent;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-card__head strong{font-size:17px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-card__value{font-size:38px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-card__foot{
+  border-top:0;padding-top:12px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .ofi-stat{
+  border:0;border-radius:6px;
+  background:var(--calm-mist);
+  color:var(--calm-muted);font-size:11px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.norm-domain-card,.facet-explorer-card,.facet-domain-group){
+  background:transparent;border:0;border-bottom:1px solid var(--calm-line);
+  box-shadow:none;border-radius:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.norm-full-disclosure,.norm-method-disclosure,.result-disclosure){
+  border:1px solid var(--calm-line);border-radius:18px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.facet-interpretation,.domain-interpretation,.cyber-science-notice){
+  background:var(--calm-mist);color:var(--calm-ink);
+  border:0;border-radius:18px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-journey{
+  border:1px solid var(--calm-line);
+  background:var(--calm-paper);border-radius:20px;
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-journey [aria-pressed="true"],
+html[data-ofilab-design="calm-v2"] #resultScreen .results-journey [aria-current="location"]{
+  background:var(--calm-mist);color:var(--calm-accent);
+  border-radius:12px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-mobile-picker-trigger{
+  background:var(--calm-paper);border:1px solid var(--calm-line);
+  color:var(--calm-ink);border-radius:14px;
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-mobile-picker-menu{
+  background:var(--calm-paper);border:1px solid var(--calm-line);
+  box-shadow:var(--calm-shadow);backdrop-filter:none;-webkit-backdrop-filter:none;
+  border-radius:20px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-mobile-menu-item[aria-checked="true"]{
+  background:var(--calm-mist);color:var(--calm-accent);
+}
+/* One neutral selection language for percentile and raw-score controls.
+   The five trait tones belong to measurements, not navigation. */
+html[data-ofilab-design="calm-v2"] #resultScreen .metric-pill{
+  min-height:44px;min-width:0;background:transparent;color:var(--calm-muted);
+  border:1px solid var(--calm-line);border-radius:14px;box-shadow:none;text-align:start;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .metric-pill:is(.active,[aria-pressed="true"]){
+  background:var(--calm-mist);color:var(--calm-ink);
+  border-color:var(--qf-rule-emphasis);
+  box-shadow:inset 0 0 0 1px var(--qf-rule-emphasis);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.big-five-cards-shell,.facet-explorer,.norm-panel,.mbti-section) :is(p,li){
+  line-height:1.85;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card :is(.domain-name,.facet-head b){text-wrap:pretty;}
+/* 05 — Everything user can touch has one material and readable contrast. */
+html[data-ofilab-design="calm-v2"] :is(dialog,.ai-dialog,.results-share-dialog,.settings-dialog,.protected-save-dialog){
+  background:var(--calm-paper);color:var(--calm-ink);
+  border:1px solid var(--calm-line);
+  border-radius:25px;box-shadow:var(--calm-shadow);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] :is(.results-share-shell,.results-share-options,.settings-panel,.ai-dialog-content){
+  background:var(--calm-paper);border-color:var(--calm-line);
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] :is(input,textarea,select){
+  background:var(--calm-mist);border:1px solid var(--calm-line);
+  color:var(--calm-ink);border-radius:12px;min-height:44px;
+}
+html[data-ofilab-design="calm-v2"] :is(.results-share-opt,.results-share-option,.settings-action-btn){
+  background:var(--calm-mist);border:1px solid var(--calm-line);
+  color:var(--calm-ink);border-radius:16px;box-shadow:none;
+  min-height:52px;
+}
+html[data-ofilab-design="calm-v2"] :is(.results-share-opt,.results-share-option,.settings-action-btn):hover{
+  background:var(--brand-primary-soft);
+  border-color:var(--calm-accent);
+}
+html[data-ofilab-design="calm-v2"] :is(.results-footer-nav-link,.results-footer-action,.results-file-actions button){
+  background:var(--calm-mist);border:0;border-radius:14px;
+  color:var(--calm-ink);box-shadow:none;
+  min-height:44px;
+}
+html[data-ofilab-design="calm-v2"] .results-report-footer{
+  padding:clamp(22px,3vw,42px);border:0;background:var(--calm-paper);
+}
+/* Opaque dialog surfaces and a solid dimmer retain reading focus. */
+html[data-ofilab-design="calm-v2"] :is(dialog,.ai-dialog,.results-share-dialog,.settings-dialog,.protected-save-dialog)::backdrop{
+  background:rgba(18,29,22,.52);backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] :is(input,textarea,select):focus-visible{
+  outline:3px solid var(--calm-accent);outline-offset:2px;border-color:var(--calm-accent);
+}
+/* SVGs in native, consistent gamut and simple silhouette. */
+html[data-ofilab-design="calm-v2"] .ofi-glyph.is-interactive [data-glyph-trait]{
+  cursor:pointer;
+}
+html[data-ofilab-design="calm-v2"] .ofi-glyph [data-glyph-trait]>path:first-child{
+  stroke-width:2.1;fill-opacity:.24;
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__line,
+html[data-ofilab-design="calm-v2"] .ofi-spectrum-track{
+  background:var(--bg-track);
+}
+html[data-ofilab-design="calm-v2"] .ofi-spectrum__thumb{
+  background:var(--ofi-trait,var(--brand-primary));
+  border:3px solid var(--calm-paper);
+  box-shadow:0 2px 7px rgba(15,31,22,.14);
+}
+/* Calm 2-column landscape; content never depends on nested card dimensions. */
+@media(min-width:1400px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-layout{
+    max-width:var(--calm-content-width);
+  }
+}
+@media(max-width:1050px){
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+    gap:28px;grid-template-columns:minmax(0,1fr) minmax(220px,.7fr);
+  }
+  html[data-ofilab-design="calm-v2"] #versions.version-choice{grid-template-columns:1fr;}
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card:nth-child(5){
+    grid-column:1/-1;
+  }
+}
+@media(max-width:780px){
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+    grid-template-columns:minmax(0,1fr);
+    gap:15px;margin:30px 0 44px;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+    max-width:none;font-size:clamp(44px,9vw,67px);
+    margin-block:14px 18px;
+  }
+  html[data-ofilab-design="calm-v2"] #versions.version-choice{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults{
+    grid-template-columns:minmax(0,1fr);
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card:nth-child(5){
+    grid-column:1;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .ofi-dist-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] .header-inner{
+    width:calc(100% - 20px);
+    min-height:56px;margin:6px auto;
+    padding:7px 10px;border-radius:16px;
+  }
+  html[data-ofilab-design="calm-v2"] #main{
+    padding-inline:16px;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{font-size:clamp(42px,10vw,55px);}
+  html[data-ofilab-design="calm-v2"] #versions .version-option{
+    padding:22px;border-radius:25px;gap:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #versions .version-size strong{font-size:50px;}
+  html[data-ofilab-design="calm-v2"] #quizScreen .quiz-shell{padding-inline:0;}
+  html[data-ofilab-design="calm-v2"] #quizScreen .question-card{padding:10px 0 0;}
+  html[data-ofilab-design="calm-v2"] #quizScreen #questionText{
+    font-size:clamp(23px,6.3vw,29px);padding-block:10px 18px;
+  }
+  html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn{min-height:58px;}
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+    margin-block:16px 22px;padding:20px;border-radius:26px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-shell{
+    grid-template-columns:minmax(0,1fr) 98px;gap:8px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-header{
+    grid-column:1;grid-row:1;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset{
+    grid-column:2;grid-row:1;width:98px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+    max-width:98px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-narrative{
+    grid-column:1/-1;grid-row:2;font-size:13.5px;margin-top:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-title{
+    font-size:clamp(19px,5vw,24px);
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;
+    margin-block:12px 5px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-chip{
+    min-width:0;min-height:66px;padding:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-chip:last-child:nth-child(odd){
+    grid-column:1/-1;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen :is(.big-five-cards-shell,.facet-explorer,.norm-panel,.mbti-section,.results-report-footer){
+    border-radius:24px;padding:20px;margin-block:16px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-heading{
+    padding:12px 0 16px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-heading h1{font-size:34px;}
+  html[data-ofilab-design="calm-v2"] #resultScreen .norm-context{grid-template-columns:1fr;}
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card{
+    padding:19px 0;
+  }
+}
+/* Existing mobile report order is untouched; metric toggles wrap naturally. */
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-metric-pills{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .metric-pill{
+    padding:10px;white-space:normal;overflow-wrap:anywhere;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen :is(.home-preview-head,.home-additional-head){
+    padding-bottom:14px;margin-bottom:16px;
+  }
+}
+@media(prefers-contrast:more){
+  html[data-ofilab-design="calm-v2"]{--calm-line:var(--qf-rule-emphasis);}
+  html[data-ofilab-design="calm-v2"] :is(.answer-btn,.metric-pill,.version-option){border-width:2px;}
+}
+@media(max-width:350px){
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-ofilab-design="calm-v2"] *,html[data-ofilab-design="calm-v2"] *::before,
+  html[data-ofilab-design="calm-v2"] *::after{
+    animation-duration:.01ms!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}
+@media(forced-colors:active){
+  html[data-ofilab-design="calm-v2"] :is(.answer-btn,.version-option,.domain-card,.header-inner,dialog){
+    border:1px solid CanvasText;
+  }
+  html[data-ofilab-design="calm-v2"] .ofi-spectrum__thumb{
+    background:Highlight;border-color:Canvas;
+  }
+}
+
+/* 06 — Quiet Field footer: zero glass and no lingering V1 decoration. */
+html[data-ofilab-design="calm-v2"] .page-footer.calm-quiet-footer{
+  display:block;width:min(1440px,calc(100% - 32px));margin:32px auto 44px;
+  padding:0;color:var(--calm-muted);border:0;background:transparent;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer>.footer-quiet-shell{
+  display:grid;grid-template-columns:minmax(175px,1fr) minmax(230px,1.6fr) minmax(120px,1fr);
+  align-items:center;gap:clamp(16px,2vw,26px);
+  min-height:108px;padding:24px clamp(20px,2.5vw,34px);
+  background:var(--calm-paper);color:var(--calm-ink);
+  border:1px solid var(--calm-line);border-radius:26px;
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer .footer-avd-mark{
+  display:inline-grid;place-items:center;width:44px;height:44px;
+  border-radius:13px;color:var(--calm-accent);
+  border:0;background:var(--calm-mist);
+  box-shadow:none;filter:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer :is(.footer-avd,.footer-support a){
+  color:var(--calm-ink);background:transparent;border:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer :is(.footer-support,.footer-avd-copy small,.footer-support-label){
+  color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer .footer-support a{
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--calm-line);border-radius:999px;
+  background:var(--calm-bg);padding:9px 16px;min-height:44px;min-width:44px;
+}
+html[data-ofilab-design="calm-v2"] .calm-quiet-footer .footer-support a:hover{
+  background:var(--calm-mist);
+}
+/* Editorial separators replace nested gray information containers. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-guide{
+  margin-top:20px;padding:20px 0 5px;border-radius:0;
+  border-top:1px solid var(--calm-line);
+  background:transparent;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-bar{
+  margin-top:21px;padding:20px 0 0;gap:14px;
+  border-top:1px solid var(--calm-line);
+  border-radius:0;background:transparent;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-cyber-teaser{
+  margin-top:20px;padding:19px 0 0;
+  border:0;border-top:1px solid var(--calm-line);
+  border-radius:0;background:transparent;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{
+  background:var(--calm-mist);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip:is(button):hover{
+  background:var(--brand-primary-soft);
+}
+@media(max-width:850px){
+  html[data-ofilab-design="calm-v2"] .calm-quiet-footer>.footer-quiet-shell{
+    grid-template-columns:minmax(0,1fr);gap:16px;text-align:center;
+    justify-items:center;
+  }
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] .page-footer.calm-quiet-footer{
+    width:calc(100% - 32px);margin:24px auto 32px;
+  }
+  html[data-ofilab-design="calm-v2"] .calm-quiet-footer>.footer-quiet-shell{
+    padding:22px 18px;border-radius:22px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-bar{
+    padding-top:17px;
+  }
+}
+
+/* 07 — Quiet Field research: one continuous porcelain reading system. */
+html[data-ofilab-design="calm-v2"] #resultScreen :is(#responseValidityCard,#cyberneticLabCard,#uppsImpulsivityCard,#interpersonalCircumplexCard,#neoStyleGraphsCard,#additionalQuizzesSection){
+  min-width:0;margin-block:clamp(18px,2.5vw,30px);
+  padding:clamp(20px,3vw,42px);
+  border:1px solid var(--calm-line);border-radius:var(--calm-radius-lg);
+  background:var(--calm-paper);color:var(--calm-ink);box-shadow:none;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(#responseValidityCard,#cyberneticLabCard,#uppsImpulsivityCard,#interpersonalCircumplexCard,#neoStyleGraphsCard,#additionalQuizzesSection) :is(h2,h3){
+  color:var(--calm-ink);text-wrap:balance;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(#responseValidityCard,#cyberneticLabCard,#uppsImpulsivityCard,#interpersonalCircumplexCard,#neoStyleGraphsCard,#additionalQuizzesSection) :is(p,li){
+  line-height:1.82;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.cyber-insight-card,.cyber-detail-card,
+  .upps-card,.upps-trait-card,.neo-style-card,.lab-card,.lab-insight-card,.lab-compare-card,.lab-record,.lab-sim-card){
+  background:var(--calm-bg);color:var(--calm-ink);
+  border:1px solid var(--calm-line);border-radius:18px;box-shadow:none;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.cyber-science-notice,.upps-notice,.cyber-note,
+  .lab-evidence,.lab-storage-note,.lab-privacy-details){
+  background:var(--calm-mist);color:var(--calm-muted);
+  border-color:var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] :is(#homeAdditionalQuizzes,#additionalQuizzesSection) .supp-hub-grid>*{
+  min-width:0;background:var(--calm-paper);border:1px solid var(--calm-line);
+  border-radius:20px;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #additionalQuizzesSection .supp-hub-grid>*{
+  background:var(--calm-bg);
+}
+html[data-ofilab-design="calm-v2"] :is(#homeAdditionalQuizzes,#additionalQuizzesSection)
+  .supp-hub-grid :is(button,a,summary){min-height:44px;min-width:0;}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.facet-explorer-header,.norm-head,.additional-quizzes-header){
+  padding-bottom:clamp(14px,2vw,22px);margin-bottom:clamp(16px,2.5vw,28px);
+  border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .facet-explorer-controls{
+  color:var(--calm-muted);gap:clamp(9px,1.5vw,18px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .facet-explorer-controls :is(input,select,button){
+  min-height:44px;border-color:var(--calm-line);box-shadow:none;
+}
+/* 08 — The AI dialogue and share flow use the same material, not V1 gradients. */
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-dialog-shell{
+  background:var(--calm-paper);color:var(--calm-ink);border:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-dialog-head{
+  background:var(--calm-paper);border-bottom:1px solid var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-avatar{
+  background:var(--calm-mist);color:var(--calm-accent);
+  border:1px solid var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-chat-messages{
+  background:var(--calm-bg);background-image:none;color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-message.user .ai-chat-bubble{
+  background:var(--brand-primary-soft);color:var(--calm-ink);
+  border:1px solid var(--qf-rule-emphasis);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog .ai-message.assistant .ai-chat-bubble{
+  background:var(--calm-paper);color:var(--calm-ink);
+  border:1px solid var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog :is(.ai-chat-form,.ai-chat-controls){
+  background:var(--calm-paper);border-color:var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #aiDialog :is(.ai-icon-button,.ai-suggestion){
+  background:var(--calm-mist);color:var(--calm-ink);
+  border:1px solid var(--calm-line);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog :is(.results-share-shell,.results-share-head){
+  background:var(--calm-paper);color:var(--calm-ink);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-head{
+  border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-kicker{
+  color:var(--calm-accent);
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-option{
+  background:var(--calm-mist);background-image:none;color:var(--calm-ink);
+  border:1px solid var(--calm-line);border-radius:17px;
+  box-shadow:none;transform:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-option-featured{
+  background:var(--brand-primary-soft);border-color:var(--qf-rule-emphasis);
+}
+/* Two tiers: the two recommended ways to keep results stand out; the other
+   options are lighter and more compact. */
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-options-primary+.results-share-section-label{margin-top:22px;}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-options-more .results-share-option{
+  background:var(--calm-paper);min-height:0;padding-block:11px;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-options-more .results-share-option-icon{
+  width:34px;height:34px;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-options-more .results-share-option-copy strong{font-size:14px;}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-option:is(:hover,:focus-visible){
+  border-color:var(--calm-accent);box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsShareDialog :is(.results-share-option-icon,.results-share-close){
+  background:var(--calm-paper);color:var(--calm-accent);
+  border:1px solid var(--calm-line);box-shadow:none;
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultScreen :is(#responseValidityCard,#cyberneticLabCard,#uppsImpulsivityCard,#interpersonalCircumplexCard,#neoStyleGraphsCard,#additionalQuizzesSection){
+    padding:20px;border-radius:24px;margin-block:16px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .facet-explorer-controls,
+  html[data-ofilab-design="calm-v2"] #resultScreen .facet-explorer-controls>*{
+    min-width:0;
+  }
+}
+@media(forced-colors:active){
+  html[data-ofilab-design="calm-v2"] #resultScreen :is(#responseValidityCard,#cyberneticLabCard,#uppsImpulsivityCard,#interpersonalCircumplexCard,#neoStyleGraphsCard,#additionalQuizzesSection){
+    border:1px solid CanvasText;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsShareDialog .results-share-option{
+    border:1px solid ButtonText;
+  }
+}
+
+/* FIELD ATLAS: a new cover / chapter / study-sheet composition. */
+html[data-ofilab-design="calm-v2"]{
+ --qf-forest:#251B30;--qf-paper-ink:#FAF4FC;--qf-paper-muted:#D3C1DC;--qf-amber:#F0BA73;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-inner{
+ border:0;border-bottom:1px solid var(--calm-line);border-radius:0;box-shadow:none;
+ background:var(--calm-paper);margin:0 auto;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+ position:relative;isolation:isolate;overflow:hidden;
+ grid-template-columns:minmax(0,1fr) minmax(250px,.93fr);
+ align-items:stretch;gap:clamp(24px,3vw,52px);min-height:460px;
+ margin:clamp(16px,2.7vw,32px) 0 clamp(32px,4vw,55px);
+ padding:clamp(30px,4.5vw,70px);border-radius:30px;
+ background:var(--qf-forest);color:var(--qf-paper-ink);border:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid::before{
+ content:"";position:absolute;inset:auto auto -160px -150px;
+ width:410px;height:410px;pointer-events:none;border-radius:50%;
+ border:1px solid rgba(243,246,227,.13);
+ box-shadow:0 0 0 47px rgba(243,246,227,.026),0 0 0 94px rgba(243,246,227,.02);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy{
+ position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:center;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid .eyebrow{
+ color:var(--qf-paper-muted);margin-top:0;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+ max-width:none;color:var(--qf-paper-ink);font-size:clamp(50px,5.5vw,87px);
+ line-height:1.11;font-weight:730;letter-spacing:-.055em;
+ text-wrap:balance;margin:20px 0 25px;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1 em{
+ color:var(--qf-amber);-webkit-text-fill-color:var(--qf-amber);font-style:normal;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid .lede{
+ color:var(--qf-paper-muted);max-width:45ch;
+ font-size:clamp(15px,1.35vw,18px);line-height:1.8;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid .resume-card{
+ background:rgba(255,255,255,.11);color:var(--qf-paper-ink);
+ border:1px solid rgba(255,255,255,.22);box-shadow:none;
+}
+/* The inventory choice sits inside the cover: both paths are visible and can
+   be started in the first fold, in place, with no page reload and no
+   decorative stand-in between the reader and the decision. */
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice{
+ position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;
+ gap:10px;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #versions{
+ display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice .version-option{
+ min-height:0;padding:clamp(17px,1.7vw,24px);gap:8px;
+ border-radius:21px;border:1px solid var(--calm-line);
+ background:var(--calm-paper);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-120{
+ background:var(--calm-mist);border-color:var(--qf-rule-emphasis);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .version-option .version-size strong{
+ font-size:clamp(40px,3.5vw,52px);color:var(--calm-ink);letter-spacing:-.04em;
+}
+/* The deeper inventory is a quieter single-row alternative, never a rival CTA. */
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-300{
+ display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
+ column-gap:16px;row-gap:2px;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-300 > :not(.start-form-btn){
+ grid-column:1;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-300 .start-form-btn{
+ grid-column:2;grid-row:1 / span 3;width:auto;min-width:128px;margin:0;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-300 .version-size strong{
+ font-size:clamp(27px,2.3vw,34px);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice .hero-trust{
+ margin:0;padding:4px 2px 0;border-top:0;font-size:12.5px;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-notes{
+ margin:0 0 clamp(36px,5vw,72px);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-notes :is(.home-save-note,.version-explainer){
+ background:transparent;border:0;border-bottom:1px solid var(--calm-line);
+ border-radius:0;box-shadow:none;
+}
+/* Distraction-free study sheet. */
+html[data-ofilab-design="calm-v2"] #quizScreen .question-card{
+ position:relative;max-width:880px;
+ margin:clamp(8px,1.2vw,14px) auto 0;padding:clamp(16px,1.5vw,21px) clamp(20px,3vw,44px);
+ background:var(--qf-forest);color:var(--qf-paper-ink);
+ border:0;border-radius:29px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .question-card::before{
+ content:"";position:static;display:block;width:68px;height:2px;
+ margin:0 0 10px;border:0;background:var(--qf-amber);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.question-caption,.question-caption span,.question-invitation,#choiceFeedback,.question-assistance summary){
+ color:var(--qf-paper-muted);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen #questionText{
+ color:var(--qf-paper-ink);max-width:36ch;
+ font-size:clamp(24px,2.1vw,31px);font-weight:650;line-height:1.34;
+ padding:6px 0 clamp(10px,1.2vw,16px);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn{
+ min-height:59px;padding:13px 20px;border-radius:11px;
+ background:#F3EDF6;color:#31243B;border:1px solid rgba(255,255,255,.13);
+ box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:hover{
+ background:#F1E8F5;border-color:var(--qf-amber);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:is(.selected,[aria-pressed="true"]){
+ background:var(--qf-amber);color:#2A1C33;
+ border:1px solid var(--qf-amber);border-inline-start:5px solid #965DB0;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen :is(.question-help-trigger,.ai-inline-action){
+ background:transparent;color:var(--qf-paper-ink);
+ border-color:rgba(247,246,238,.24);
+}
+/* The report becomes a field-note folio, preserving result order and controls. */
+html[data-ofilab-design="calm-v2"] #resultScreen .qf-report-issue{
+ display:flex;align-items:center;justify-content:space-between;gap:14px;
+ padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--calm-line);
+ color:var(--calm-accent);direction:ltr;text-align:left;
+ font:650 10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.12em;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading{
+ padding:clamp(10px,1.8vw,24px) 0 24px;
+ border-bottom:1px solid var(--qf-rule-emphasis);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading h1{
+ font-size:clamp(39px,4.4vw,68px);line-height:1.17;
+ color:var(--calm-ink);font-weight:710;letter-spacing:-.045em;margin-block:9px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+ background:var(--calm-mist);border:1px solid var(--qf-rule-emphasis);
+ border-radius:23px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{
+ background:var(--calm-paper);border:1px solid var(--calm-line);
+ border-radius:14px;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .big-five-cards-head{
+ padding-bottom:22px;border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card{
+ border:0;border-bottom:1px solid var(--calm-line);
+ border-radius:0;background:transparent;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card:last-child{
+ border-bottom:0;
+}
+@media(max-width:980px){
+ html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+  grid-template-columns:minmax(0,1fr) minmax(210px,.8fr);padding:32px;
+ }
+}
+@media(max-width:650px){
+ html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+  grid-template-columns:1fr;gap:12px;min-height:0;
+  margin:10px 0 32px;padding:26px 20px 19px;border-radius:22px;
+ }
+ html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+  font-size:clamp(44px,11vw,57px);margin:17px 0 14px;
+ }
+ html[data-ofilab-design="calm-v2"] #introScreen .hero-grid .lede{
+  font-size:14px;line-height:1.75;
+ }
+ html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #versions{
+  gap:10px;
+ }
+ html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice .version-option{
+  padding:15px 16px;gap:6px;
+ }
+ html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #card-300 .start-form-btn{
+  min-width:112px;
+ }
+ html[data-ofilab-design="calm-v2"] #quizScreen .question-card{
+  padding:14px 15px 14px;margin-top:8px;border-radius:21px;
+ }
+ html[data-ofilab-design="calm-v2"] #quizScreen #questionText{
+  font-size:clamp(21px,5.6vw,25px);padding-bottom:10px;
+ }
+ html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn{
+  min-height:58px;padding:12px 13px;
+ }
+ html[data-ofilab-design="calm-v2"] #resultScreen .results-heading h1{font-size:34px;}
+ html[data-ofilab-design="calm-v2"] #resultScreen .qf-report-issue{
+  font-size:9px;flex-wrap:wrap;
+ }
+ html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+  border-radius:20px;
+ }
+}
+/* One question = one screen. The prompt, all five answers and the navigation
+   stay in view without scrolling; verified over all 120 items at 390x844,
+   1440x900 and 1920x1080. Likert targets keep their 58px minimum. */
+html[data-ofilab-design="calm-v2"] #quizScreen{padding-block-start:clamp(4px,.8vw,10px);}
+html[data-ofilab-design="calm-v2"] #quizScreen .meter{margin-block:8px 10px;}
+html[data-ofilab-design="calm-v2"] #quizScreen .question-heading{margin-block:6px 2px;}
+html[data-ofilab-design="calm-v2"] #quizScreen .question-assistance{margin-block:2px 8px;}
+html[data-ofilab-design="calm-v2"] #quizScreen #choiceFeedback{margin-block-start:8px;}
+/* Short viewports (small phones, phones with browser bars, 768px laptops):
+   spend the height on the answers, not on ornament. */
+@media(max-height:800px){
+ html[data-ofilab-design="calm-v2"] #quizScreen .question-card{padding-block:10px 12px;}
+ html[data-ofilab-design="calm-v2"] #quizScreen .question-card::before{display:none;}
+ html[data-ofilab-design="calm-v2"] #quizScreen .answer-set{gap:6px;}
+ html[data-ofilab-design="calm-v2"] #quizScreen .quiz-controls{margin-top:8px;padding-block:8px;}
+}
+@media(forced-colors:active){
+ html[data-ofilab-design="calm-v2"] #introScreen .hero-grid,
+ html[data-ofilab-design="calm-v2"] #quizScreen .question-card{
+  background:Canvas;color:CanvasText;border:2px solid CanvasText;
+ }
+ html[data-ofilab-design="calm-v2"] #quizScreen #questionText{color:CanvasText;}
+}
+
+/* Amber Crystal visual grammar — precision facets, smoky violet, inner amber. */
+html[data-ofilab-design="calm-v2"] .ofi-glyph{
+ --crystal-core:#F2BB77;--crystal-edge:#D5B5EB;
+ overflow:visible;
+}
+html[data-ofilab-design="calm-v2"] .ofi-glyph [data-crystal-face]{
+ stroke:var(--crystal-edge);stroke-opacity:.28;stroke-width:.9px;stroke-linejoin:miter;
+}
+html[data-ofilab-design="calm-v2"] .ofi-glyph [data-crystal-core]{
+ stroke:var(--crystal-edge);stroke-width:1.8px;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+ background:radial-gradient(ellipse 45% 65% at 77% 45%,rgba(139,79,173,.28),transparent 82%),
+ radial-gradient(ellipse 30% 60% at 87% 72%,rgba(221,154,86,.15),transparent 85%),var(--qf-forest);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+ background:var(--calm-paper);border-color:var(--qf-rule-emphasis);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset{
+ background:radial-gradient(circle at 50% 48%,rgba(226,169,115,.14),transparent 73%);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:focus-visible{
+  outline:3px solid #FFD69B;outline-offset:2px;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:is(.selected,[aria-pressed="true"]):focus-visible{
+  outline-color:#D6B1E9;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-narrative{
+  line-height:1.83;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen :is(.qf-report-issue,.results-heading .lede){
+  text-wrap:pretty;
+}
+
+/* LUMINOUS ATELIER — Calm V2 light-mode experience
+   An intentional second lighting state, not V1 translucent glass.
+   Dark Violet Amber remains a true dark, focused alternative. */
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) {
+  --qf-atelier-ink:#33263E;
+  --qf-atelier-muted:#66566F;
+  --qf-atelier-accent:#916044;
+  --qf-atelier-rule:#DCCCE6;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid {
+  background-color:#F4EEF7;
+  background-image:
+    radial-gradient(ellipse at 82% 0%,rgba(255,247,229,.98) 0%,rgba(255,247,229,0) 54%),
+    radial-gradient(ellipse at 6% 93%,rgba(223,209,240,.56),transparent 60%),
+    linear-gradient(145deg,#FBF7FB 0%,#F2EAF6 64%,#EDE2F3 100%);
+  color:var(--qf-atelier-ink);
+  border:1px solid #E0D3E9;
+  box-shadow:0 24px 58px -52px rgba(61,40,78,.38);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid::before {
+  border-color:rgba(117,76,145,.14);
+  box-shadow:0 0 0 47px rgba(165,130,190,.035),0 0 0 94px rgba(165,130,190,.025);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid .eyebrow {
+  color:#745D7D;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid .status-dot {
+  background:#BA854B;
+  box-shadow:0 0 0 3px rgba(186,133,75,.12);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-copy h1 {
+  color:var(--qf-atelier-ink);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-copy h1 em {
+  color:#9B6331;
+  -webkit-text-fill-color:#9B6331;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid .lede {
+  color:#62546B;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid .resume-card {
+  background:rgba(255,252,251,.86);
+  color:var(--qf-atelier-ink);
+  border:1px solid var(--qf-atelier-rule);
+}
+/* The recommended inventory now reads like a considered starting point. */
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .qf-cover-choice #card-120 {
+  background:linear-gradient(143deg,#F2EAF7,#F8F2F9);
+  border-color:#D8C7E2;
+  box-shadow:0 9px 25px -25px rgba(101,69,128,.4);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .qf-cover-choice #card-300 {
+  background:#FFFCFB;
+  border-color:#E7DFEA;
+}
+/* The light questionnaire is warm paper, not a dark modal repeated 300 times. */
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .question-card {
+  background-color:#FFFCFB;
+  color:var(--qf-atelier-ink);
+  border:1px solid #E5D9E9;
+  box-shadow:0 21px 53px -54px rgba(82,50,104,.34);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .question-card::before {
+  background:#BF9059;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen :is(.question-caption,.question-caption span,.question-invitation,#choiceFeedback,.question-assistance summary) {
+  color:#6B5A75;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen #questionText {
+  color:#33263E;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .answer-btn {
+  background:#F8F3FA;
+  color:#352741;
+  border:1px solid #E8DCEA;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .answer-btn:hover {
+  background:#F1E7F6;
+  border-color:#B9A2C8;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .answer-btn:is(.selected,[aria-pressed="true"]) {
+  background:#6F508A;
+  color:#FFFFFF;
+  border-color:#6F508A;
+  border-inline-start:5px solid #EAB77B;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .answer-btn.selected .answer-bullet {
+  color:#FFFFFF;border-color:rgba(255,255,255,.72);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen :is(.question-help-trigger,.ai-inline-action) {
+  background:#F8F3FA;color:#614875;border-color:#E2D6E7;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .answer-btn:focus-visible {
+  outline-color:#6F508A;
+}
+/* Report typography and measured surfaces: keep its information architecture. */
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen .results-heading {
+  border-bottom-color:#DED0E7;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #resultsProfileSummary {
+  background:linear-gradient(150deg,#FFFCFB 0%,#F5EFF8 100%);
+  border:1px solid #E1D3E9;
+  box-shadow:0 22px 54px -58px rgba(95,55,129,.42);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #resultsProfileSummary .profile-chip {
+  background:rgba(255,252,251,.85);
+  border:1px solid #E8DBED;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-narrative {
+  max-width:71ch;
+  line-height:1.8;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #domainResults>.domain-card {
+  background:#FFFCFB;
+  border:1px solid #E7DEEB;
+  border-radius:16px;
+  margin-bottom:13px;
+  padding:clamp(18px,2vw,25px);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #domainResults>.domain-card:last-child {
+  border-bottom:1px solid #E7DEEB;
+}
+@media(max-width:650px) {
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #domainResults>.domain-card {
+    padding:16px;
+  }
+}
+@media(prefers-contrast:more) {
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid,
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .question-card {
+    border:2px solid #6F508A;
+    box-shadow:none;
+  }
+}
+@media(forced-colors:active) {
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #introScreen .hero-grid,
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen .question-card {
+    background:Canvas;color:CanvasText;border:2px solid CanvasText;
+    box-shadow:none;
+  }
+  html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #quizScreen #questionText {
+    color:CanvasText;
+  }
+}
+
+/* CALM V2 FINAL — recognizable ofiLab branding and the personal field report.
+   The original ofiLab color-wheel identifies the product; the amber crystal
+   remains a data visualization only, never a competing site logo. */
+html[data-ofilab-design="calm-v2"] .brand-mark {
+  display:grid;place-items:center;flex:0 0 38px;
+  width:38px;height:38px;min-width:38px;min-height:38px;
+  overflow:visible;border:0;border-radius:50%;
+  background:transparent;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .brand-mark img {
+  display:block;width:38px;height:38px;object-fit:contain;
+}
+html[data-ofilab-design="calm-v2"] .brand-type b{
+  font-weight:800;letter-spacing:-.035em;
+}
+html[data-ofilab-design="calm-v2"] .ofi-share-brand{
+  display:inline-flex;align-items:center;gap:10px;
+  min-width:0;margin-bottom:5px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-share-brand img{
+  flex:none;display:block;width:34px;height:34px;object-fit:contain;
+}
+html[data-ofilab-design="calm-v2"] .ai-head-topline .ofi-ai-brand{
+  flex:none;display:inline-block;width:22px;height:22px;
+  object-fit:contain;vertical-align:middle;margin-inline-end:6px;
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack {
+  display:grid;gap:8px;align-content:center;min-width:0;
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab {
+  display:inline-flex;align-items:center;gap:9px;min-width:0;
+  color:var(--calm-ink);text-decoration:none;
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab img {
+  display:block;width:38px;height:38px;flex:none;object-fit:contain;
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab span {
+  display:flex;flex-direction:column;line-height:1.28;gap:3px;
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab strong{
+  font-size:19px;letter-spacing:-.035em;color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab small{
+  color:var(--calm-muted);font-size:11px;
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd {
+  display:inline-flex;align-items:center;gap:7px;
+  padding-inline-start:2px;font-size:11px;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd-mark{
+  display:none;
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd-copy{
+  display:flex;align-items:baseline;gap:6px;
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd-copy strong{
+  font-size:11px;font-weight:650;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd-copy small{
+  font-size:10px;
+}
+html[data-ofilab-design="calm-v2"] .footer-ofilab:focus-visible {
+  outline:2px solid var(--calm-accent);outline-offset:5px;border-radius:10px;
+}
+/* Report remains familiar: improve scanning, not move the five scores. */
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading {
+  margin-bottom:clamp(12px,1.6vw,22px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-heading .lede{
+  max-width:64ch;line-height:1.7;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary{
+  isolation:isolate;overflow:hidden;
+  margin-block:clamp(14px,2.2vw,28px) clamp(21px,3vw,38px);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-title {
+  max-width:24ch;text-wrap:balance;line-height:1.31;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-narrative {
+  max-width:68ch;line-height:1.76;text-wrap:pretty;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-chips {
+  gap:clamp(8px,1.2vw,12px);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip{
+  min-width:0;min-height:68px;padding:clamp(12px,1.3vw,17px);
+  border:1px solid var(--calm-line);border-radius:16px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip strong{
+  display:block;font-size:12px;line-height:1.4;font-weight:650;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-chip span {
+  display:block;margin-top:5px;
+  line-height:1.4;font-size:clamp(13px,1vw,15px);overflow-wrap:anywhere;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-ai-summary-bar,
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-cyber-teaser{
+  margin-top:16px;padding-top:16px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults{
+  row-gap:clamp(10px,1.4vw,18px);
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #domainResults>.domain-card{
+  border:1px solid #E7DEEB;
+  border-inline-start:3px solid var(--ofi-trait,var(--calm-accent));
+  border-radius:18px;
+  padding:clamp(18px,2vw,26px);
+  margin:0;min-height:0;
+  background:#FFFCFB;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"]:not([data-theme="dark"]) #resultScreen #domainResults>.domain-card:last-child{
+  border-bottom:1px solid #E7DEEB;
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] #resultScreen #domainResults>.domain-card{
+  border:1px solid #55465E;
+  border-inline-start:3px solid var(--ofi-trait,var(--calm-accent));
+  border-radius:18px;
+  padding:clamp(18px,2vw,26px);
+  margin:0;min-height:0;
+  background:#2A2331;
+  box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card .domain-summary {
+  max-width:100%;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .domain-card .score{
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:850px){
+  html[data-ofilab-design="calm-v2"] .footer-brand-stack{
+    justify-items:center;text-align:center;
+  }
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] .brand-mark,
+  html[data-ofilab-design="calm-v2"] .brand-mark img{
+    width:36px;height:36px;min-width:36px;min-height:36px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-heading .lede{
+    max-width:100%;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-title{
+    max-width:none;
+  }
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-narrative{
+    font-size:13px;line-height:1.7;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card{
+    padding:17px;min-height:0;
+  }
+  html[data-ofilab-design="calm-v2"] .footer-brand-stack .footer-avd{
+    justify-content:center;
+  }
+}
+@media(forced-colors:active){
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults>.domain-card{
+    border:2px solid CanvasText;
+  }
+}
+
+
+/* CALM V2 FLAGSHIP MOTION — restrained, perception-first, never layout-shifting. */
+@keyframes qfFadeUp {
+  from { opacity:0; transform:translate3d(0,7px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes qfCrystalOutline {
+  from { stroke-dashoffset:1; opacity:.24; }
+  to { stroke-dashoffset:0; opacity:1; }
+}
+@keyframes qfCrystalFacet {
+  from { opacity:0; transform:translate3d(0,3px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes qfCrystalHeart {
+  from { opacity:0; transform:scale(.94); }
+  to { opacity:1; transform:scale(1); }
+}
+@keyframes qfDomainRise {
+  from { opacity:0; transform:translate3d(0,8px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .question-card.question-reveal {
+  animation:qfFadeUp 225ms cubic-bezier(.16,1,.3,1) both;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn {
+  min-height:58px;
+  position:relative;
+  transform-origin:center center;
+  transition:transform 170ms cubic-bezier(.16,1,.3,1), box-shadow 170ms ease, border-color 170ms ease, background-color 170ms ease;
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn:is(.is-responding,:active) {
+  transform:scale(1.01);
+  border-inline-start:5px solid var(--qf-amber);
+  box-shadow:0 0 0 2px rgba(240,186,115,.35),0 6px 19px -15px rgba(176,118,69,.45);
+}
+html[data-ofilab-design="calm-v2"] #quizScreen .answer-btn.is-responding .answer-bullet {
+  box-shadow:0 0 0 4px rgba(240,186,115,.16);
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-core] {
+  transform-box:fill-box;
+  transform-origin:center;
+  filter: drop-shadow(0 0 4px rgba(246,193,128,.36)) drop-shadow(0 0 11px rgba(234,161,110,.15));
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal.is-revealing [data-crystal-outline] {
+  stroke-dasharray:1;
+  animation:qfCrystalOutline 940ms cubic-bezier(.16,1,.3,1) both;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal.is-revealing [data-crystal-face] {
+  animation:qfCrystalFacet 475ms cubic-bezier(.16,1,.3,1) both;
+  animation-delay:calc(95ms + var(--crystal-seq,0)*31ms);
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal.is-revealing [data-crystal-core] {
+  animation:qfCrystalHeart 630ms cubic-bezier(.16,1,.3,1) 260ms both;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen.calm-report-in #domainResults>.domain-card {
+  animation:qfDomainRise 440ms cubic-bezier(.16,1,.3,1) both;
+  animation-delay:calc(var(--calm-card-index,0)*55ms);
+}
+html[data-ofilab-design="calm-v2"] .calm-reveal-veil {
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;
+  min-height:100dvh;padding:24px;pointer-events:auto;
+  background:radial-gradient(ellipse 54% 46% at 50% 45%,rgba(196,143,192,.13),transparent 92%),var(--calm-bg);
+  color:var(--calm-ink);text-align:center;
+  opacity:1;transition:opacity 260ms cubic-bezier(.16,1,.3,1);
+}
+html[data-ofilab-design="calm-v2"] .calm-reveal-veil.is-leaving {opacity:0;pointer-events:none;}
+html[data-ofilab-design="calm-v2"] .calm-reveal-message {
+  font-size:clamp(20px,3vw,27px);font-weight:620;line-height:1.7;letter-spacing:-.02em;
+}
+html[data-ofilab-design="calm-v2"] .calm-reveal-mark {
+  display:block;margin:0 auto 24px;width:52px;height:52px;transform:rotate(45deg);
+  border:1px solid color-mix(in srgb,var(--qf-amber) 62%,var(--calm-line));
+  background:radial-gradient(circle at 35% 30%,rgba(255,222,173,.32),rgba(156,100,168,.08) 75%);
+  border-radius:14px;box-shadow:0 10px 35px -28px rgba(157,99,179,.48);
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 68% 52% at 12% 10%,rgba(131,79,157,.065),transparent 78%),
+    radial-gradient(ellipse 48% 50% at 91% 81%,rgba(219,151,84,.052),transparent 80%),
+    var(--calm-bg);
+  background-attachment:fixed;
+}
+/* Motion-off is a hard invariant for the entire V2 subtree, including SVG and overlays. */
+@media (prefers-reduced-motion: reduce) {
+  html[data-ofilab-design="calm-v2"],
+  html[data-ofilab-design="calm-v2"] *,
+  html[data-ofilab-design="calm-v2"] *::before,
+  html[data-ofilab-design="calm-v2"] *::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+
+/* CALM V2 — FULL-CANVAS EDITORIAL COVER & CLEAN HEADER, Nov 2026.
+   The quiz and report retain their compact inner grids. */
+html[data-ofilab-design="calm-v2"] #main{
+  width:100%;max-width:none;padding-inline:clamp(14px,2.25vw,44px);
+}
+html[data-ofilab-design="calm-v2"] #introScreen{
+  width:100%;max-width:none;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+  width:100%;max-width:none;
+  min-height:calc(100svh - 128px);
+  margin:clamp(12px,2vh,22px) 0 clamp(30px,4vh,48px);
+  padding:clamp(34px,5.4vw,96px) clamp(30px,6.3vw,116px);
+  gap:clamp(28px,5vw,110px);
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  border-radius:clamp(23px,2vw,36px);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+  font-size:clamp(52px,5.9vw,104px);
+  margin:12px 0 clamp(18px,3vh,36px);
+}
+html[data-ofilab-design="calm-v2"] #introScreen .hero-grid .lede{
+  font-size:clamp(16px,1.28vw,21px);
+  line-height:1.74;max-width:47ch;
+}
+html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice{
+  gap:clamp(12px,2vh,22px);
+}
+html[data-ofilab-design="calm-v2"] .site-header{
+  background:var(--calm-paper);border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-inner{
+  position:relative;width:100%;max-width:none;
+  min-height:74px;margin:0 auto;
+  padding:10px clamp(16px,2.5vw,48px);
+  gap:clamp(18px,2vw,32px);
+  border:0;border-radius:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links{
+  display:flex;align-items:center;justify-content:flex-start;
+  flex:1;gap:clamp(10px,.9vw,16px);min-width:0;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links>.nav-link{
+  margin-inline:auto;padding:9px 16px;
+  border:1px solid transparent;border-radius:12px;
+  color:var(--calm-muted);font-size:13px;font-weight:650;
+  white-space:nowrap;transition:color 180ms ease,background 180ms ease;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links>.nav-link:hover{
+  background:var(--calm-mist);color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] .site-header .nav-divider{display:none;}
+html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top){
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:44px;padding:8px 15px;border-radius:12px;
+  border:1px solid var(--calm-line);
+  background:var(--calm-paper);color:var(--calm-ink);
+  white-space:nowrap;font-size:13px;font-weight:650;
+  transition:border-color 180ms ease,background 180ms ease;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top):hover{
+  border-color:var(--qf-rule-emphasis);background:var(--calm-mist);
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top)[hidden]{
+  display:none!important;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top) span{
+  display:inline;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links .theme-toggle{
+  flex:0 0 44px;width:44px;height:44px;
+  margin-inline-start:5px;padding:10px;
+  border-radius:13px;border:1px solid var(--calm-line);
+  background:var(--calm-mist);
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-save-menu>summary{
+  border:1px solid var(--calm-line);border-radius:12px;
+  background:var(--calm-paper);
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links :is(button,a,summary):focus-visible{
+  outline:2px solid var(--calm-accent);outline-offset:3px;
+}
+@media (max-width:1100px){
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.92fr);
+    gap:24px;padding:clamp(28px,3.5vw,46px);
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links{
+    gap:8px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links>.nav-link{
+    margin-inline:6px;
+  }
+}
+@media (max-width:780px){
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+    grid-template-columns:minmax(0,1fr);min-height:0;
+    margin:12px 0 30px;padding:clamp(22px,4vw,34px);
+    gap:20px;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+    font-size:clamp(44px,9vw,65px);
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links>.nav-link{
+    display:none;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top){
+    flex:0 0 44px;width:44px;height:44px;padding:10px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links :is(.home-load-button,.header-settings-btn,.results-print-top) span{
+    display:none;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner{
+    min-height:64px;padding:7px 14px;gap:10px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links{gap:7px;}
+}
+@media (max-width:480px){
+  html[data-ofilab-design="calm-v2"] #main{padding-inline:12px;}
+  /* 390x844: both start buttons (120 and 300) must sit inside the first fold. */
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{
+    padding:20px 19px 18px;border-radius:22px;gap:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-copy h1{
+    font-size:clamp(43px,10.8vw,55px);margin:10px 0 15px;
+  }
+  html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice #versions{gap:8px;}
+  html[data-ofilab-design="calm-v2"] #introScreen .qf-cover-choice .version-option{padding:13px 16px;}
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner{padding-inline:12px;}
+  html[data-ofilab-design="calm-v2"] .site-header .header-links{gap:5px;}
+  html[data-ofilab-design="calm-v2"] .site-header .header-links .theme-toggle{margin-inline-start:0;}
+}
+/* PERSONALITY CRYSTAL — gem quality lighting, with an explicit 5-trait key.
+   Perimeter = five domain scores; each of 30 luminous cuts = one facet score. */
+html[data-ofilab-design="calm-v2"] .ofi-crystal{
+  overflow:visible;
+  filter:drop-shadow(0 12px 14px rgba(84,47,96,.14));
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-halo]{
+  opacity:.4;pointer-events:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-mass]{
+  stroke:rgba(255,245,255,.5);stroke-width:1.4px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-face]{
+  stroke:#F8E9FF;stroke-opacity:.48;stroke-width:.85px;
+  stroke-linejoin:round;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-sheen]{
+  fill:#FFFCF5;fill-opacity:.18;pointer-events:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-outline]{
+  stroke:#FAE8FF;stroke-opacity:.95;stroke-width:2px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-glyph-trait]{
+  cursor:pointer;transition:opacity 180ms ease;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-glyph-trait]:is(:hover,:focus-visible){
+  opacity:.79;outline:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-crystal [data-crystal-core]{
+  stroke:#FFE8BD;stroke-width:1.3px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-shell{
+  grid-template-columns:minmax(0,1fr) clamp(185px,19vw,260px);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset{
+  width:clamp(185px,19vw,260px);max-width:100%;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+  max-width:260px;width:100%;height:auto;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset figcaption{
+  color:var(--calm-muted);font-size:12px;line-height:1.6;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:9px;margin-top:22px;padding-top:18px;border-top:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__heading{
+  grid-column:1/-1;color:var(--calm-muted);font-size:12px;
+  font-weight:650;margin:0 0 2px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__trait{
+  display:flex;align-items:center;gap:7px;min-width:0;min-height:50px;
+  padding:9px 10px;border:1px solid var(--calm-line);
+  border-radius:13px;background:var(--calm-paper);color:var(--calm-ink);
+  text-align:start;cursor:pointer;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__trait:hover{
+  background:var(--calm-mist);border-color:var(--qf-rule-emphasis);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__trait:focus-visible{
+  outline:2px solid var(--calm-accent);outline-offset:2px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__swatch{
+  display:block;flex:none;width:9px;height:9px;border-radius:3px;
+  background:var(--key-color);box-shadow:0 0 0 3px color-mix(in srgb,var(--key-color) 16%,transparent);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__name{
+  min-width:0;font-size:12px;font-weight:620;line-height:1.3;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key__value{
+  font-size:14px;margin-inline-start:auto;font-variant-numeric:tabular-nums;
+}
+@media(max-width:780px){
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-crystal-key{
+    grid-template-columns:repeat(2,minmax(0,1fr));margin-top:13px;padding-top:12px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset,
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .ofi-signature-inset .ofi-glyph{
+    width:clamp(104px,28vw,138px);max-width:138px;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-shell{
+    grid-template-columns:minmax(0,1fr) clamp(104px,28vw,138px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-ofilab-design="calm-v2"] .ofi-crystal,
+  html[data-ofilab-design="calm-v2"] .ofi-crystal *{
+    animation:none!important;transition:none!important;
+  }
+}
+@media print{
+  html[data-ofilab-design="calm-v2"] .site-header{display:none;}
+  html[data-ofilab-design="calm-v2"] #introScreen .hero-grid{min-height:0;}
+  html[data-ofilab-design="calm-v2"] .ofi-crystal{filter:none;}
+}
+
+
+/* SCIENCE-FIRST REPORT — continuous emotional stability, separate from the four-letter estimate. */
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-card{
+  margin:clamp(16px,2vw,25px) 0 clamp(22px,3vw,34px);
+  padding:clamp(23px,3vw,40px);
+  border:1px solid var(--calm-line);border-radius:25px;
+  background:
+    radial-gradient(ellipse 80% 110% at 95% 0%,rgba(234,186,127,.09),transparent 76%),
+    var(--calm-paper);box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-head{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-eyebrow{
+  color:var(--calm-muted);font-size:12px;font-weight:650;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #emotionalStabilityTitle{
+  font-size:clamp(24px,3vw,36px);margin:7px 0 8px;letter-spacing:-.04em;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-subtitle{
+  max-width:65ch;color:var(--calm-muted);line-height:1.65;margin:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-stat{
+  flex:none;display:flex;flex-direction:column;align-items:center;gap:1px;
+  color:var(--calm-ink);font-variant-numeric:tabular-nums;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-stat strong{
+  font-size:clamp(40px,5vw,65px);line-height:1;font-weight:760;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-stat span{font-size:11px;color:var(--calm-muted);}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-range{
+  direction:ltr;position:relative;height:12px;margin:27px 7px 12px;
+  border-radius:999px;background:linear-gradient(90deg,#B590CD 0%,#D6B1C1 52%,#D59E62 100%);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-marker{
+  position:absolute;top:50%;width:20px;height:20px;
+  border:4px solid var(--calm-paper);border-radius:50%;
+  background:var(--calm-ink);box-shadow:0 2px 7px rgba(28,20,35,.2);
+  transform:translate(-50%,-50%);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-endpoints{
+  display:flex;flex-direction:row-reverse;justify-content:space-between;gap:14px;
+  font-size:12px;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-context{
+  margin:17px 0 8px;font-weight:650;font-size:13px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-note{
+  margin:0 0 16px;font-size:13px;line-height:1.7;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-detail{
+  min-height:44px;padding-inline:17px;border-radius:12px;
+}
+@media(max-width:650px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-head{
+    gap:8px;align-items:flex-start;
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-stat strong{font-size:39px;}
+  html[data-ofilab-design="calm-v2"] #resultScreen .emotional-stability-card{padding:19px;}
+}
+
+
+/* CALM V2 HEADER HOTFIX — prevent overlap with legacy absolute-positioned nav link.
+   Legacy structural CSS positions "איך זה עובד" absolutely; V2 must explicitly
+   reset position, not merely add padding/margins. Every visible control occupies
+   its own flex slot; collapse labels at narrow widths, never their hit targets. */
+html[data-ofilab-design="calm-v2"] .site-header .header-inner{
+  flex-wrap:nowrap;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-inner > .brand{
+  flex:0 0 auto;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-inner > .results-header-badge{
+  flex:0 1 auto;
+  min-width:0;
+  max-width:240px;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links{
+  display:flex;
+  flex:0 1 auto;
+  align-items:center;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  gap:clamp(8px,1vw,14px);
+  min-width:0;
+  margin-inline-start:auto;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links > :is(
+  .home-load-button,.results-print-top,.header-settings-btn,
+  .results-share-top,.header-save-menu,.theme-toggle,.nav-link
+){
+  flex-shrink:0;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links > .nav-link{
+  /* Reset absolute centering inherited from results-usability structural CSS. */
+  position:static;
+  inset:auto;
+  transform:none;
+  margin:0;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  border-radius:12px;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links > .nav-link:hover{
+  transform:none;
+}
+html[data-ofilab-design="calm-v2"] .site-header .header-links > #resultsShareTop{
+  position:static;
+  width:auto;
+  white-space:nowrap;
+}
+html[data-ofilab-design="calm-v2"] .site-header [hidden]{
+  display:none!important;
+}
+/* Reserve the full button widths, then reduce the number of visible labels
+   BEFORE the controls can collide. All icon-only buttons retain aria-labels. */
+@media(max-width:1320px){
+  html[data-ofilab-design="calm-v2"] .site-header .header-links > .nav-link{
+    display:none;
+  }
+}
+@media(max-width:1150px){
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner > .results-header-badge{
+    display:none!important;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links > :is(
+    .home-load-button,.results-print-top,.header-settings-btn,.results-share-top
+  ){
+    flex:0 0 44px;
+    width:44px;
+    min-width:44px;
+    height:44px;
+    min-height:44px;
+    padding:10px;
+    border-radius:13px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links > :is(
+    .home-load-button,.results-print-top,.header-settings-btn,.results-share-top
+  ) > span{
+    display:none;
+  }
+}
+@media(max-width:530px){
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner{
+    gap:8px;
+    padding-inline:12px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-inner > .brand .brand-type{
+    display:none;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links{
+    gap:6px;
+  }
+  html[data-ofilab-design="calm-v2"] .site-header .header-links > .theme-toggle{
+    flex:0 0 44px;
+    width:44px;
+    margin-inline-start:0;
+  }
+}
+
+
+/* CALM V2 DOMAIN ACCORDION — a closed trait must never impersonate an open card.
+   Previously both color themes imposed min-height:100% on every grid item;
+   expanding the opposite trait stretched its closed neighbour into a blank panel.
+   When details are open, use a readable single-column report, preserving DOM order
+   and independent native <details> toggling without a JavaScript side effect. */
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults > .domain-card{
+  align-self:start;
+  height:auto;
+  min-height:0;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults:has(> .domain-card[open]){
+  grid-template-columns:minmax(0,1fr);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults:has(> .domain-card[open]) > .domain-card{
+  grid-column:1/-1;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #domainResults:has(> .domain-card[open]) > .domain-card[open] .domain-detail{
+  max-width:1000px;
+}
+/* Fallback for browsers without relational selectors: no paired empty row. */
+@supports not selector(:has(*)){
+  html[data-ofilab-design="calm-v2"] #resultScreen #domainResults{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+
+
+/* Calm V2 / experimental short-form personal reading, not a second report. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec{
+  grid-column:1/-1;
+  width:100%;
+  min-width:0;
+  margin-block:clamp(18px,2vw,26px);
+  padding:clamp(18px,2vw,28px);
+  border:1px solid var(--calm-line);
+  border-radius:20px;
+  background:var(--calm-paper);
+  box-shadow:0 12px 32px -32px rgba(72,43,87,.24);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__eyebrow{
+  color:var(--calm-accent);font-size:12px;font-weight:750;letter-spacing:.02em;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__title{
+  margin:6px 0 6px;font-size:clamp(23px,2.3vw,29px);letter-spacing:-.03em;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__intro{
+  color:var(--calm-muted);font-size:13px;line-height:1.7;margin:0 0 19px;max-width:75ch;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__grid{
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__pane{
+  padding:19px 20px;border:1px solid var(--calm-line);border-radius:16px;
+  background:color-mix(in srgb,var(--calm-mist) 38%,var(--calm-paper));
+  min-width:0;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__pane--soft{
+  background:color-mix(in srgb,var(--calm-mist) 60%,var(--calm-paper));
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__pane-title{
+  margin:0 0 13px;font-size:16px;font-weight:760;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__list{
+  list-style:none;padding:0;margin:0;display:grid;gap:13px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item{
+  padding:0 0 12px;border-bottom:1px solid var(--calm-line);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item:last-child{
+  padding-bottom:0;border-bottom:0;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item strong{
+  color:var(--calm-ink);font-size:14px;line-height:1.45;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item p,
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__empty{
+  color:var(--calm-muted);font-size:13px;line-height:1.67;margin:4px 0 0;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__metric{
+  flex:none;font-size:11px;font-variant-numeric:tabular-nums;
+  color:var(--calm-accent);white-space:nowrap;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__tip{
+  display:flex;align-items:baseline;gap:16px;
+  margin-top:16px;padding:17px 20px;
+  border-radius:15px;
+  border-inline-start:3px solid var(--qf-amber);
+  background:var(--calm-mist);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__tip strong{
+  flex:0 0 auto;font-size:13px;
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__tip p{
+  color:var(--calm-ink);font-size:13px;line-height:1.65;margin:0;
+}
+@media(max-width:840px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__grid{grid-template-columns:minmax(0,1fr);}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__tip{display:block;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__tip strong{display:block;margin-bottom:6px;}
+}
+@media(max-width:450px){
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec{padding:15px;margin-block:16px;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__pane{padding:15px;}
+  html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-exec__item-head{flex-wrap:wrap;gap:3px;}
+}
+
+
+/* CALM V2 BALANCED CARD ROWS
+   Keep the width of full-row cards and center incomplete final rows in RTL.
+   Dedicated to these four report collections; domain accordion is unchanged. */
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;
+  --ofi-balance-gap:clamp(8px,1.2vw,12px);
+  gap:var(--ofi-balance-gap);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips > .profile-chip{
+  box-sizing:border-box;min-width:0;max-width:none;
+  flex:0 0 calc((100% - var(--ofi-balance-gap) - var(--ofi-balance-gap)) / 3);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .validity-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:12px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .validity-grid > .validity-chip{
+  box-sizing:border-box;min-width:0;max-width:none;flex:0 0 calc((100% - 36px) / 4);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #uppsImpulsivityCard .cyber-dual-meters{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:14px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen #uppsImpulsivityCard .cyber-dual-meters > .cyber-meter{
+  box-sizing:border-box;min-width:0;max-width:none;flex:0 0 calc((100% - 28px) / 3);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .neo-style-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px;
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .neo-style-grid > .neo-style-card{
+  box-sizing:border-box;min-width:0;max-width:none;flex:0 0 calc((100% - 32px) / 3);
+}
+@media(max-width:1180px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .validity-grid > .validity-chip{
+    flex-basis:calc((100% - 24px) / 3);
+  }
+}
+@media(max-width:1050px){
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips > .profile-chip{
+    flex-basis:calc((100% - var(--ofi-balance-gap)) / 2);
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen #uppsImpulsivityCard .cyber-dual-meters > .cyber-meter{
+    flex-basis:calc((100% - 14px) / 2);
+  }
+  html[data-ofilab-design="calm-v2"] #resultScreen .neo-style-grid > .neo-style-card{
+    flex-basis:calc((100% - 16px) / 2);
+  }
+}
+@media(max-width:840px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .validity-grid > .validity-chip{
+    flex-basis:calc((100% - 12px) / 2);
+  }
+}
+@media(max-width:620px){
+  html[data-ofilab-design="calm-v2"] #resultScreen #resultsProfileSummary .profile-summary-chips > .profile-chip,
+  html[data-ofilab-design="calm-v2"] #resultScreen .validity-grid > .validity-chip,
+  html[data-ofilab-design="calm-v2"] #resultScreen #uppsImpulsivityCard .cyber-dual-meters > .cyber-meter,
+  html[data-ofilab-design="calm-v2"] #resultScreen .neo-style-grid > .neo-style-card{
+    flex-basis:100%;
+  }
+}
+
+/* PERSONALITY LENS — frosted glass on one canvas (assets/calm-lens.js).
+   Replaces the faceted crystal inside the summary card only; sizing is inherited from .ofi-glyph. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .ofi-signature-inset:has(.ofi-lens){
+  background:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens{
+  position:relative;aspect-ratio:1;overflow:visible;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__canvas{
+  display:block;width:100%;height:100%;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__trait{
+  position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;padding:0;
+  border:0;border-radius:50%;background:none;pointer-events:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__trait:focus-visible{
+  outline:2px solid var(--calm-accent);outline-offset:1px;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__sr{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;list-style:none;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip{
+  position:absolute;inset-inline-start:auto;left:0;top:0;z-index:5;
+  display:grid;gap:3px;width:max-content;max-width:min(232px,78vw);
+  padding:10px 12px 11px;border-radius:14px;text-align:start;
+  background:color-mix(in srgb,var(--calm-paper) 97%,transparent);
+  border:1px solid color-mix(in srgb,var(--lens-tint,#B393DA) 30%,var(--calm-line));
+  box-shadow:0 12px 30px -14px rgba(84,58,128,.34),0 1px 0 rgba(255,255,255,.7) inset;
+  color:var(--calm-ink);pointer-events:none;
+  opacity:0;visibility:hidden;transition:opacity 160ms ease,visibility 0s linear 160ms;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip.is-open{
+  opacity:1;visibility:visible;transition:opacity 160ms ease;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-kicker{
+  font-size:11px;font-weight:650;line-height:1.35;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-title{
+  font-size:14.5px;font-weight:720;line-height:1.35;letter-spacing:-.01em;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-metric{
+  font-size:12.5px;line-height:1.4;font-variant-numeric:tabular-nums;
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-meter{
+  display:block;height:4px;margin-block:3px 2px;border-radius:999px;overflow:hidden;
+  background:color-mix(in srgb,var(--lens-tint,#B393DA) 18%,transparent);
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-fill{
+  display:block;height:100%;border-radius:inherit;background:var(--lens-tint,#B393DA);
+}
+html[data-ofilab-design="calm-v2"] .ofi-lens__tip-relation{
+  font-size:11.5px;line-height:1.45;color:var(--calm-muted);white-space:normal;
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-ofilab-design="calm-v2"] .ofi-lens__tip{transition:none;}
+}
+@media print{
+  html[data-ofilab-design="calm-v2"] .ofi-lens__tip{display:none;}
+}
+
+/* Report opening: deeper summary layers open on request. */
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more{
+  margin-top:18px;border:1px solid var(--calm-line);border-radius:18px;
+  background:var(--calm-paper);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more-toggle{
+  position:relative;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;cursor:pointer;
+  min-height:48px;padding:13px 18px;padding-inline-end:44px;list-style:none;color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more-toggle::-webkit-details-marker{display:none;}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more-toggle::after{
+  content:"+";position:absolute;inset-inline-end:18px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:700;color:var(--calm-accent);
+}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more[open]>.profile-summary-more-toggle::after{content:"−";}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more-title{font-weight:700;font-size:15px;}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more-hint{font-size:13px;color:var(--calm-muted);}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more[open]{padding:0 14px 14px;}
+html[data-ofilab-design="calm-v2"] #resultsProfileSummary .profile-summary-more[open]>.profile-summary-more-toggle{padding-inline-start:4px;}

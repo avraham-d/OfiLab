@@ -1,0 +1,88 @@
+/* Calm V2 · Quiet Field — standalone methodology / transparency page.
+   Intentionally does not depend on personality.v20.css or calm-modern.v1.css. */
+@font-face{font-family:"ofiLab Heebo";src:url("./fonts/heebo-variable.ttf") format("truetype");font-weight:100 900;font-style:normal;font-display:swap;}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;min-height:100vh;background:var(--bg-canvas);color:var(--text-primary);font-family:"ofiLab Heebo",Arial,sans-serif;}
+a{color:inherit;text-decoration:none;}button{font-family:inherit;cursor:pointer;}
+.icon-sprite{position:absolute!important;width:0;height:0;overflow:hidden;}
+.icon{display:inline-block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.skip-link{position:absolute;top:-120px;right:24px;z-index:100;display:block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border-hairline);border-radius:12px;}
+.skip-link:focus{top:12px;}
+html[data-ofilab-design="calm-v2"] .site-header .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+html[data-ofilab-design="calm-v2"] .brand{display:inline-flex;align-items:center;gap:12px;min-width:0;}
+html[data-ofilab-design="calm-v2"] .brand-mark{display:grid;place-items:center;width:44px;height:44px;}
+html[data-ofilab-design="calm-v2"] .brand-mark img{width:38px;height:38px;object-fit:contain;}
+html[data-ofilab-design="calm-v2"] .brand-type{display:flex;flex-direction:column;line-height:1.35;}
+html[data-ofilab-design="calm-v2"] .brand-type b{font-size:22px;font-weight:780;}
+html[data-ofilab-design="calm-v2"] .brand-type>span{font-size:11px;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .header-links{display:flex;align-items:center;gap:9px;}
+html[data-ofilab-design="calm-v2"] .header-links .header-share{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;background:var(--bg-subtle);font-size:12px;font-weight:700;}
+html[data-ofilab-design="calm-v2"] .header-center{flex:1;text-align:center;}
+html[data-ofilab-design="calm-v2"] .results-header-badge{display:inline-flex;align-items:center;gap:7px;color:var(--text-secondary);font-size:12px;}
+html[data-ofilab-design="calm-v2"] .badge-dot,html[data-ofilab-design="calm-v2"] .status-dot{width:7px;height:7px;background:var(--brand-primary);display:inline-block;border-radius:50%;vertical-align:middle;}
+html[data-ofilab-design="calm-v2"] main.about-page-wrap{max-width:1100px;margin:0 auto;padding:30px clamp(16px,4vw,36px) 70px;}
+html[data-ofilab-design="calm-v2"] .about-hero{padding:clamp(36px,6vw,74px) 0 28px;text-align:center;}
+html[data-ofilab-design="calm-v2"] .about-hero h1{font-size:clamp(36px,5vw,62px);font-weight:760;line-height:1.19;letter-spacing:-.045em;margin:22px auto 20px;max-width:18ch;}
+html[data-ofilab-design="calm-v2"] .about-hero h1 em{display:block;font-style:normal;color:var(--brand-primary);-webkit-text-fill-color:var(--brand-primary);}
+html[data-ofilab-design="calm-v2"] .about-hero .lede{max-width:73ch;margin:0 auto;font-size:clamp(15px,1.5vw,18px);line-height:1.85;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .about-toc-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:34px auto 4px;}
+html[data-ofilab-design="calm-v2"] .about-toc-pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;min-height:44px;border:1px solid var(--border-hairline);border-radius:999px;background:var(--bg-card);font-size:13px;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .about-toc-pill:hover,html[data-ofilab-design="calm-v2"] .about-toc-pill:focus-visible{background:var(--bg-subtle);color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .about-card{margin:24px 0;padding:clamp(23px,3.5vw,42px);background:var(--bg-card);border:0;border-radius:30px;box-shadow:none;color:var(--text-primary);scroll-margin-top:108px;}
+html[data-ofilab-design="calm-v2"] .about-card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+html[data-ofilab-design="calm-v2"] .about-card-icon{width:46px;height:46px;display:inline-grid;place-items:center;flex-shrink:0;border-radius:15px;background:var(--bg-subtle);font-size:24px;color:var(--brand-primary);}
+html[data-ofilab-design="calm-v2"] .about-card-title{margin:0;font-size:clamp(22px,2.5vw,32px);font-weight:730;line-height:1.35;color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .about-card :is(p,.body-copy){color:var(--text-secondary);font-size:14.5px;line-height:1.89;}
+html[data-ofilab-design="calm-v2"] .about-card :is(h3,h4){color:var(--text-primary);font-weight:730;}
+html[data-ofilab-design="calm-v2"] .about-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-block:16px;}
+html[data-ofilab-design="calm-v2"] .about-subcard{padding:20px;border:0;border-radius:20px;background:var(--bg-subtle);min-width:0;}
+html[data-ofilab-design="calm-v2"] .about-subcard.is-featured{background:var(--brand-primary-soft);border:0;}
+html[data-ofilab-design="calm-v2"] .about-subcard p{margin-block:9px;}
+html[data-ofilab-design="calm-v2"] .about-tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-block:18px;}
+html[data-ofilab-design="calm-v2"] .about-badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border-hairline);font-size:12px;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .about-callout{padding:18px 21px;background:var(--bg-subtle);border:0;border-inline-start:3px solid var(--brand-primary);border-radius:13px;margin:18px 0;}
+html[data-ofilab-design="calm-v2"] .about-table-wrap{max-width:100%;overflow-x:auto;margin:20px 0;border:1px solid var(--border-hairline);border-radius:16px;}
+html[data-ofilab-design="calm-v2"] .about-table{width:100%;border-collapse:collapse;min-width:480px;}
+html[data-ofilab-design="calm-v2"] .about-table :is(td,th){padding:13px 15px;text-align:right;border-bottom:1px solid var(--border-hairline);font-size:13px;}
+html[data-ofilab-design="calm-v2"] .about-table th{background:var(--bg-subtle);color:var(--text-primary);font-weight:720;}
+html[data-ofilab-design="calm-v2"] .about-table td{color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] .about-formula{display:block;margin:15px 0;padding:15px 18px;max-width:100%;overflow-x:auto;direction:ltr;text-align:left;unicode-bidi:isolate;font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:13px;background:var(--bg-subtle);color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .about-page-wrap :is(a,button):focus-visible{outline:2px solid var(--brand-primary);outline-offset:3px;}
+html[data-ofilab-design="calm-v2"] .page-footer{max-width:1100px;margin:0 auto 45px;padding:15px 24px;text-align:center;color:var(--text-secondary);border-top:1px solid var(--border-hairline);}
+html[data-ofilab-design="calm-v2"] .footer-brand{font-weight:650;color:var(--text-primary);}
+html[data-ofilab-design="calm-v2"] .page-footer a{color:var(--brand-primary);text-decoration:underline;text-underline-offset:3px;}
+
+/* Same editorial field marks on the standalone methodology guide. */
+html[data-ofilab-design="calm-v2"] .about-hero::after{
+ content:"";display:block;width:56px;height:2px;margin:26px auto 0;
+ border-radius:999px;background:var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] .about-card-title::before{
+ content:"";display:inline-block;vertical-align:middle;
+ width:5px;height:.85em;margin-inline-end:12px;
+ border-radius:999px;background:var(--brand-primary);
+}
+html[data-ofilab-design="calm-v2"] .about-toc-pill{
+ min-height:44px;background:var(--bg-card);color:var(--text-primary);
+ border:1px solid var(--border-hairline);box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] .about-toc-pill:is(:hover,:focus-visible){
+ background:var(--bg-subtle);border-color:var(--brand-primary);
+ box-shadow:none;transform:none;
+}
+html[data-ofilab-design="calm-v2"] .about-card{
+ box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+@media(max-width:650px){
+ html[data-ofilab-design="calm-v2"] .header-center{display:none;}
+ html[data-ofilab-design="calm-v2"] .site-header .header-inner{width:calc(100% - 18px);gap:8px;}
+ html[data-ofilab-design="calm-v2"] .header-links .header-share span{display:none;}
+ html[data-ofilab-design="calm-v2"] .about-hero{padding:28px 0 20px;}
+ html[data-ofilab-design="calm-v2"] .about-hero h1{font-size:35px;max-width:none;}
+ html[data-ofilab-design="calm-v2"] .about-grid-2{grid-template-columns:1fr;}
+ html[data-ofilab-design="calm-v2"] .about-card{padding:20px;border-radius:24px;}
+ html[data-ofilab-design="calm-v2"] .about-toc-nav{justify-content:flex-start;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+@media(forced-colors:active){html[data-ofilab-design="calm-v2"] :is(.about-card,.about-subcard,.header-inner){border:1px solid CanvasText;}}

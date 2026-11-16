@@ -1,0 +1,93 @@
+/* Independent printed report, typography and pages; never emits the private answer URL. */
+@font-face{font-family:"ofiLab Report";src:url("./fonts/heebo-variable.ttf") format("truetype");font-weight:100 900;font-style:normal;font-display:swap}
+/* ofiLab print/PDF document — independent paginated product, no answer links. */
+@page{size:A4 portrait;margin:14mm 13mm 13mm}
+/* This stylesheet is also embedded in the app: page defaults belong to the report only. */
+:root[data-print-report="true"]{color-scheme:light}
+body.print-preview{margin:0;background:white!important;color:#30253A!important;font:430 11pt/1.65 "ofiLab Report",Arial,sans-serif;direction:rtl;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.report-page,.report-page *{box-sizing:border-box}
+body.print-preview{padding:0!important;min-height:0}
+body.print-preview>.printable-report,body.print-preview>#printableReport{display:block!important}
+[data-print-report="true"] :is(.site-header,.page-footer,.results-ai,.result-actions,.quiz-options,.toast,.skip-link,.results-journey,dialog){display:none!important}
+[data-print-report="true"] main{margin:0;padding:0;max-width:none}
+[data-print-report="true"] #printableReport{display:block!important}
+.report-page{position:relative;margin:0;padding:0 0 12mm;min-height:260mm;break-after:page;page-break-after:always;overflow:visible;background:#fff;color:#30253A}
+.report-page:last-child{break-after:auto;page-break-after:auto}
+.report-header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E8DDEC;padding:0 0 6mm;margin-bottom:8mm;font-size:9pt;color:#765E87}
+.report-header b{font-size:17pt;color:#6F508A;letter-spacing:-.4px}
+.report-brand{display:inline-flex;direction:ltr;align-items:center;gap:3mm}
+.report-brand-mark{display:block;width:10mm;height:10mm;object-fit:contain;flex:none}
+.report-page h1{font-size:28pt;line-height:1.28;letter-spacing:-.025em;margin:0 0 6mm;color:#30253A}
+.report-kicker{font-size:9pt;font-weight:700;color:#765E87;margin:0 0 3mm}
+.report-lead{font-size:13pt;color:#75647C;margin:0 0 7mm}
+.report-radar{display:block;width:min(145mm,100%);height:auto;max-height:82mm;margin:0 auto 8mm}
+/* The print window loads only this stylesheet, not the application's radar styles. */
+.report-radar .grid-polygon{fill:none;stroke:#DCCDE4;stroke-width:1}
+.report-radar .grid-spoke{stroke:#DCCDE4;stroke-width:1}
+.report-radar .data-polygon{fill:#6F508A26;stroke:#6F508A;stroke-width:2.5;stroke-linejoin:round}
+.report-radar .data-point{fill:#6F508A;stroke:#fff;stroke-width:2}
+.report-radar .axis-label{fill:#30253A;font-family:"ofiLab Report",Arial,sans-serif;font-size:12px;font-weight:600}
+.report-score-list{display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin:7mm 0 7mm}
+.report-score-list>div,.report-score-head{display:flex;align-items:center;justify-content:space-between;gap:6mm}
+.report-score-list>div{padding:3mm 0;border-bottom:1px solid #E8DDEC;font-size:11pt}
+.report-score-list b,.report-score-head b{font-variant-numeric:tabular-nums;direction:ltr;color:#6F508A}
+.report-footer{position:absolute;inset-inline:0;bottom:2mm;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #E8DDEC;padding-top:4mm;color:#766681;font-size:8pt}
+.report-note{font-size:9pt;color:#665A70;line-height:1.8;border-right:3px solid #D7B1DE;padding:2mm 4mm;background:#FAF5FB}
+.report-domain{margin:0 0 8mm;break-inside:avoid}
+.report-domain>.report-score-head{padding-bottom:3mm;border-bottom:1px solid #E6DAEA}
+.report-score-head h2,.report-score-head h3{margin:0;color:#30253A}
+.report-score-head h2{font-size:15pt}
+.report-score-head h3{font-size:10.5pt}
+.report-domain>.track,.report-facet>.track{height:4px;overflow:hidden;border-radius:3px;background:#EDE5F1;margin:3mm 0}
+.report-page .track>div{height:100%;border-radius:inherit;background:#8968BF}
+.report-domain>p,.report-facet>p{font-size:10pt;line-height:1.64;margin:0 0 3mm;color:#685A73}
+.report-facet{margin:0 0 4.5mm;padding:3mm 0;border-bottom:1px solid #F0E8F2;break-inside:avoid}
+.report-facet .track{height:3px;margin:2mm 0}
+.report-page[data-trait="N"] .track>div{background:#BB789F}
+.report-page[data-trait="E"] .track>div{background:#C78E4E}
+.report-page[data-trait="O"] .track>div{background:#8968BF}
+.report-page[data-trait="A"] .track>div{background:#9A80BE}
+.report-page[data-trait="C"] .track>div{background:#6883B2}
+@media screen{
+ body.print-preview{max-width:210mm;padding:12mm!important;margin:auto;background:#F8F5FA!important;box-shadow:0 2px 20px #0002}
+ .report-page{min-height:265mm;padding:8mm 4mm 15mm;box-shadow:0 1px 8px #0001;margin-bottom:12mm}
+}
+@media print{
+ html,body{width:auto;height:auto}
+ .report-page{box-shadow:none!important}
+ .report-facet,.report-domain{page-break-inside:avoid}
+ .report-footer{break-inside:avoid}
+}
+/* Stable A4 typography, independent of site and share-image presentation. */
+.report-header b{font-weight:780}
+.report-page h1{font-weight:750;text-wrap:balance;overflow-wrap:anywhere}
+.report-score-head :is(h2,h3){font-weight:690;overflow-wrap:anywhere}
+.report-note{break-inside:avoid;page-break-inside:avoid}
+.report-domain p,.report-facet p{overflow-wrap:anywhere;orphans:3;widows:3}
+.report-page{isolation:isolate}
+@media print{
+  .report-page{min-height:255mm}
+  a[href]::after{content:none!important}
+  .report-domain,.report-facet{break-inside:avoid-page}
+}
+
+
+/* Calm V2 PDF parity: color tokens are local to the isolated print document. */
+:root[data-print-report="true"]{
+  --bg-card:#FFFFFF;--border-hairline:rgba(28,27,25,.08);--brand-primary:#6F508A;
+  --trait-emotional:#912061;--trait-extraversion:#BB6802;--trait-openness:#9878E5;
+  --trait-agreeableness:#11A68B;--trait-conscientiousness:#0850AB;
+}
+.report-signature{width:min(130mm,100%);max-height:82mm;overflow:visible;margin-inline:auto;}
+.report-page [data-trait="N"]{--print-trait:var(--trait-emotional);}
+.report-page [data-trait="E"]{--print-trait:var(--trait-extraversion);}
+.report-page [data-trait="O"]{--print-trait:var(--trait-openness);}
+.report-page [data-trait="A"]{--print-trait:var(--trait-agreeableness);}
+.report-page [data-trait="C"]{--print-trait:var(--trait-conscientiousness);}
+.report-page :is(.report-domain,.report-facet)>.track{height:7px;overflow:visible;background:#EAE6DF;}
+.report-page :is(.report-domain,.report-facet)>.track>div{position:relative;height:100%;background:transparent;}
+.report-page :is(.report-domain,.report-facet)>.track>div::after{
+  content:"";position:absolute;right:-7px;top:50%;width:14px;height:14px;
+  transform:translateY(-50%);border-radius:50%;border:2px solid #fff;
+  background:var(--print-trait,#6F508A);box-shadow:0 1px 4px rgba(0,0,0,.12);
+}

@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light" data-ofilab-design="calm-v2" data-calm-style="quiet" data-calm-art="amber-crystal" data-ui-version="v2">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#F8F5FA">
+  <link rel="icon" href="./assets/logo-mark.png" type="image/png" sizes="192x192">
+  <link rel="icon" href="./assets/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/logo-mark.png" sizes="192x192">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="ofiLab">
+  <meta property="og:title" content="ofiLab · איך זה עובד — שקיפות ומתודולוגיה מדעית">
+  <meta property="og:description" content="המתמטיקה, הפסיכומטריה והקוד של ofiLab: איך מחושבים הציונים והאחוזונים האמפיריים, מודל 10 האספקטים, מנועי הקיברנטיקה, ופרטיות מוחלטת בדפדפן.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="description" content="הסבר שקוף ופתוח על המתמטיקה של הציונים, האחוזונים האמפיריים מ-555,000+ נבדקים, מודל 10 האספקטים, הצפנת התשובות והקוד של ofiLab.">
+  <title>איך זה עובד | ofiLab — שקיפות ומתודולוגיה מדעית</title>
+  <link rel="preload" href="./assets/fonts/heebo-variable.ttf" as="font" type="font/ttf" crossorigin>
+  <script src="./assets/theme.js" defer></script>
+  <link rel="stylesheet" href="./assets/calm.css">
+  <link rel="stylesheet" href="./assets/calm.identity.css">
+  <link rel="stylesheet" href="./assets/calm.about.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+  
+  <svg width="0" height="0" class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.9 7.1L21 11l-7.1 1.9L12 20l-1.9-7.1L3 11l7.1-1.9L12 2Z"/><path d="m19 18 .7 2.3L22 21l-2.3.7L19 24l-.7-2.3L16 21l2.3-.7L19 18Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5m7 7-7-7 7-7"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.7 8.7 0 0 1 9.7 3.5a8.8 8.8 0 1 0 10.8 10.8Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4m0 16h16M8 15l4-4 3 2 5-7"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="דף הבית של מפת האישיות">
+        <span class="brand-mark" aria-hidden="true"><img src="./assets/logo-mark.png" alt="" width="38" height="38" decoding="async"></span>
+        <span class="brand-type"><b>ofiLab<span class="brand-dot">.</span></b><span>מעבדת האישיות</span></span>
+      </a>
+      
+      <div class="header-center">
+        <span class="results-header-badge" style="display:inline-flex; margin:0;">
+          <span class="badge-dot"></span>
+          <span class="badge-text">שקיפות ומתודולוגיה מדעית</span>
+        </span>
+      </div>
+
+      <nav class="header-links" aria-label="ניווט ראשי">
+        <a href="./" class="header-share" style="text-decoration:none;"><svg width="18" height="18" class="icon" aria-hidden="true"><use href="#i-arrow"/></svg><span>חזרה למבחן</span></a>
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="מעבר למצב לילה" title="מעבר למצב לילה"><svg width="20" height="20" class="icon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="about-page-wrap">
+    <div class="about-hero">
+      <span class="eyebrow"><span class="status-dot"></span> שקיפות מתודולוגית · מדע פתוח · אפס מעקב</span>
+      <h1>איך ofiLab עובדת.<br><em>המתמטיקה, הפסיכומטריה והפרטיות שלך.</em></h1>
+      <p class="lede">
+        מעבדת אישיות פתוחה, מדעית ומאובטחת: בלי הרשמה, בלי מאגרי נתונים שמרגלים אחריך, ועם שקיפות אלגוריתמית מלאה מהשאלה הראשונה ועד פירוק מנועי האישיות העמוקים ביותר.
+      </p>
+
+      <nav class="about-toc-nav" aria-label="קפיצה מהירה לנושא">
+        <a href="#instruments" class="about-toc-pill">🎯 3 גרסאות השאלון</a>
+        <a href="#big-five-model" class="about-toc-pill">📊 מודל חמש התכונות</a>
+        <a href="#ten-aspects" class="about-toc-pill">🧬 לוח 10 האספקטים ופיצולים</a>
+        <a href="#cybernetics" class="about-toc-pill">🧭 מנועי יציבות וגמישות</a>
+        <a href="#paradoxes" class="about-toc-pill">⚡ פרדוקסים ומתחים</a>
+        <a href="#scoring-math" class="about-toc-pill">📐 המתמטיקה והאחוזונים</a>
+        <a href="#five-letters" class="about-toc-pill">🧩 סגנון 4 האותיות (MBTI)</a>
+        <a href="#privacy-crypto" class="about-toc-pill">🛡️ פרטיות והצפנה (Argon2id)</a>
+        <a href="#ai-assistant" class="about-toc-pill">🤖 עוזר ה־AI</a>
+        <a href="#open-source" class="about-toc-pill">📚 מקורות ומדע פתוח</a>
+      </nav>
+    </div>
+
+    <!-- 1. שתי גרסאות השאלון -->
+    <section class="about-card" id="instruments">
+      <div class="about-card-head">
+        <span class="about-card-icon">🎯</span>
+        <div>
+          <h2 class="about-card-title">שתי גרסאות שאלון: 120 ו־300</h2>
+          <small style="color:var(--calm-muted);">סולמות ה-IPIP-NEO המקוריים (International Personality Item Pool) של ד"ר ג'ון ג'ונסון ופרופ' לואיס גולדברג</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        רוב שאלוני הרשת כופים שאלון קצר ושטחי. ב־ofiLab עומדות לרשותך שתי גרסאות המחקר המלאות של סולמות IPIP-NEO (ללא גרסת 50 המצומצמת, שהוצאה משימוש), המאפשרות לבחור בדיוק את רמת הרזולוציה ומשך הזמן המתאימים לך:
+      </p>
+
+      <div class="about-grid-2">
+        <div class="about-subcard is-featured">
+          <div>
+            <div class="about-tag-row">
+              <span class="about-badge" style="background:#2d6a4f; color:#fff;">✨ מומלץ ביותר</span>
+              <span class="about-badge">10–15 דקות</span>
+            </div>
+            <h3 style="margin:8px 0; font-size:18px;">IPIP-NEO-120</h3>
+            <p style="font-size:14px; line-height:1.6; color:var(--calm-muted);">
+              <strong>נקודת האיזון האידיאלית.</strong> פותח בידי ד"ר ג'ון ג'ונסון (2014). כולל 24 שאלות לכל אחת מ־5 התכונות (4 שאלות לכל אחד מ־30 תחומי המשנה). מפיק את לוח 10 האספקטים המלא ומזהה פיצולים אישיותיים בדיוק גבוה.
+            </p>
+          </div>
+          <div style="margin-top:14px; padding-top:10px; border-top:1px solid rgba(0,0,0,0.06); font-size:13px; font-weight:600; color:var(--calm-accent);">
+            מדגם השוואה: 410,376 משיבי שאלון 120
+          </div>
+        </div>
+
+        <div class="about-subcard">
+          <div>
+            <div class="about-tag-row">
+              <span class="about-badge">עומק מקסימלי</span>
+              <span class="about-badge">30–45 דקות</span>
+            </div>
+            <h3 style="margin:8px 0; font-size:18px;">IPIP-NEO-300</h3>
+            <p style="font-size:14px; line-height:1.6; color:var(--calm-muted);">
+              <strong>הרזולוציה הגבוהה ביותר בעולם.</strong> שאלון העומק המלא: 10 שאלות ייעודיות לכל אחד מ־30 תחומי המשנה (60 שאלות לכל ממד ראשי). מיועד לחוקרים, אנשי מקצוע ולמי שמחפש מיפוי יסודי עד רמת הניואנס.
+            </p>
+          </div>
+          <div style="margin-top:14px; padding-top:10px; border-top:1px solid rgba(0,0,0,0.06); font-size:13px; font-weight:600; color:var(--calm-accent);">
+            מדגם השוואה: 145,388 משיבים
+          </div>
+        </div>
+      </div>
+
+      <div class="about-callout">
+        <span style="font-size:20px;">💡</span>
+        <div>
+          <strong>הפרדה מלאה באחסון המקומי:</strong> כל גרסה נשמרת בנפרד בדפדפן שלך. אפשר למלא את שאלון 120, ובהמשך למלא גם את שאלון 300 בלי לחשוש שמילוי שאלון אחד ידרוס או יערבב את נתוני האחר.
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. מודל חמש התכונות הגדולות -->
+    <section class="about-card" id="big-five-model">
+      <div class="about-card-head">
+        <span class="about-card-icon">📊</span>
+        <div>
+          <h2 class="about-card-title">מודל חמש התכונות הגדולות (The Big Five)</h2>
+          <small style="color:var(--calm-muted);">קונצנזוס המחקר הפסיכולוגי העולמי לאפיון מבנה האישיות</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        עשרות שנות מחקר פסיכומטרי חוצה-תרבויות הוכיחו כי הבדלים בינאישיים באישיות מתכנסים לחמישה ממדי-על בלתי תלויים (הידועים כמודל <strong>OCEAN</strong> או <strong>CANOE</strong>):
+      </p>
+
+      <div class="about-table-wrap">
+        <table class="about-table">
+          <thead>
+            <tr>
+              <th style="width:22%;">ממד האישיות</th>
+              <th style="width:38%;">מאפייני ציון גבוה</th>
+              <th style="width:40%;">מאפייני ציון נמוך</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>פתיחות לחוויה (Openness)</strong></td>
+              <td>סקרנות אינטלקטואלית עשירה, משיכה לאמנות, יצירתיות, דמיון ופתיחות לשינויים.</td>
+              <td>פרגמטיות, הישענות על המוכר והבטוח, העדפת שגרה ברורה ופתרונות מעשיים.</td>
+            </tr>
+            <tr>
+              <td><strong>מצפוניות (Conscientiousness)</strong></td>
+              <td>משמעת עצמית גבוהה, ארגון, תכנון מראש, יסודיות ושאיפה עקבית להישגים.</td>
+              <td>גמישות, ספונטניות, יכולת אילתור, לצד נטייה לדחיינות או קושי בשגרה קשיחה.</td>
+            </tr>
+            <tr>
+              <td><strong>מוחצנות (Extraversion)</strong></td>
+              <td>אנרגיה חברתית גבוהה, התלהבות, אסרטיביות, יוזמה וחיפוש גירויים בסביבה.</td>
+              <td>מופנמות, צורך במרחב אישי שקט, טעינת אנרגיה ביחידות וזהירות חברתית.</td>
+            </tr>
+            <tr>
+              <td><strong>נועם הליכות (Agreeableness)</strong></td>
+              <td>חמלה, אמפתיה, רצון לעזור, שיתופיות, צניעות והימנעות מחיכוכים.</td>
+              <td>ישירות, תחרותיות, ספקנות לגבי כוונות הזולת ועמידה נחושה על האינטרס האישי.</td>
+            </tr>
+            <tr>
+              <td><strong>רגישות רגשית (Neuroticism)</strong></td>
+              <td>ערנות מוגברת לסיכונים, עומק רגשי, דאגנות, רגישות לשינויים ורגישות ללחץ.</td>
+              <td>יציבות רגשית, רוגע תחת עומס, חוסן פנימי גבוה וביטחון עצמי איתן.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="body-copy" style="margin-top:16px;">
+        <strong>30 תחומי המשנה (Facets):</strong> כל אחת מחמש התכונות אינה גוש אחיד, אלא מתפרקת ל־6 תת-תכונות מובחנות (סך הכל 30 מדדים). הפירוק הזה מאפשר להבין למשל מדוע אדם בעל מוחצנות ממוצעת עשוי להיות אסרטיבי ומוביל בדעותיו (E3), אך שקט וסלקטיבי בחברה המונית (E2).
+      </p>
+    </section>
+
+    <!-- 3. מודל 10 האספקטים וזיהוי פיצולים -->
+    <section class="about-card" id="ten-aspects">
+      <div class="about-card-head">
+        <span class="about-card-icon">🧬</span>
+        <div>
+          <h2 class="about-card-title">גולת הכותרת: מודל 10 האספקטים וזיהוי "פיצולים"</h2>
+          <small style="color:var(--calm-muted);">מחקרו המכונן של פרופ' קולין די-יאנג (DeYoung et al., 2007, Journal of Personality and Social Psychology)</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        אחד החידושים המדעיים המרכזיים ב־ofiLab הוא שילוב <strong>מודל 10 האספקטים</strong>. פרופ' די-יאנג ועמיתיו הוכיחו כי לכל אחת מחמש התכונות קיימים שני תתי-מנועים אבולוציוניים וביולוגיים מובחנים. פירוק זה פותר "סתירות" רבות באישיות:
+      </p>
+
+      <div class="about-table-wrap">
+        <table class="about-table">
+          <thead>
+            <tr>
+              <th>תכונת-על</th>
+              <th>אספקט ראשון (Aspect 1)</th>
+              <th>אספקט שני (Aspect 2)</th>
+              <th>דוגמה לפיצול התנהגותי (פער מובחן)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>רגישות רגשית</strong></td>
+              <td><strong>נסיגה פנימית (Withdrawal)</strong><br><small>דאגה, ספק עצמי, עצבות</small></td>
+              <td><strong>תנודתיות חיצונית (Volatility)</strong><br><small>כעס, קוצר רוח, רגיזות</small></td>
+              <td><strong>רגישות מופנמת:</strong> סטרס שמתבטא בדאגה שקטה וספקות, ללא התפרצויות כעס כלפי חוץ.</td>
+            </tr>
+            <tr>
+              <td><strong>נועם הליכות</strong></td>
+              <td><strong>חמלה וחיבור (Compassion)</strong><br><small>חום אנושי, עזרה ואמפתיה</small></td>
+              <td><strong>נימוס וגבולות (Politeness)</strong><br><small>צניעות, הוגנות, כבוד לכללים</small></td>
+              <td><strong>ענווה ויושרה לצד זהירות:</strong> הקפדה על צניעות והוגנות, לצד סלקטיביות וספקנות כלפי כוונות הזולת.</td>
+            </tr>
+            <tr>
+              <td><strong>מצפוניות</strong></td>
+              <td><strong>חריצות ומשימתיות (Industriousness)</strong><br><small>השגת יעדים ומניעת דחיינות</small></td>
+              <td><strong>סדר ושיקול דעת (Orderliness)</strong><br><small>שיטתיות, ניקיון, זהירות</small></td>
+              <td><strong>ביצועיסט פרגמטי:</strong> הנעת משימות להישגים גבוהים בסגנון חופשי, ללא תלות בסדר פיזי מוקפד.</td>
+            </tr>
+            <tr>
+              <td><strong>פתיחות לחוויה</strong></td>
+              <td><strong>אינטלקט וסקרנות (Intellect)</strong><br><small>חשיבה מופשטת, פילוסופיה, לוגיקה</small></td>
+              <td><strong>פתיחות חושית ואמנות (Openness)</strong><br><small>רגישות לאסתטיקה, דמיון, רגש</small></td>
+              <td><strong>חשיבה אנליטית:</strong> משיכה לחקר מערכות ולוגיקה, לצד פחות עניין באמנות מופשטת או שירה.</td>
+            </tr>
+            <tr>
+              <td><strong>מוחצנות</strong></td>
+              <td><strong>התלהבות וחמימות (Enthusiasm)</strong><br><small>חברותיות, שמחת חיים ופתיחות</small></td>
+              <td><strong>אסרטיביות והובלה (Assertiveness)</strong><br><small>נוכחות, השמעת קול, מנהיגות</small></td>
+              <td><strong>הובלה עניינית:</strong> הובלת מהלכים וקבלת החלטות, ללא צורך להיות במרכז תשומת הלב החברתית.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="about-callout">
+        <span style="font-size:20px;">⚡</span>
+        <div>
+          <strong>זיהוי "פער מובחן" (Split Detection):</strong> כאשר המערכת מזהה פער של <strong>24 נקודות ומעלה</strong> בין שני האספקטים של אותה תכונה, היא מציגה תגית ייעודית ומסבירה כיצד שני הכוחות האלו מתקיימים בך יחד.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. מנועי הקיברנטיקה -->
+    <section class="about-card" id="cybernetics">
+      <div class="about-card-head">
+        <span class="about-card-icon">🧭</span>
+        <div>
+          <h2 class="about-card-title">מנועי-העל הקיברנטיים (Cybernetic Metatraits)</h2>
+          <small style="color:var(--calm-muted);">התיאוריה הקיברנטית של האישיות (Cybernetic Big Five Theory)</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        במבט-על, חמש התכונות מתלכדות לשתי מערכות הפעלה קוגניטיביות-אבולוציוניות מרכזיות המניעות את האורגניזם:
+      </p>
+
+      <div class="about-grid-2">
+        <div class="about-subcard">
+          <div class="about-tag-row">
+            <span class="about-badge">🛡️ עוגן המערכת</span>
+          </div>
+          <h3 style="margin:8px 0; font-size:19px;">עוגן הוויסות והיציבות (Stability)</h3>
+          <p style="font-size:14px; line-height:1.65; color:var(--calm-muted);">
+            משקלל את היציבות הרגשית (היפוך נוירוטיות), המשמעת העצמית (מצפוניות) והשיתופיות (נועם הליכות): <br>
+            <span class="about-formula">Stability = (−z<sub>N</sub> + z<sub>A</sub> + z<sub>C</sub>) / SD</span><br>
+            בתצוגת האחוזונים (ברירת המחדל) כל תכונה מתוקננת מול מדגם הייחוס, הסכום מחולק בסטיית התקן שלו במדגם (<bdi>2.20</bdi> ב־300, <bdi>2.19</bdi> ב־120) ומומר לאחוזון. בתצוגת <bdi>0–100</bdi> מוצג הממוצע הפשוט <bdi>[(100 − N) + C + A] / 3</bdi>.<br>
+            מודד את כושר ההתמדה, ההגנה מפני כאוס פנימי והיכולת לשמור על יעדים ארוכי טווח תחת הפרעות.
+          </p>
+        </div>
+
+        <div class="about-subcard">
+          <div class="about-tag-row">
+            <span class="about-badge">🚀 מנוע המערכת</span>
+          </div>
+          <h3 style="margin:8px 0; font-size:19px;">מנוע הגילוי והחקרנות (Plasticity)</h3>
+          <p style="font-size:14px; line-height:1.65; color:var(--calm-muted);">
+            משקלל את הדחף האקספלורטיבי (פתיחות לחוויה) והאנרגיה היוזמת (מוחצנות): <br>
+            <span class="about-formula">Plasticity = (z<sub>E</sub> + z<sub>O</sub>) / SD</span><br>
+            בתצוגת האחוזונים הסכום מחולק בסטיית התקן שלו במדגם (<bdi>1.57</bdi> ב־300, <bdi>1.53</bdi> ב־120) ומומר לאחוזון. בתצוגת <bdi>0–100</bdi> מוצג הממוצע הפשוט <bdi>(E + O) / 2</bdi>.<br>
+            מודד את הדחף לחקור סביבות חדשות, ליזום שינויים, לייצר רעיונות ולגלות הזדמנויות בלתי מוכרות.
+          </p>
+        </div>
+      </div>
+
+      <p class="body-copy">
+        <strong>חמשת הארכיטיפים ההתנהגותיים:</strong> שילוב שני הצירים ממפה 5 דפוסי התנהגות: 
+        <strong>נווט מאוזן וסתגלני</strong> (איזון גמיש סביב אמצע הסקאלה בשני הצירים),
+        <strong>חוקר אינטגרטיבי</strong> (יציבות גבוהה + גמישות גבוהה במובהק), 
+        <strong>עוגן שקול ומייצב</strong> (דומיננטיות של עוגן היציבות והוויסות), 
+        <strong>חלוץ אינטואיטיבי ודינמי</strong> (דומיננטיות של מנוע הגילוי והחקרנות), ו־
+        <strong>מתבונן סלקטיבי ורגיש</strong> (קשב פנימי וחיסכון באנרגיה בשני הצירים).
+      </p>
+    </section>
+
+    <!-- 5. פרדוקסים ומתחים בין-תכונתיים -->
+    <section class="about-card" id="paradoxes">
+      <div class="about-card-head">
+        <span class="about-card-icon">⚡</span>
+        <div>
+          <h2 class="about-card-title">זיהוי פרדוקסים ומתחים בין-תכונתיים</h2>
+          <small style="color:var(--calm-muted);">מנוע ההצלבות הפסיכומטרי הייחודי של ofiLab</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        אנשים רבים חשים שאישיותם מלאה "ניגודים". במקום להתעלם מכך, ofiLab סורקת שילובים פסיכומטריים מוכחים ומחלצת תובנות עומק:
+      </p>
+
+      <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-ink);">
+        <li><strong>פרדוקס הענווה הזהירה (A5 גבוה + A1 נמוך):</strong> צניעות מובהקת שאינה מתנשאת, לצד ערנות וספקנות שמונעות נאיביות או ניצול בידי אחרים.</li>
+        <li><strong>פרפקציוניזם דרוך (N גבוה + C גבוה):</strong> שאיפה בלתי מתפשרת לסדר ואחריות, כאשר המנוע המרכזי מלווה לעיתים בחרדת ביצוע או חשש מפני שגיאות.</li>
+        <li><strong>יצירתיות ממושמעת (O גבוה + C גבוה):</strong> שילוב פורה המאפשר להגות רעיונות מקוריים ובו בזמן להחזיק במשמעת העצמית הנדרשת כדי לממש אותם.</li>
+        <li><strong>חוקר עצמאי ושקט (O גבוה + E נמוך):</strong> סקרנות אינטלקטואלית עשירה המוצאת את ביטויה המושלם בלמידה יחידנית, ללא צורך בבמה חברתית.</li>
+        <li><strong>פגיעות תחת הצפה (N גבוה + C נמוך):</strong> הצפה רגשית בעת סטרס שעלולה לפגוע בהתארגנות ובשגרה היומיומית, הדורשת יצירת עוגנים סביבתיים ברורים.</li>
+        <li><strong>הטיית שיפוט עצמי מחמיר (Negative Self-Appraisal Bias):</strong> זיהוי מצב שבו ציוני דיכאון וצניעות קיצוניים גורמים להערכת חסר שגויה של מסוגלות עצמית (C1).</li>
+      </ul>
+    </section>
+
+    <!-- 6. המתמטיקה והאחוזונים -->
+    <section class="about-card" id="scoring-math">
+      <div class="about-card-head">
+        <span class="about-card-icon">📐</span>
+        <div>
+          <h2 class="about-card-title">איך מחושבים הציונים והאחוזונים?</h2>
+          <small style="color:var(--calm-muted);">הפרדה מלאה בין ציון בסולם השאלון לבין מיקום יחסי במדגם</small>
+        </div>
+      </div>
+
+      <p class="body-copy"><strong>1. מענה והיפוך פריטים:</strong> המענה מתבצע בסולם ליקרט בן 5 דרגות (1 = מאוד לא מתאים, 5 = מתאים מאוד). היגדים שנוסחו בכיוון הפוך (Keyed Minus) מחושבים אוטומטית כ־<span class="about-formula">6 − answer</span>, כך שכל הציונים מצביעים באופן עקבי לאותו כיוון מושגי.</p>
+
+      <p class="body-copy"><strong>2. ציון סולם התשובות (0–100):</strong> משקף ישירות את רמת ההסכמה שלך עם ההיגדים, ללא תלות באנשים אחרים:<br>
+      <span class="about-formula">Score = 100 × (mean − 1) / 4</span><br>
+      ממוצע תשובות מתחת ל־2.5 מסווג כנמוך, מעל 3.5 כגבוה, ובתווך (2.5–3.5) כממוצע.</p>
+
+      <p class="body-copy"><strong>3. חישוב האחוזון האמפירי (Midrank Empirical CDF):</strong> במקום לכפות התפלגות נורמלית תיאורטית ("פעמון גאוס") שאינה תואמת תמיד את התפלגות האמת באוכלוסייה, ofiLab מחשבת את מיקומך המדויק מתוך טבלאות השכיחות האמיתיות של מדגמי ג'ונסון לפי נוסחת Midrank CDF:<br>
+      <span class="about-formula">Percentile = 100 × (N_below + 0.5 × N_equal) / N_total</span><br>
+      נוסחה זו מודדת כמה אחוזים מהמדגם קיבלו ציון נמוך משלך, בתוספת מחצית ממשקל המשיבים שקיבלו ציון זהה.</p>
+
+      <p class="body-copy"><strong>4. ציוני תקן T ועקומת הפעמון:</strong> המערכת מחשבת לכל מדד ציון תקן T סטנדרטי (ממוצע 50, סטיית תקן 10) ומציגה עקומת פעמון ויזואלית אישית הממחישה היכן אתה ממוקם ביחס לטווח התקין של האוכלוסייה (±2 סטיית תקן).</p>
+
+      <p class="body-copy"><strong>5. בקרת עקביות ואיכות מענה (Straight-lining Detection):</strong> המערכת בודקת באופן מתמטי את שונות המענה (סטיית תקן), מזהה חזרתיות על אותה תשובה ברצף, ומשווה עקביות בין היגדים מנוגדים. בשאלוני 120 ו־300 נוספות שלוש בדיקות מול מדגם הייחוס: מרחק Mahalanobis של 30 תחומי המשנה, מדד התאמה לפריטים (<bdi>l_z</bdi>) ומתאם חצאים. ספי הרצף תואמים לסינון שעבר מדגם הייחוס עצמו (Johnson, 2005), ולכן האחוזונים של הבדיקות האלה הם ביחס למדגם שכבר סונן.</p>
+    </section>
+
+    <!-- 7. סגנון ארבע האותיות -->
+    <section class="about-card" id="five-letters">
+      <div class="about-card-head">
+        <span class="about-card-icon">🧩</span>
+        <div>
+          <h2 class="about-card-title">סגנון ארבע האותיות — אומדן מבני (v5)</h2>
+          <small style="color:var(--calm-muted);">אומדן רציף מתוך Big Five · טווחי סמך · מדד יציבות רגשית נפרד</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        ממיר פשוט מ־Big Five ל־MBTI סובל לרוב מהטיה חמורה: משיבים נוטים לדרג היגדי פתיחות ונעימות גבוה מ־50 ("הטיית רצייה והסכמה"), ולכן נוסחאות גולמיות מסווגות בטעות כמעט את כולם כ־<code>N</code> וכ־<code>F</code>. ב־ofiLab פיתחנו את מנוע <strong>five-letter-estimate-v5</strong> המבוסס על ארבע שכבות דיוק פסיכומטריות:
+      </p>
+
+      <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-ink);">
+        <li><strong>תקנון אמפירי והשוואת סולמות (Levine True-Score Equating):</strong> כל אחד מ־30 תחומי המשנה עובר תקנון ליחידות תקן מול מדגמי הייחוס (<bdi>N = 410,376</bdi> בשאלון 120 ו־<bdi>N = 145,388</bdi> בשאלון 300; נורמות האחוזונים נפרדות ומקדמי ציון הצירים נשמרים).</li>
+        <li><strong>רגרסיית Ridge מבנית חוצת־ממדים (<bdi>30×30 R_XX</bdi>):</strong> כל ציר מחושב ממשקלי רגרסיה מונוטוניים המותאמים למטריצת המתאמים האמפירית בין 30 תחומי המשנה (McCrae &amp; Costa, 1989; Furnham et al., 2003; DeYoung et al., 2007), כולל התאמה לתוכן ההיגדים ולדפוסי התשובות האישיים.</li>
+        <li><strong>מהימנות משוקללת (Mosier) וטווח סמך של 95%:</strong> לכל ציר מחושבת מהימנות הקומפוזיט (<bdi>0.87–0.97</bdi>) וסטיית התקן של המדידה בהתאם לאורך השאלון ואיכות המענה, לצד התפלגות הסתברותית מלאה על פני 16 הטיפוסים ומיזוג דיוק משאלונים משלימים (<code>HEXACO-H</code>, <code>ECR-RS</code>, <code>IPIP-VIA-R</code>) כאשר מולאו.</li>
+        <li><strong>הפונקציות הקוגניטיביות היונגיאניות:</strong> אינן מוצגות בדוח כמדידה אישית מאומתת. סדרי הפונקציות והמחסניות אינם נגזרים באופן חד־משמעי מחמש התכונות.</li>
+        <li><strong>יציבות רגשית בנפרד:</strong> התצוגה אינה מצרפת <bdi>-A / -T</bdi> לסגנון. במקום זאת, יציבות רגשית מוצגת כ־<bdi>100 − N</bdi>, בציון רציף עם רווח סמך שנגזר ישירות מהמדד המקורי. זהו היפוך מדד הרגישות הרגשית ולא מבחן עצמאי לחוסן.</li>
+        <li><strong>אין מדגם קריטריון:</strong> אין בידינו משיבים שמילאו גם MBTI רשמי וגם IPIP. המשקלות נגזרו ממתאמים שפורסמו, וההסתברויות הן תוצאת המודל ולא מדידה של התאמה בפועל.</li>
+      </ul>
+
+      <div class="about-callout">
+        <span style="font-size:20px;">⚖️</span>
+        <div>
+          <strong>יושר מדעי מול תוויות מאולצות:</strong> כאשר ציון בציר קרוב לקו האמצע (באזור גבולי המכויל לכל ציר ושאלון, כ־<code>3.5–6.5</code> נקודות מ־50 שבהן אות מתהפכת בלמעלה מ־30% מהמקרים בהשוואה בין גרסאות השאלון 120 ו־300) או נופל באזור הניטרלי הצר סביב 50 (<code>?</code>), המערכת מסמנת זאת בשקיפות ומראה את הטיפוסים השכנים הקרובים ביותר לפרופיל שלך.
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. פרטיות והצפנה -->
+    <section class="about-card" id="privacy-crypto">
+      <div class="about-card-head">
+        <span class="about-card-icon">🛡️</span>
+        <div>
+          <h2 class="about-card-title">פרטיות מוחלטת, אפס ידע והצפנת Argon2id</h2>
+          <small style="color:var(--calm-muted);">ארכיטקטורת Client-First אמיתית ללא שרתים מרגלים</small>
+        </div>
+      </div>
+
+      <p class="body-copy">
+        בניגוד לאתרים מסחריים שצוברים את התשובות והפרופילים שלך למטרות שיווקיות, ofiLab נבנתה לפי עקרון <strong>Zero-Knowledge</strong>:
+      </p>
+
+      <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-ink);">
+        <li><strong>100% חישוב מקומי:</strong> כל חישובי הציונים, טבלאות הנורמות והגרפים מבוצעים ישירות במעבד של הדפדפן שלך. לשרת אין שום מסד נתונים של תשובותיך.</li>
+        <li><strong>שמירה מוצפנת בסיסמה (Client-Side Argon2id + AES-256-GCM):</strong> כאשר בוחרים לשמור בסיסמה, המפתח נגזר מקומית בדפדפן באמצעות ספריית WebAssembly של <code>Argon2id v1.3</code> (עם 64MB זיכרון ו־2 סבבים), והמידע מוצפן ב־AES-256-GCM עם תג אימות של 128 ביט. הסיסמה לעולם אינה נשלחת לרשת.</li>
+        <li><strong>אפס מעקב ופרסומות:</strong> האתר אינו כולל שום כלי מעקב של גוגל/פייסבוק, קוקיז פרסום או מכירת נתונים.</li>
+      </ul>
+    </section>
+
+    <!-- 9. עוזר ה-AI -->
+    <section class="about-card" id="ai-assistant">
+      <div class="about-card-head">
+        <span class="about-card-icon">🤖</span>
+        <div>
+          <h2 class="about-card-title">העוזר החכם של ofiLab (AI Assistant)</h2>
+          <small style="color:var(--calm-muted);">סיוע בהבנת שאלות מורכבות ופיענוח הדוח המסכם</small>
+        </div>
+      </div>
+      <p class="body-copy">
+        במהלך המענה ובדוח התוצאות עומד לרשותך עוזר AI חכם המסייע בהבנת כוונת ההיגדים או בהעמקה בדוח האישיות.
+      </p>
+      
+      <p class="body-copy"><strong>שקיפות מלאה סביב שיחת ה־AI:</strong></p>
+      <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-muted);">
+        <li>פתיחת חלון השיחה אינה שולחת שום מידע. המידע נשלח רק כאשר אתה לוחץ "שליחה".</li>
+        <li>בשיחה על התוצאות: נשלחים רק הציונים המחושבים ופנייתך. <strong>התשובות הגולמיות לשאלות הבודדות אינן מצורפות לשיחה.</strong></li>
+        <li>השימוש בעוזר הוא בחירה אישית בלבד ואינו חלק מחייב מהשאלון.</li>
+      </ul>
+    </section>
+
+    <!-- 10. קוד פתוח ומקורות -->
+    <section class="about-card" id="open-source">
+      <div class="about-card-head">
+        <span class="about-card-icon">📚</span>
+        <div>
+          <h2 class="about-card-title">קוד פתוח, נתונים ומקורות מחקר</h2>
+          <small style="color:var(--calm-muted);">מדע פתוח, שקיפות קוד מלאה ושיתוף ידע</small>
+        </div>
+      </div>
+
+      <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-ink);">
+        <li><strong>שאלוני IPIP ומפתחות הניקוד:</strong> שאלון <a href="https://ipip.ori.org/30FacetNEO-PI-RItems.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-120</a> ומפתח <a href="https://ipip.ori.org/newNEOKey.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-300</a>. כל היגדי IPIP נמצאים בנחלת הכלל (Public Domain).</li>
+        <li><strong>מחקר 10 האספקטים:</strong> DeYoung, C. G., Quilty, L. C., & Peterson, J. B. (2007). <em>Between facets and domains: 10 aspects of the Big Five</em>. Journal of Personality and Social Psychology, 93(5), 880–896.</li>
+        <li><strong>מאגרי הנתונים הפתוחים:</strong> מאגר ג'ונסון <a href="https://osf.io/tbmh5/" target="_blank" rel="noopener noreferrer">IPIP-NEO-120 ב־OSF</a> ומאגר <a href="https://huggingface.co/datasets/ecorbari/IPIP300-SCORES" target="_blank" rel="noopener noreferrer">IPIP-NEO-300 ב־HuggingFace</a>.</li>
+        <li><strong>קובצי הנורמות באתר:</strong> טבלאות השכיחות המלאות זמינות ישירות בקבצים <a href="./data/empirical-norms.json">empirical-norms.json (120)</a> ו־<a href="./data/empirical-norms-300.json">empirical-norms-300.json (300)</a>.</li>
+      </ul>
+    </section>
+
+    <div style="text-align:center; margin:48px 0 24px;">
+      <a class="primary" href="./" style="display:inline-flex; align-items:center; gap:8px; padding:14px 28px; font-size:16px; border-radius:999px; text-decoration:none;">
+        חזרה למבחן והתחלת שאלון <svg width="20" height="20" class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </main>
+  
+  <footer class="page-footer" style="max-width:1040px; margin:auto; padding:24px 20px;">
+    <div>
+      <span class="footer-brand"><bdi>ofiLab</bdi> · מעבדת האישיות הפתוחה</span>
+      <span>120 או 300 שאלות · 100% חישוב מקומי בדפדפן · שמירה מאובטחת</span>
+    </div>
+    <a href="./" style="text-decoration:none; color:var(--calm-accent); font-weight:650;">חזרה למבחן</a>
+  </footer>
+</body>
+</html>

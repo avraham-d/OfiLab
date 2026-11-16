@@ -1,0 +1,46 @@
+THIRD-PARTY NOTICES — ofiLab
+============================
+
+1. Questionnaire items (IPIP)
+   International Personality Item Pool (IPIP), Lewis R. Goldberg / Oregon Research Institute.
+   The original English items and scale keys are in the public domain:
+   https://ipip.ori.org/newPermission.htm
+
+   - IPIP-NEO-120: Johnson, J. A. (2014). Measuring thirty facets of the Five Factor Model
+     with a 120-item public domain inventory: Development of the IPIP-NEO-120.
+     Journal of Research in Personality, 51, 78–89. https://doi.org/10.1016/j.jrp.2014.05.003
+   - IPIP-NEO-300: https://ipip.ori.org/newNEOKey.htm (30 facets, 10 items each).
+   This is the public-domain IPIP representation, not the proprietary NEO PI-R instrument.
+
+   The English wording and the facet/key position of every item are kept beside the Hebrew
+   text in data/ipip-neo-120-he.json and data/ipip-neo-300-he.json (source_en, source_id).
+   The Hebrew translations are independent and experimental; they have not been
+   psychometrically validated in Hebrew.
+
+2. Norm tables (aggregate counts only, no respondent records)
+   - IPIP-NEO-120: J. A. Johnson's original archive, https://osf.io/tbmh5/
+     (N = 410,376 complete respondents) → data/empirical-norms.json, assets/empirical-data.js
+   - IPIP-NEO-300: Johnson IPIP-NEO-300 data as published at
+     https://huggingface.co/datasets/ecorbari/IPIP300-SCORES
+     (N = 145,388 complete respondents) → data/empirical-norms-300.json, assets/empirical-data-300.js
+   Derived parameters (assets/empirical-deep-models.js, assets/irt-facet-score-ci.js,
+   assets/profile-links-data.js) are aggregate statistics computed from the same sources.
+
+3. Supplementary questionnaires
+   - HEXACO-H (16 items): items written for this site after the Honesty-Humility facets of the
+     HEXACO model (Lee & Ashton, 2004). Not the official HEXACO-PI-R.
+   - IPIP-VIA-R (60 items): after the public-domain IPIP-VIA scales (Bluemke, Partsch,
+     Saucier & Lechner, 2021; McGrath, Hall-Simmonds & Goldberg, 2020).
+   - ECR-RS (9 items): Fraley, Heffernan, Vicary & Brumbaugh (2011), Psychological Assessment.
+
+4. Heebo variable font (assets/fonts/)
+   SIL Open Font License 1.1; full text in assets/fonts/OFL-Heebo.txt.
+
+5. hash-wasm 4.12.0 (Argon2id in the browser)
+   https://github.com/Daninet/hash-wasm — MIT; full text in assets/LICENSE-hash-wasm.txt.
+   Vendored file: assets/argon2.umd.min.js
+   SHA-256: dcec617a2e1b700fa132d1583a186cb70611113395e869f2dd6cc82b415d3094
+
+6. qrcode-generator (QR codes drawn in the browser)
+   Kazuhiko Arase, 2009. https://github.com/kazuhikoarase/qrcode-generator — MIT;
+   full text in assets/qrcode-generator.LICENSE.txt. Vendored file: assets/qrcode-generator.js

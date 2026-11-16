@@ -1,0 +1,402 @@
+{
+  "version": "ipip-via-r-60-he-1.0.0",
+  "name": "שאלון חוזקות האופי המשוקלל (IPIP-VIA-R · 60)",
+  "reference": "Bluemke, Partsch, Saucier, & Lechner (2021); McGrath, Hall-Simmonds, & Goldberg (2020); Partsch, Olaru, & Lechner (2024)",
+  "description": "60 היגדים מאוזנים (2 חיוביים ו-2 הפוכים לכל סולם) שנכתבו עבור האתר בהשראת סולמות IPIP-VIA-R (Bluemke et al., 2021). רובם אינם תרגום של 96 הפריטים הרשמיים של המאגר, והם לא תוקפו מחקרית. הם מודדים ישירות את 15 החוזקות שבהן ל-Big Five יש פערי כיסוי, ומשתלבים בשקלול מהימנות (Precision-Weighted Composite) עם 30 תחומי המשנה של IPIP-NEO כדי להעריך את כל 24 חוזקות האופי ו-3 כוחות העל.",
+  "scale": [
+    {"value": 1, "label": "בכלל לא מתאר אותי"},
+    {"value": 2, "label": "מתאר אותי מעט"},
+    {"value": 3, "label": "במידה בינונית"},
+    {"value": 4, "label": "מתאר אותי במידה רבה"},
+    {"value": 5, "label": "מתאר אותי מאוד"}
+  ],
+  "coreDimensions": {
+    "positivity": {
+      "name": "חיוביות והתעלות (Positivity)",
+      "desc": "יכולת לחוות ולהפיץ הכרת תודה, תקווה, הומור, סלחנות, חיוניות ואהבת אדם."
+    },
+    "dependability": {
+      "name": "אמינות ומוסריות (Dependability)",
+      "desc": "יושרה, הוגנות, אחריות קבוצתית, ענווה, משמעת עצמית וזהירות שקולה."
+    },
+    "mastery": {
+      "name": "מומחיות, חוכמה והובלה (Mastery)",
+      "desc": "שיקול דעת, פרספקטיבה, יצירתיות, סקרנות, אומץ לב, מנהיגות ואינטליגנציה חברתית."
+    }
+  },
+  "strengths": {
+    "spirituality": {
+      "name": "רוחניות ומשמעות (Spirituality)",
+      "virtue": "התעלות (Transcendence)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.81,
+      "mcgrathR": 0.42,
+      "mcgrathTrueR": 0.51,
+      "directWeight": 0.90,
+      "neoWeights": [{"facet": "O6", "weight": 0.40, "invert": true}, {"facet": "A3", "weight": 0.60, "invert": false}],
+      "desc": "חיבור לתחושת משמעות רחבה, ייעוד פנימי או אמונה המעניקים עוגן ופשר לחיים."
+    },
+    "gratitude": {
+      "name": "הכרת תודה (Gratitude)",
+      "virtue": "התעלות (Transcendence)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.79,
+      "mcgrathR": 0.50,
+      "mcgrathTrueR": 0.57,
+      "directWeight": 0.88,
+      "neoWeights": [{"facet": "E6", "weight": 0.50, "invert": false}, {"facet": "A3", "weight": 0.50, "invert": false}],
+      "desc": "ערנות והערכה עמוקה לדברים הטובים בחיים ולתרומתם של אחרים, ללא קבלתם כמובנים מאליהם."
+    },
+    "teamwork": {
+      "name": "עבודת צוות ואזרחות (Teamwork)",
+      "virtue": "צדק וקהילה (Justice)",
+      "coreDimension": "dependability",
+      "mode": "direct_composite",
+      "omega": 0.74,
+      "mcgrathR": 0.51,
+      "mcgrathTrueR": 0.58,
+      "directWeight": 0.86,
+      "neoWeights": [{"facet": "A4", "weight": 0.45, "invert": false}, {"facet": "E2", "weight": 0.30, "invert": false}, {"facet": "C3", "weight": 0.25, "invert": false}],
+      "desc": "מחויבות להצלחת הקבוצה, שיתוף פעולה הרמוני ונשיאה משותפת באחריות חברתית."
+    },
+    "fairness": {
+      "name": "הוגנות ושוויון (Fairness)",
+      "virtue": "צדק וקהילה (Justice)",
+      "coreDimension": "dependability",
+      "mode": "direct_composite",
+      "omega": 0.80,
+      "mcgrathR": 0.60,
+      "mcgrathTrueR": 0.68,
+      "directWeight": 0.82,
+      "neoWeights": [{"facet": "A2", "weight": 0.45, "invert": false}, {"facet": "A6", "weight": 0.35, "invert": false}, {"facet": "C3", "weight": 0.20, "invert": false}],
+      "desc": "מתן יחס שוויוני והוגן לכל אדם על בסיס עקרונות של צדק, ללא משוא פנים או דעות קדומות."
+    },
+    "forgiveness": {
+      "name": "סלחנות וחמלה (Forgiveness)",
+      "virtue": "מתינות וריסון (Temperance)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.83,
+      "mcgrathR": 0.65,
+      "mcgrathTrueR": 0.69,
+      "directWeight": 0.82,
+      "neoWeights": [{"facet": "A4", "weight": 0.45, "invert": false}, {"facet": "N2", "weight": 0.35, "invert": true}, {"facet": "A1", "weight": 0.20, "invert": false}],
+      "desc": "יכולת לשחרר טינה, כעס ורצון לנקמה כלפי מי שפגע או טעה, ולתת הזדמנות שנייה."
+    },
+    "humor": {
+      "name": "הומור ושובבות (Humor)",
+      "virtue": "התעלות (Transcendence)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.83,
+      "mcgrathR": 0.58,
+      "mcgrathTrueR": 0.64,
+      "directWeight": 0.85,
+      "neoWeights": [{"facet": "E6", "weight": 0.60, "invert": false}, {"facet": "E1", "weight": 0.40, "invert": false}],
+      "desc": "יכולת לראות את הצד המשעשע והקליל של החיים, להעלות חיוך אצל אחרים ולהפיג מתחים."
+    },
+    "socialIntelligence": {
+      "name": "אינטליגנציה חברתית ורגשית (Social Intelligence)",
+      "virtue": "אנושיות (Humanity)",
+      "coreDimension": "mastery",
+      "mode": "direct_composite",
+      "omega": 0.76,
+      "mcgrathR": 0.57,
+      "mcgrathTrueR": 0.64,
+      "directWeight": 0.84,
+      "neoWeights": [{"facet": "E1", "weight": 0.40, "invert": false}, {"facet": "O3", "weight": 0.35, "invert": false}, {"facet": "E3", "weight": 0.25, "invert": false}],
+      "desc": "מודעות למניעים ולרגשות של אחרים ושל עצמך, והתאמה רגישה למצבים חברתיים מגוונים."
+    },
+    "hope": {
+      "name": "תקווה ואופטימיות (Hope)",
+      "virtue": "התעלות (Transcendence)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.80,
+      "mcgrathR": 0.73,
+      "mcgrathTrueR": 0.80,
+      "directWeight": 0.72,
+      "neoWeights": [{"facet": "N3", "weight": 0.50, "invert": true}, {"facet": "E6", "weight": 0.30, "invert": false}, {"facet": "C1", "weight": 0.20, "invert": false}],
+      "desc": "ציפייה חיובית לעתיד ואמונה ביכולת האישית לפעול כדי להגשים מטרות ולהתגבר על משברים."
+    },
+    "perspective": {
+      "name": "פרספקטיבה וחוכמת חיים (Perspective)",
+      "virtue": "חוכמה וידע (Wisdom)",
+      "coreDimension": "mastery",
+      "mode": "direct_composite",
+      "omega": 0.76,
+      "mcgrathR": 0.70,
+      "mcgrathTrueR": 0.76,
+      "directWeight": 0.74,
+      "neoWeights": [{"facet": "O5", "weight": 0.45, "invert": false}, {"facet": "C1", "weight": 0.30, "invert": false}, {"facet": "C6", "weight": 0.25, "invert": false}],
+      "desc": "יכולת לראות את התמונה הרחבה, להעניק עצה שקולה ומאוזנת ולחבר בין ניסיון חיים להבנה עמוקה."
+    },
+    "bravery": {
+      "name": "אומץ לב וגבורה (Bravery)",
+      "virtue": "אומץ (Courage)",
+      "coreDimension": "mastery",
+      "mode": "direct_composite",
+      "omega": 0.77,
+      "mcgrathR": 0.74,
+      "mcgrathTrueR": 0.80,
+      "directWeight": 0.72,
+      "neoWeights": [{"facet": "E3", "weight": 0.45, "invert": false}, {"facet": "N1", "weight": 0.30, "invert": true}, {"facet": "O4", "weight": 0.25, "invert": false}],
+      "desc": "נכונות לעמוד על עקרונות ואמת פנימית מול איום, קושי או התנגדות חברתית, בלי להירתע."
+    },
+    "judgment": {
+      "name": "שיקול דעת וחשיבה ביקורתית (Judgment)",
+      "virtue": "חוכמה וידע (Wisdom)",
+      "coreDimension": "mastery",
+      "mode": "direct_composite",
+      "omega": 0.75,
+      "mcgrathR": 0.71,
+      "mcgrathTrueR": 0.77,
+      "directWeight": 0.74,
+      "neoWeights": [{"facet": "C6", "weight": 0.50, "invert": false}, {"facet": "O5", "weight": 0.50, "invert": false}],
+      "desc": "בחינת נושאים מכל הזוויות, שקילת ראיות באופן אובייקטיבי ונכונות לשנות דעה מול עובדות חדשות."
+    },
+    "leadership": {
+      "name": "מנהיגות והנעה (Leadership)",
+      "virtue": "צדק וקהילה (Justice)",
+      "coreDimension": "mastery",
+      "mode": "direct_composite",
+      "omega": 0.78,
+      "mcgrathR": 0.70,
+      "mcgrathTrueR": 0.77,
+      "directWeight": 0.74,
+      "neoWeights": [{"facet": "E3", "weight": 0.65, "invert": false}, {"facet": "E1", "weight": 0.20, "invert": false}, {"facet": "C1", "weight": 0.15, "invert": false}],
+      "desc": "יכולת לארגן פעילות משותפת, לעודד קבוצה לעמוד ביעדיה ולשמור על אווירה חיובית ומכלילה."
+    },
+    "love": {
+      "name": "יכולת לאהוב ולהיות נאהב (Love)",
+      "virtue": "אנושיות (Humanity)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.78,
+      "mcgrathR": 0.69,
+      "mcgrathTrueR": 0.75,
+      "directWeight": 0.75,
+      "neoWeights": [{"facet": "E1", "weight": 0.50, "invert": false}, {"facet": "A3", "weight": 0.30, "invert": false}, {"facet": "A1", "weight": 0.20, "invert": false}],
+      "desc": "הערכה עמוקה של קשרים קרובים, הדדיות רגשית, חום ויכולת להעניק ולקבל קרבה ואכפתיות."
+    },
+    "kindness": {
+      "name": "טוב לב ונדיבות (Kindness)",
+      "virtue": "אנושיות (Humanity)",
+      "coreDimension": "positivity",
+      "mode": "direct_composite",
+      "omega": 0.75,
+      "mcgrathR": 0.70,
+      "mcgrathTrueR": 0.77,
+      "directWeight": 0.74,
+      "neoWeights": [{"facet": "A3", "weight": 0.55, "invert": false}, {"facet": "A6", "weight": 0.45, "invert": false}],
+      "desc": "נכונות טבעית לעזור, לתמוך ולעשות מעשים טובים למען הזולת מתוך אכפתיות כנה."
+    },
+    "honesty": {
+      "name": "יושרה ואותנטיות (Honesty)",
+      "virtue": "אומץ (Courage)",
+      "coreDimension": "dependability",
+      "mode": "direct_composite",
+      "omega": 0.74,
+      "mcgrathR": 0.69,
+      "mcgrathTrueR": 0.76,
+      "directWeight": 0.74,
+      "neoWeights": [{"facet": "A2", "weight": 0.55, "invert": false}, {"facet": "C3", "weight": 0.45, "invert": false}],
+      "desc": "אמירת האמת, חיים באותנטיות ללא זיוף, ולקיחת אחריות מלאה על מילים ומעשים."
+    },
+    "perseverance": {
+      "name": "התמדה וחריצות (Perseverance)",
+      "virtue": "אומץ (Courage)",
+      "coreDimension": "dependability",
+      "mode": "neo_facet_high",
+      "omega": 0.88,
+      "mcgrathR": 0.76,
+      "mcgrathTrueR": 0.92,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "C5", "weight": 0.65, "invert": false}, {"facet": "C4", "weight": 0.35, "invert": false}],
+      "fallbackVia": ["honesty", "hope"],
+      "desc": "השלמת משימות שהתחלת בהן למרות מכשולים, עבודה עקבית וממוקדת עד להשגת היעד."
+    },
+    "selfRegulation": {
+      "name": "ויסות ושליטה עצמית (Self-Regulation)",
+      "virtue": "מתינות וריסון (Temperance)",
+      "coreDimension": "dependability",
+      "mode": "neo_facet_high",
+      "omega": 0.85,
+      "mcgrathR": 0.73,
+      "mcgrathTrueR": 0.88,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "N5", "weight": 0.55, "invert": true}, {"facet": "C5", "weight": 0.45, "invert": false}],
+      "fallbackVia": ["judgment", "honesty"],
+      "desc": "יכולת לווסת דחפים, רגשות והרגלים, ולשמור על משמעת ואיזון גם מול פיתויים ולחץ."
+    },
+    "prudence": {
+      "name": "זהירות ותכנון מראש (Prudence)",
+      "virtue": "מתינות וריסון (Temperance)",
+      "coreDimension": "dependability",
+      "mode": "neo_facet_high",
+      "omega": 0.85,
+      "mcgrathR": 0.73,
+      "mcgrathTrueR": 0.87,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "C6", "weight": 0.70, "invert": false}, {"facet": "C2", "weight": 0.30, "invert": false}],
+      "fallbackVia": ["judgment", "honesty"],
+      "desc": "בחירה שקולה של מילים ופעולות, ראיית הנולד והימנעות מסיכונים מיותרים או מהחלטות פזיזות."
+    },
+    "zest": {
+      "name": "חיוניות, אנרגיה ולהט (Zest)",
+      "virtue": "אומץ (Courage)",
+      "coreDimension": "positivity",
+      "mode": "neo_facet_high",
+      "omega": 0.86,
+      "mcgrathR": 0.75,
+      "mcgrathTrueR": 0.89,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "E4", "weight": 0.40, "invert": false}, {"facet": "E6", "weight": 0.40, "invert": false}, {"facet": "N3", "weight": 0.20, "invert": true}],
+      "fallbackVia": ["hope", "humor"],
+      "desc": "גישה מלאת התלהבות, מרץ וחיות לעשייה היומיומית, מעורבות פעילה ושמחת חיים."
+    },
+    "creativity": {
+      "name": "יצירתיות ומקוריות (Creativity)",
+      "virtue": "חוכמה וידע (Wisdom)",
+      "coreDimension": "mastery",
+      "mode": "neo_facet_high",
+      "omega": 0.85,
+      "mcgrathR": 0.73,
+      "mcgrathTrueR": 0.85,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "O1", "weight": 0.55, "invert": false}, {"facet": "O5", "weight": 0.45, "invert": false}],
+      "fallbackVia": ["perspective", "bravery"],
+      "desc": "חשיבה על דרכים חדשות, מקוריות ומועילות לעשות דברים, וחיבור בין רעיונות באופן ייחודי."
+    },
+    "beauty": {
+      "name": "הערכת יופי ומצוינות (Appreciation of Beauty)",
+      "virtue": "התעלות (Transcendence)",
+      "coreDimension": "positivity",
+      "mode": "neo_facet_high",
+      "omega": 0.83,
+      "mcgrathR": 0.72,
+      "mcgrathTrueR": 0.86,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "O2", "weight": 0.80, "invert": false}, {"facet": "O3", "weight": 0.20, "invert": false}],
+      "fallbackVia": ["gratitude", "spirituality"],
+      "desc": "רגישות והתפעלות מיופי בטבע, באמנות, במוזיקה ובמיומנות אנושית יוצאת דופן."
+    },
+    "loveOfLearning": {
+      "name": "אהבת הלמידה (Love of Learning)",
+      "virtue": "חוכמה וידע (Wisdom)",
+      "coreDimension": "mastery",
+      "mode": "neo_facet_high",
+      "omega": 0.85,
+      "mcgrathR": 0.72,
+      "mcgrathTrueR": 0.84,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "O5", "weight": 0.75, "invert": false}, {"facet": "O2", "weight": 0.25, "invert": false}],
+      "fallbackVia": ["perspective", "judgment"],
+      "desc": "תשוקה לרכישת מיומנויות חדשות, העמקת ידע שיטתי וחקירה מתמדת של תחומי תוכן."
+    },
+    "curiosity": {
+      "name": "סקרנות ועניין בעולם (Curiosity)",
+      "virtue": "חוכמה וידע (Wisdom)",
+      "coreDimension": "mastery",
+      "mode": "neo_facet_high",
+      "omega": 0.84,
+      "mcgrathR": 0.70,
+      "mcgrathTrueR": 0.83,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "O5", "weight": 0.50, "invert": false}, {"facet": "O4", "weight": 0.35, "invert": false}, {"facet": "E6", "weight": 0.15, "invert": false}],
+      "fallbackVia": ["perspective", "hope"],
+      "desc": "עניין פעיל בחוויות חדשות, שאילת שאלות ופתיחות לחקור נושאים ומצבים לא מוכרים."
+    },
+    "humility": {
+      "name": "צניעות וענווה (Humility)",
+      "virtue": "מתינות וריסון (Temperance)",
+      "coreDimension": "dependability",
+      "mode": "neo_facet_high",
+      "omega": 0.82,
+      "mcgrathR": 0.72,
+      "mcgrathTrueR": 0.85,
+      "directWeight": 0.0,
+      "neoWeights": [{"facet": "A5", "weight": 0.80, "invert": false}, {"facet": "A2", "weight": 0.20, "invert": false}],
+      "fallbackVia": ["fairness", "forgiveness"],
+      "desc": "הכרה שקטה בערך העצמי ובמגבלות האישיות ללא התנשאות, ראוותנות או צורך במרכזיות."
+    }
+  },
+  "items": [
+    {"number": 1, "strength": "spirituality", "key": "+", "source_en": "Believe that my life serves a higher purpose.", "text": "אני מאמין/ה שלחיים שלי יש משמעות וייעוד מעבר לשגרה היומיומית."},
+    {"number": 2, "strength": "spirituality", "key": "+", "source_en": "Have a strong sense of faith or spiritual connection.", "text": "יש לי חיבור פנימי עמוק לאמונה, לערכים רוחניים או למשמעות גבוהה יותר."},
+    {"number": 3, "strength": "spirituality", "key": "-", "source_en": "Do not consider myself a spiritual person.", "text": "אינני מגדיר/ה את עצמי כאדם רוחני."},
+    {"number": 4, "strength": "spirituality", "key": "-", "source_en": "Rarely think about the deeper meaning of life.", "text": "רק לעיתים רחוקות אני עוצר/ת לחשוב על המשמעות העמוקה של הקיום."},
+
+    {"number": 5, "strength": "gratitude", "key": "+", "source_en": "Feel a profound sense of thankfulness for what I have.", "text": "אני חווה לעיתים קרובות תחושת הכרת תודה עמוקה על מה שיש בחיי."},
+    {"number": 6, "strength": "gratitude", "key": "+", "source_en": "Make sure to thank people even for small favors.", "text": "חשוב לי להביע תודה והערכה כנה לאנשים גם על מחוות קטנות."},
+    {"number": 7, "strength": "gratitude", "key": "-", "source_en": "Find few things in my life to be grateful for.", "text": "אני מוצא/ת מעט מאוד דברים בחיי שאפשר באמת להכיר עליהם תודה."},
+    {"number": 8, "strength": "gratitude", "key": "-", "source_en": "Often take the good things in my life for granted.", "text": "לעיתים קרובות אני מתייחס/ת לדברים הטובים בחיי כאל מובנים מאליהם."},
+
+    {"number": 9, "strength": "teamwork", "key": "+", "source_en": "Do my fair share when working in a group.", "text": "בעבודה בקבוצה אני עושה את החלק שלי בהגינות."},
+    {"number": 10, "strength": "teamwork", "key": "+", "source_en": "Gladly sacrifice my own wishes for the good of the team.", "text": "אני מוותר/ת בשמחה על רצונותיי לטובת הצוות."},
+    {"number": 11, "strength": "teamwork", "key": "-", "source_en": "Prefer working completely alone rather than being part of a team.", "text": "אני מעדיף/ה לעבוד לגמרי לבד ולא כחלק מצוות."},
+    {"number": 12, "strength": "teamwork", "key": "-", "source_en": "Feel little obligation to the groups or communities I belong to.", "text": "אני מרגיש/ה מחויבות מועטה בלבד לקבוצות או לקהילות שבהן אני נמצא/ת."},
+
+    {"number": 13, "strength": "fairness", "key": "+", "source_en": "Believe that everyone's rights are equally important.", "text": "אני מאמין/ה שזכויותיו וכבודו של כל אדם חשובים באותה מידה בדיוק."},
+    {"number": 14, "strength": "fairness", "key": "+", "source_en": "Treat all people equally regardless of who they are.", "text": "אני מתייחס/ת לכל האנשים באופן שווה, בלי קשר למי שהם."},
+    {"number": 15, "strength": "fairness", "key": "-", "source_en": "Give preferential treatment to people I like.", "text": "טבעי בעיניי לתת יחס מועדף או הקלות לאנשים שמוצאים חן בעיניי."},
+    {"number": 16, "strength": "fairness", "key": "-", "source_en": "Let my personal feelings bias my decisions about others.", "text": "רגשות אישיים או חיבה משפיעים לא פעם על האופן שבו אני שופט/ת אנשים."},
+
+    {"number": 17, "strength": "forgiveness", "key": "+", "source_en": "Readily let go of grudges when someone apologizes.", "text": "כאשר מישהו מביע חרטה כנה, קל לי לשחרר את הכעס ולפתוח דף חדש."},
+    {"number": 18, "strength": "forgiveness", "key": "+", "source_en": "Believe in giving people a second chance after they make a mistake.", "text": "אני מאמין/ה שראוי לתת לאנשים הזדמנות שנייה אחרי שמעדו או טעו."},
+    {"number": 19, "strength": "forgiveness", "key": "-", "source_en": "Find it hard to forgive others who have wronged me.", "text": "קשה לי מאוד לסלוח לאנשים שפגעו בי או אכזבו אותי."},
+    {"number": 20, "strength": "forgiveness", "key": "-", "source_en": "Hold on to resentment for a very long time.", "text": "אני נוטה לשמור טינה ולזכור פגיעות לאורך זמן רב."},
+
+    {"number": 21, "strength": "humor", "key": "+", "source_en": "Use humor to brighten the mood in difficult situations.", "text": "אני משתמש/ת בהומור כדי להכניס אור ולהקל על האווירה ברגעים מתוחים."},
+    {"number": 22, "strength": "humor", "key": "+", "source_en": "Enjoy making people laugh and smile.", "text": "אני נהנה/ית מאוד להצחיק אנשים ולגרום לסובבים אותי לחייך."},
+    {"number": 23, "strength": "humor", "key": "-", "source_en": "Am rarely the one who cracks a joke.", "text": "רק לעיתים נדירות אני האדם שמתבדח או מכניס קלילות לשיחה."},
+    {"number": 24, "strength": "humor", "key": "-", "source_en": "Have a very serious demeanor with little room for playfulness.", "text": "יש לי גישה רצינית מאוד ואינני נוטה להומור או לשובבות ביומיום."},
+
+    {"number": 25, "strength": "socialIntelligence", "key": "+", "source_en": "Quickly sense what other people are feeling without them saying a word.", "text": "אני קולט/ת במהירות מה אנשים אחרים מרגישים גם בלי שיאמרו מילה."},
+    {"number": 26, "strength": "socialIntelligence", "key": "+", "source_en": "Know how to put people at ease in awkward social situations.", "text": "אני יודע/ת איך לגרום לאנשים להרגיש בנוח במצבים חברתיים מביכים."},
+    {"number": 27, "strength": "socialIntelligence", "key": "-", "source_en": "Often miss subtle emotional cues from others.", "text": "לעיתים קרובות אני מפספס/ת רמזים רגשיים דקים או מצבי רוח של הסובבים."},
+    {"number": 28, "strength": "socialIntelligence", "key": "-", "source_en": "Find it difficult to figure out why people act the way they do.", "text": "קשה לי להבין מה מניע אנשים להתנהג כפי שהם מתנהגים בסיטואציות חברתיות."},
+
+    {"number": 29, "strength": "hope", "key": "+", "source_en": "Look to the future with confidence and optimism.", "text": "אני מביט/ה אל העתיד בתקווה ובביטחון שדברים יסתדרו לטובה."},
+    {"number": 30, "strength": "hope", "key": "+", "source_en": "Always manage to see the silver lining in a setback.", "text": "גם בעקבות כישלון אני מצליח/ה לראות את נקודת האור."},
+    {"number": 31, "strength": "hope", "key": "-", "source_en": "Expect the worst when things are uncertain.", "text": "כאשר המצב אינו ודאי, אני נוטה לצפות לתרחיש הגרוע ביותר."},
+    {"number": 32, "strength": "hope", "key": "-", "source_en": "Feel pessimistic about where my life is heading.", "text": "אני מרגיש/ה פסימיות לגבי הכיוון שאליו החיים שלי הולכים."},
+
+    {"number": 33, "strength": "perspective", "key": "+", "source_en": "Others often come to me for wise, balanced advice.", "text": "אנשים פונים אליי לעיתים קרובות כדי לקבל זווית ראייה שקולה ועצה חכמה."},
+    {"number": 34, "strength": "perspective", "key": "+", "source_en": "Am able to step back and see the big picture in complex problems.", "text": "במצבים סבוכים אני מצליח/ה לקחת צעד אחורה ולראות את התמונה הגדולה."},
+    {"number": 35, "strength": "perspective", "key": "-", "source_en": "Get lost in minor details and miss what really matters.", "text": "אני נוטה ללכת לאיבוד בפרטים הקטנים ולפספס את העיקר במצבים מורכבים."},
+    {"number": 36, "strength": "perspective", "key": "-", "source_en": "Rarely feel that I have deep life wisdom to offer others.", "text": "רק לעיתים רחוקות אני מרגיש/ה שיש לי חוכמת חיים עמוקה להציע לאחרים."},
+
+    {"number": 37, "strength": "bravery", "key": "+", "source_en": "Speak up for what is right even when I stand alone.", "text": "אני משמיע/ה את קולי למען מה שנכון בעיניי, גם כשאני בדעת מיעוט מול כולם."},
+    {"number": 38, "strength": "bravery", "key": "+", "source_en": "Confront difficult challenges head-on rather than backing down.", "text": "אני מתייצב/ת מול קשיים ועימותים הכרחיים באופן ישיר במקום לסגת."},
+    {"number": 39, "strength": "bravery", "key": "-", "source_en": "Stay silent when my opinion might upset the group.", "text": "אני מעדיף/ה לשתוק ולא להביע את דעתי אם היא עלולה לעורר התנגדות."},
+    {"number": 40, "strength": "bravery", "key": "-", "source_en": "Tend to avoid standing up to authority or strong opposition.", "text": "אני נוטה להימנע מלעמוד מול דמויות סמכות או מול התנגדות תקיפה."},
+
+    {"number": 41, "strength": "judgment", "key": "+", "source_en": "Carefully weigh evidence on both sides before making up my mind.", "text": "אני בוחן/ת בקפידה טיעונים וראיות מכל הצדדים לפני שאני מגבש/ת עמדה."},
+    {"number": 42, "strength": "judgment", "key": "+", "source_en": "Am willing to change my views when presented with strong facts.", "text": "אין לי קושי לשנות את דעתי כשאני נחשף/ת לעובדות חדשות ומשכנעות."},
+    {"number": 43, "strength": "judgment", "key": "-", "source_en": "Jump to conclusions quickly without checking all the facts.", "text": "אני נוטה לקפוץ למסקנות מהר בלי לבדוק לעומק את כל העובדות."},
+    {"number": 44, "strength": "judgment", "key": "-", "source_en": "Stick stubbornly to my first impression even when counter-evidence appears.", "text": "אני נצמד/ת לרושם הראשוני שלי גם כשמופיעות ראיות שמעמידות אותו בספק."},
+
+    {"number": 45, "strength": "leadership", "key": "+", "source_en": "Am good at organizing people and helping a group reach its goals.", "text": "אני יודע/ת לרתום אנשים, לארגן משימות ולהוביל קבוצה להשגת מטרה משותפת."},
+    {"number": 46, "strength": "leadership", "key": "+", "source_en": "Make sure everyone in a group feels included and motivated.", "text": "כשמובילים פרויקט או קבוצה, אני דואג/ת שכל אחד ירגיש שייך ובעל משמעות."},
+    {"number": 47, "strength": "leadership", "key": "-", "source_en": "Feel uncomfortable taking responsibility for guiding others.", "text": "לא נוח לי לקחת אחריות על הובלה או הנחיה של אנשים אחרים."},
+    {"number": 48, "strength": "leadership", "key": "-", "source_en": "Wait for someone else to coordinate group efforts.", "text": "בקבוצה אני מעדיף/ה לחכות שמישהו אחר ייקח יוזמה ויארגן את העניינים."},
+
+    {"number": 49, "strength": "love", "key": "+", "source_en": "Share deep warmth and emotional closeness with the people most important to me.", "text": "אני חולק/ת חום עמוק וקרבה רגשית עם האנשים החשובים לי ביותר."},
+    {"number": 50, "strength": "love", "key": "+", "source_en": "Feel comfortable both giving and receiving affection in close relationships.", "text": "טבעי ונוח לי גם להעניק וגם לקבל חיבה מהאנשים הקרובים אליי."},
+    {"number": 51, "strength": "love", "key": "-", "source_en": "Keep an emotional distance even from my closest family or friends.", "text": "אני שומר/ת על מרחק רגשי מסוים גם מול האנשים הקרובים אליי ביותר."},
+    {"number": 52, "strength": "love", "key": "-", "source_en": "Find it hard to express deep affection to others.", "text": "קשה לי לבטא חיבה עמוקה כלפי אחרים."},
+
+    {"number": 53, "strength": "kindness", "key": "+", "source_en": "Go out of my way to help someone in need without expecting anything back.", "text": "אני יוצא/ת מגדרי כדי לעזור לאדם שזקוק לתמיכה, בלי לצפות לתמורה."},
+    {"number": 54, "strength": "kindness", "key": "+", "source_en": "Take genuine pleasure in doing small acts of kindness for others.", "text": "אני שואב/ת שמחה אמיתית מעשיית מחוות טובות ונדיבות כלפי אנשים סביבי."},
+    {"number": 55, "strength": "kindness", "key": "-", "source_en": "Rarely put my own plans aside to assist others.", "text": "רק לעיתים רחוקות אעצור את עיסוקיי האישיים כדי לסייע לאחרים."},
+    {"number": 56, "strength": "kindness", "key": "-", "source_en": "Feel that people should mostly solve their own problems.", "text": "אני מרגיש/ה שאנשים צריכים בעיקר לפתור את הבעיות שלהם בעצמם."},
+
+    {"number": 57, "strength": "honesty", "key": "+", "source_en": "Always keep my promises and act in line with my values.", "text": "אני תמיד מקיים/ת את הבטחותיי ופועל/ת בהתאם לערכים שלי."},
+    {"number": 58, "strength": "honesty", "key": "+", "source_en": "Present myself genuinely rather than pretending to be someone I am not.", "text": "אני מציג/ה את עצמי כפי שאני באמת, בלי מסכות או העמדת פנים."},
+    {"number": 59, "strength": "honesty", "key": "-", "source_en": "Bend the truth when it makes my life easier.", "text": "אני נוטה לעגל את האמת כשזה הופך את החיים שלי לנוחים יותר."},
+    {"number": 60, "strength": "honesty", "key": "-", "source_en": "Sometimes act in ways that go against what I claim to believe.", "text": "לפעמים אני מתנהג/ת בפועל בצורה שונה מהעקרונות שאני מצהיר/ה עליהם."}
+  ]
+}

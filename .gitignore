@@ -1,0 +1,6 @@
+# Your AI endpoint configuration (see ai-config.example.php). Never commit keys.
+ai-config.php
+.env
+.env.*
+.DS_Store
+Thumbs.db

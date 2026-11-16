@@ -1,0 +1,91 @@
+ofiLab Community License 1.0
+============================
+
+Copyright 2026 Avraham David — ofiLab (https://ofilab.avrahamd.ovh)
+
+This license covers everything in this repository: the software (code, styles,
+pages) and the content (the Hebrew item translations, answer scales, explanations
+and texts), together "the Work". It does not cover:
+  - the original English items of the International Personality Item Pool (IPIP)
+    and their scoring keys, which are in the public domain;
+  - third-party components listed in THIRD_PARTY_LICENSES.txt, which keep their
+    own licenses;
+  - the name "ofiLab" and its logo (see section 6).
+
+1. Permission
+   You may use, copy, run, study and modify the Work, and share it with others,
+   free of charge, for the purposes allowed in section 2 and under the
+   conditions in sections 3–5.
+
+2. Allowed purposes
+   The Work is for the benefit of people, not for profit. You may use it:
+   a. personally, for self-exploration;
+   b. for research, study and teaching, including at schools, colleges,
+      universities and courses that charge tuition, provided that the
+      questionnaire, its results and its reports are not sold or charged for;
+   c. in nonprofit organizations, public bodies and charities;
+   d. as a professional (for example a psychologist, counselor or coach) with
+      your clients, even if you are paid for your own services, provided that
+      the client is not charged anything for the questionnaire, its results or
+      its reports, and no fee depends on them.
+
+3. No income
+   Neither you nor anyone acting with you may receive money or any other
+   compensation in connection with the Work or with any copy, version or service
+   based on it. This includes, for example: fees, subscriptions, paid features or
+   paid reports; advertising, sponsorship or affiliate income; donations
+   requested through the Work; and selling or licensing data collected through
+   it. The general funding of an organization that uses the Work for an allowed
+   purpose is not affected, provided that it is not tied to the Work.
+
+4. Restricted uses
+   You may not use the Work, its results or its content:
+   a. to make or inform decisions about people in employment: hiring,
+      screening or selecting candidates, promotion, evaluation or dismissal.
+      An employer may offer the Work to employees for voluntary
+      self-exploration only if the employer does not receive or see their
+      answers or results. The questionnaire is not validated for such decisions;
+   b. to train, fine-tune or evaluate an artificial intelligence model that is
+      offered for payment or used in a commercial product or service. Use for
+      noncommercial research models is allowed under the other terms of this
+      license;
+   c. for any purpose that is not an allowed purpose under section 2, unless
+      you have written permission from the copyright holder.
+
+5. Conditions
+   a. Credit. Every copy or version that is used by others, including a website,
+      must show in a visible place (for example the footer of each page):
+      "Based on ofiLab by Avraham David" with a link to
+      https://ofilab.avrahamd.ovh. Keep this license and the copyright notice
+      with every copy of the source.
+   b. Share alike. If you make a modified version available to others in any
+      way, including by running it as a website, you must make its complete
+      source available to its users, free of charge, under this same license,
+      and state clearly that you changed it. (A website made from the Work
+      delivers its code to every visitor's browser; this condition ensures the
+      code of every version stays available and readable.)
+   c. No additional restrictions. You may not add terms that limit the rights
+      this license gives to the people you share the Work with.
+
+6. Name and logo
+   This license does not grant any right to use the name "ofiLab", its logo, or
+   any name or mark that could be confused with them. A modified or separate
+   version must use its own name and branding, and must not suggest that it is
+   ofiLab or endorsed by its author. The credit line in section 5a is allowed.
+
+7. Other permissions
+   Uses outside this license, including commercial uses, may be allowed by
+   written permission from the copyright holder. Requests:
+   https://github.com/avraham-david/ofilab/issues
+
+8. Ending of the license
+   If you break the terms of this license, your permission ends automatically.
+   If you correct the breach within 30 days of becoming aware of it, and it is
+   your first breach, your permission is restored.
+
+9. No warranty; not a diagnostic tool
+   The Work is provided "as is", without warranty of any kind, express or
+   implied. The questionnaire is a self-exploration tool, not a psychological
+   diagnosis, and its Hebrew translations have not been psychometrically
+   validated. To the extent permitted by law, the copyright holder is not liable
+   for any claim, damage or other liability arising from the Work or its use.
