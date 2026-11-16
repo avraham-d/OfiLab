@@ -29,6 +29,10 @@ THIRD-PARTY NOTICES — ofiLab
      (N = 145,388 complete respondents) → data/empirical-norms-300.json, assets/empirical-data-300.js
    Derived parameters (assets/empirical-deep-models.js, assets/irt-facet-score-ci.js,
    assets/profile-links-data.js) are aggregate statistics computed from the same sources.
+   Licenses of the sources (checked 2026-11): the Hugging Face datasets
+   ecorbari/IPIP120-SCORES and ecorbari/IPIP300-SCORES are distributed under the MIT
+   license; the OSF project "Johnson's IPIP-NEO data repository" declares no license.
+   No respondent-level data is redistributed here, only aggregate counts and statistics.
 
 3. Supplementary questionnaires
    - Honesty-Humility (16 items): items of the public-domain IPIP-HEXACO scales,
@@ -38,7 +42,10 @@ THIRD-PARTY NOTICES — ofiLab
      42, 1515–1526. The HEXACO model: Lee, K., & Ashton, M. C. (2004). Multivariate
      Behavioral Research, 39, 329–358. Not the HEXACO-PI-R.
    - ECR-RS (9 items): not covered by the ofiLab license; it remains subject to its
-     authors' terms. Hebrew translation of the items of Fraley, R. C., Heffernan, M. E.,
+     authors' terms. The author's page invites translations ("If you are interested in
+     translating the ECR-RS from English to another language, please feel free to do so"):
+     https://labs.psychology.illinois.edu/~rcfraley/measures/relstructures.htm
+     Hebrew translation of the items of Fraley, R. C., Heffernan, M. E.,
      Vicary, A. M., & Brumbaugh, C. C. (2011). The Experiences in Close Relationships —
      Relationship Structures questionnaire. Psychological Assessment, 23, 615–625.
    - Character strengths (60 items): written for this site, inspired by the public-domain
