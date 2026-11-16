@@ -543,12 +543,12 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
           <div>
             <span class="eyebrow">🧩 מילוי שאלונים משלימים · הרחבה ממוקדת</span>
             <h2 id="additionalQuizzesTitle" class="section-title">שאלונים נוספים מומלצים</h2>
-            <p class="body-copy">שאלון ה-Big Five (IPIP-NEO) מעניק תשתית של כ־74%–85% ממיפוי האישיות. כאן תוכל להשלים בנפרד ובצורה מסודרת את הממדים שהמחקר הפסיכומטרי מזהה כבעלי תרומה ייחודית מעבר לחמש התכונות — חוזקות אופי (IPIP-VIA-R), סגנון היקשרות (ECR-RS), וציר הכנות והענווה (HEXACO-H).</p>
+            <p class="body-copy">שאלון ה-Big Five (IPIP-NEO) מעניק תשתית של כ־74%–85% ממיפוי האישיות. כאן תוכל להשלים בנפרד ובצורה מסודרת את הממדים שהמחקר הפסיכומטרי מזהה כבעלי תרומה ייחודית מעבר לחמש התכונות — חוזקות אופי (בהשראת IPIP-VIA-R), סגנון היקשרות (ECR-RS), וציר הכנות והענווה (HEXACO-H).</p>
           </div>
         </div>
         <div id="additionalQuizzesHub" class="supp-hub-grid"></div>
         <div id="additionalQuizzesResults" class="additional-quizzes-results">
-          <section id="viaStrengthsCard" class="via-strengths-card" aria-label="24 חוזקות האופי ו-3 כוחות העל (IPIP-VIA-R)" hidden></section>
+          <section id="viaStrengthsCard" class="via-strengths-card" aria-label="24 חוזקות האופי ו-3 כוחות העל" hidden></section>
           <section id="ecrrsAttachmentCard" class="ecrrs-attachment-card" aria-label="סגנון היקשרות במערכות יחסים (ECR-RS)" hidden></section>
           <section id="hexacoHonestyCard" class="hexaco-honesty-card" aria-label="מדד כנות וענווה מתוך מודל HEXACO" hidden></section>
         </div>
@@ -912,24 +912,44 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
       <div class="ai-dialog-footer"><svg width="13" height="13" class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>ה־AI נועד להסביר, לא להחליט בשבילך.</span></div>
     </div>
   </dialog>
-  <footer class="page-footer calm-quiet-footer" aria-label="קישורי האתר">
-  <div class="footer-quiet-shell">
-    <div class="footer-brand-stack">
-      <a class="footer-ofilab" href="./" aria-label="ofiLab — חזרה לדף הבית">
-        <img src="./assets/logo-mark.png" alt="" width="38" height="38" decoding="async">
-        <span><strong dir="ltr">ofiLab</strong><small>מעבדת האישיות</small></span>
-      </a>
-    <a class="footer-avd" href="https://avrahamd.ovh/" target="_blank" rel="noopener noreferrer" aria-label="AVD, מעבר לאתר avrahamd.ovh">
-      <span class="footer-avd-mark" aria-hidden="true">✧</span>
-      <span class="footer-avd-copy"><strong dir="ltr">AVD</strong><small dir="ltr">avrahamd.ovh</small></span>
-    </a>
+  <footer class="page-footer calm-quiet-footer ofi-site-footer" aria-label="קישורי האתר">
+  <div class="ofi-footer-inner">
+    <div class="ofi-footer-top">
+      <div class="footer-brand-stack ofi-footer-brand">
+        <a class="footer-ofilab" href="./" aria-label="ofiLab — חזרה לדף הבית">
+          <img src="./assets/logo-mark.png" alt="" width="38" height="38" decoding="async">
+          <span><strong dir="ltr">ofiLab</strong><small>מעבדת האישיות</small></span>
+        </a>
+        <p class="ofi-footer-tagline">שאלוני Big Five בעברית, עם השוואה למדגמים של מאות אלפי משיבים. החישוב כולו נעשה בדפדפן, והתשובות לא נשלחות לשרת.</p>
+      </div>
+      <nav class="ofi-footer-col" aria-labelledby="footerSiteTitle">
+        <p class="ofi-footer-title" id="footerSiteTitle">האתר</p>
+        <ul>
+          <li><a href="./">שאלון 120 שאלות</a></li>
+          <li><a href="./?len=300">שאלון 300 שאלות</a></li>
+          <li><a href="./about.html">אודות והשיטה</a></li>
+        </ul>
+      </nav>
+      <nav class="ofi-footer-col" aria-labelledby="footerSourceTitle">
+        <p class="ofi-footer-title" id="footerSourceTitle">קוד מקור</p>
+        <ul>
+          <li><a href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>GitHub</a></li>
+          <li><a href="https://github.com/avraham-d/OfiLab/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">רישיון שימוש</a></li>
+        </ul>
+      </nav>
+      <nav class="ofi-footer-col" aria-labelledby="footerSupportTitle">
+        <p class="ofi-footer-title" id="footerSupportTitle">תמיכה והקשבה</p>
+        <ul>
+          <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, טלפון 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
+          <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · סיוע ברשת</a></li>
+          <li class="ofi-footer-note">במצב חירום: מד״א 101</li>
+        </ul>
+      </nav>
     </div>
-    <nav class="footer-support" aria-label="קישורי סיוע והקשבה">
-      <span class="footer-support-label">לתמיכה ולהקשבה</span>
-      <a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן — מעבר לאתר סיוע חיצוני">ער״ן</a>
-      <a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר</a>
-    </nav>
-    <a class="footer-about" href="./about.html">אודות <span aria-hidden="true">↗</span></a>
+    <div class="ofi-footer-bottom">
+      <p>© <?= date('Y') ?> <span dir="ltr">ofiLab</span> · כלי להיכרות עצמית, לא אבחון</p>
+      <a class="ofi-footer-avd" href="https://avrahamd.ovh/" target="_blank" rel="noopener noreferrer" aria-label="AVD, מעבר לאתר avrahamd.ovh"><span dir="ltr">AVD · avrahamd.ovh</span></a>
+    </div>
   </div>
 </footer>
   <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
@@ -1200,7 +1220,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
       <header class="hexaco-dialog-head">
         <div class="hexaco-dialog-head-inner">
           <div class="hexaco-dialog-brand">
-            <div class="hexaco-head-badge">🌟 IPIP-VIA-R</div>
+            <div class="hexaco-head-badge">🌟 חוזקות אופי</div>
             <div>
               <h2 id="viaDialogTitle">שאלון חוזקות האופי המשולב</h2>
               <p class="hexaco-dialog-sub">60 שאלות ממוקדות · מדידה ישירה להשלמת 24 חוזקות האופי ו-3 כוחות העל</p>

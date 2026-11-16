@@ -603,3 +603,58 @@ html[data-ofilab-design="calm-v2"] #resultScreen .continue-300 .primary{flex:0 0
 
 /* No AI server configured (ai-config.php): hide every assistant control. */
 html[data-ai="off"] :is(.ai-inline-action,#resultsAiFab,#openResultsAiMain,#resultsFooterAi,.profile-ai-summary-bar,#aiDialog){display:none!important;}
+
+/* Site footer: a full-width band at the bottom of the page — brand, three link columns, and a
+   bottom bar. Used on index.php and about.html. */
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer{
+  display:block;width:auto;max-width:none;margin:clamp(40px,6vw,72px) 0 0;padding:0;
+  text-align:start;color:var(--calm-muted);background:var(--calm-paper);
+  border:0;border-top:1px solid var(--calm-line);border-radius:0;box-shadow:none;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-inner{
+  display:block;width:min(1240px,100%);margin:0 auto;padding:clamp(32px,4vw,48px) clamp(18px,4vw,40px) 22px;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-top{
+  display:grid;grid-template-columns:minmax(220px,1.7fr) repeat(3,minmax(130px,1fr));
+  gap:clamp(24px,3vw,44px);align-items:start;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-brand{
+  display:grid;gap:14px;justify-items:start;align-content:start;text-align:start;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-tagline{
+  margin:0;max-width:34ch;font-size:13.5px;line-height:1.7;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-title{
+  margin:4px 0 12px;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-col ul{
+  list-style:none;margin:0;padding:0;display:grid;gap:9px;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer a{text-decoration:none;}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-col a,
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-avd{
+  display:inline-flex;align-items:center;gap:7px;padding:2px 0;
+  font-size:14px;color:var(--calm-muted);text-decoration:none;border-radius:6px;
+  transition:color .16s ease;
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-col a:hover,
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-avd:hover{color:var(--calm-accent);}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer a:focus-visible{outline:2px solid var(--calm-accent);outline-offset:3px;}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-icon{width:15px;height:15px;flex:none;fill:currentColor;}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-note{font-size:12.5px;color:var(--calm-muted);opacity:.85;}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-bottom{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;
+  margin-top:clamp(28px,3.5vw,40px);padding-top:18px;border-top:1px solid var(--calm-line);
+  font-size:12.5px;color:var(--calm-muted);
+}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-bottom p{margin:0;}
+html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-bottom .ofi-footer-avd{font-size:12.5px;}
+@media(max-width:900px){
+  html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-top{grid-template-columns:repeat(3,minmax(0,1fr));}
+  html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-brand{grid-column:1/-1;}
+}
+@media(max-width:560px){
+  html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px;}
+  html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-col:last-child{grid-column:1/-1;}
+  html[data-ofilab-design="calm-v2"] footer.ofi-site-footer .ofi-footer-bottom{flex-direction:column;align-items:flex-start;}
+}

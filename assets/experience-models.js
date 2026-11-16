@@ -874,7 +874,7 @@
     const badgeRow = el('div', 'cyber-lab-badge-row');
     badgeRow.append(
       el('span', 'cyber-lab-badge', '🎨 סגנונות חיים'),
-      el('span', 'cyber-lab-citation', 'NEO Style Graphs (Costa & McCrae, 1992)'),
+      el('span', 'cyber-lab-citation', 'בהשראת גרפי הסגנון של Costa & McCrae (1992)'),
       returnBtn
     );
 

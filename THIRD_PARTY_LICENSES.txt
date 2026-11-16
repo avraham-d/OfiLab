@@ -6,6 +6,10 @@ THIRD-PARTY NOTICES — ofiLab
    The original English items and scale keys are in the public domain:
    https://ipip.ori.org/newPermission.htm
 
+   Goldberg, L. R., Johnson, J. A., Eber, H. W., Hogan, R., Ashton, M. C., Cloninger,
+   C. R., & Gough, H. G. (2006). The International Personality Item Pool and the future
+   of public-domain personality measures. Journal of Research in Personality, 40, 84–96.
+
    - IPIP-NEO-120: Johnson, J. A. (2014). Measuring thirty facets of the Five Factor Model
      with a 120-item public domain inventory: Development of the IPIP-NEO-120.
      Journal of Research in Personality, 51, 78–89. https://doi.org/10.1016/j.jrp.2014.05.003
@@ -27,11 +31,33 @@ THIRD-PARTY NOTICES — ofiLab
    assets/profile-links-data.js) are aggregate statistics computed from the same sources.
 
 3. Supplementary questionnaires
-   - HEXACO-H (16 items): items written for this site after the Honesty-Humility facets of the
-     HEXACO model (Lee & Ashton, 2004). Not the official HEXACO-PI-R.
-   - IPIP-VIA-R (60 items): after the public-domain IPIP-VIA scales (Bluemke, Partsch,
-     Saucier & Lechner, 2021; McGrath, Hall-Simmonds & Goldberg, 2020).
-   - ECR-RS (9 items): Fraley, Heffernan, Vicary & Brumbaugh (2011), Psychological Assessment.
+   These items are not covered by the ofiLab license; each remains subject to its
+   authors' terms.
+   - Honesty-Humility (16 items): after the Honesty-Humility factor of the HEXACO model
+     (Lee, K., & Ashton, M. C. (2004). Psychometric properties of the HEXACO Personality
+     Inventory. Multivariate Behavioral Research, 39, 329–358). Several items follow
+     items of the HEXACO-PI-R, which is copyrighted by its authors (https://hexaco.org);
+     this site is not affiliated with them.
+   - ECR-RS (9 items): Hebrew translation of the items of Fraley, R. C., Heffernan, M. E.,
+     Vicary, A. M., & Brumbaugh, C. C. (2011). The Experiences in Close Relationships —
+     Relationship Structures questionnaire. Psychological Assessment, 23, 615–625.
+   - Character strengths (60 items): written for this site, inspired by the public-domain
+     IPIP-VIA-R scales (Bluemke, Partsch, Saucier & Lechner, 2021; McGrath,
+     Hall-Simmonds & Goldberg, 2020). They are not the official IPIP-VIA-R items and are
+     not validated. "VIA" is a trademark of the VIA Institute on Character; this site is
+     not affiliated with it.
+
+   Other models computed from the Big Five scores (no items reused):
+   - Cybernetic Big Five Theory: DeYoung, C. G. (2015). Journal of Research in
+     Personality, 56, 33–58.
+   - UPPS impulsivity: Whiteside, S. P., & Lynam, D. R. (2001). Personality and
+     Individual Differences, 30, 669–689.
+   - Style graphs: after the style graphs of Costa & McCrae (1992).
+   - Four-letter estimate: an approximation from Big Five facets, not the MBTI.
+
+   Trademarks: MBTI and Myers-Briggs are trademarks of The Myers-Briggs Company; NEO PI-R
+   is a trademark of PAR, Inc. They are used here only to describe what this site is not;
+   ofiLab is not affiliated with these companies.
 
 4. Heebo variable font (assets/fonts/)
    SIL Open Font License 1.1; full text in assets/fonts/OFL-Heebo.txt.

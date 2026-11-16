@@ -21,7 +21,7 @@
   // These percentiles are not drawn from respondents. build-empirical-deep-models.py simulates
   // 400,000 scores from published means/SDs, partly for different item sets than the ones here.
   const SIMULATED_NORM_NOTES={
-    hexaco:'על האחוזון: אין לשאלון הזה נורמות משלו. האחוזון מחושב מהתפלגות מדומה לפי ממוצע וסטיית תקן שפורסמו לשאלון HEXACO-100 (Lee & Ashton, 2018), בעוד ש־16 ההיגדים כאן נכתבו לאתר. זה אומדן גס, לא השוואה למדגם אמיתי.',
+    hexaco:'על האחוזון: אין לשאלון הזה נורמות משלו. האחוזון מחושב מהתפלגות מדומה לפי ממוצע וסטיית תקן שפורסמו לשאלון HEXACO-100 (Lee & Ashton, 2018), בעוד ש־16 ההיגדים כאן הם שאלון מקוצר שחלקו מבוסס על היגדי HEXACO-PI-R. זה אומדן גס, לא השוואה למדגם אמיתי.',
     via:'על האחוזונים: הם מחושבים מהתפלגות מדומה לפי ממוצעים שפורסמו לשאלון VIA-IS המלא (McGrath, 2015), שהוא שאלון אחר מההיגדים כאן. זה אומדן גס, לא השוואה למדגם אמיתי.',
     ecrrs:'על האחוזונים: הם מחושבים מהתפלגות מדומה לפי ממוצעים וסטיות תקן שפורסמו (Fraley et al., 2011), לא מנתוני משיבים. מדד הביטחון משלב את שני הצירים בנוסחה שהוגדרה באתר הזה ואינו חלק מהשאלון המקורי.'
   };
@@ -366,16 +366,16 @@
 
     const isDirectOrComposite = v.type === 'composite' || v.type === 'direct';
     const accLabel = v.type === 'composite'
-      ? 'שילוב NEO + מענה ישיר (60 היגדים IPIP-VIA-R)'
+      ? 'שילוב Big Five + מענה ישיר (60 היגדים בהשראת IPIP-VIA-R)'
       : v.type === 'direct'
-        ? 'מענה ישיר (60 היגדים IPIP-VIA-R)'
+        ? 'מענה ישיר (60 היגדים בהשראת IPIP-VIA-R)'
         : 'רעיונות לחוזקות מתוך חמש התכונות';
 
     const head = el('div', 'cyber-lab-header');
     const badgeRow = el('div', 'cyber-lab-badge-row');
     badgeRow.append(
       el('span', 'cyber-lab-badge', '🌟 24 חוזקות האופי ו-3 כוחות העל'),
-      el('span', 'cyber-lab-citation', 'IPIP-VIA-R (Bluemke et al., 2021; McGrath et al., 2020; Partsch et al., 2024)'),
+      el('span', 'cyber-lab-citation', 'בהשראת IPIP-VIA-R (Bluemke et al., 2021; McGrath et al., 2020; Partsch et al., 2024)'),
       el('span', 'hexaco-accuracy-pill ' + (isDirectOrComposite ? 'is-direct' : 'is-proxy'), accLabel),
       returnBtn
     );
@@ -390,7 +390,7 @@
 
     head.append(
       badgeRow,
-      el('h2', 'cyber-lab-title', 'פרופיל חוזקות האופי שלך (IPIP-VIA-R)'),
+      el('h2', 'cyber-lab-title', 'פרופיל חוזקות האופי שלך'),
       el('p', 'cyber-lab-subtitle', isDirectOrComposite
         ? 'חמש חוזקות החתימה המובילות שלך, שלושת כוחות העל (Positivity, Dependability, Mastery) ודירוג מלא של 24 החוזקות.'
         : 'רעיונות לחוזקות מתוך חמש התכונות — לא תוצאות של שאלון VIA. להשלמה ישירה מומלץ למלא את השאלון המלא (60 היגדים).'),
@@ -499,7 +499,7 @@
     if(isDirectOrComposite){
       ctaLead.append(
         el('span', 'hexaco-cta-icon', '✅'),
-        el('strong', 'hexaco-cta-title', 'שאלון חוזקות האופי (60 שאלות IPIP-VIA-R) הושלם!'),
+        el('strong', 'hexaco-cta-title', 'שאלון חוזקות האופי (60 שאלות) הושלם!'),
         el('p', 'hexaco-cta-desc', 'התוצאות משוקללות בדוח ושמורות בקישור התוצאות שלך ובמכשיר.')
       );
       const retakeBtn = el('button', 'hexaco-retake-btn', 'עריכת מענה (60 שאלות) ↺');
@@ -509,7 +509,7 @@
     } else {
       ctaLead.append(
         el('span', 'hexaco-cta-icon', '🌟'),
-        el('strong', 'hexaco-cta-title', 'להשלמת מענה ישיר ב-24 החוזקות: שאלון IPIP-VIA-R (60 היגדים)'),
+        el('strong', 'hexaco-cta-title', 'להשלמת מענה ישיר ב-24 החוזקות: שאלון חוזקות אופי (60 היגדים)'),
         el('p', 'hexaco-cta-desc', 'השאלון דוגם את 15 החוזקות שחסרות ב-Big Five ומשלב אותן עם תחומי המשנה של IPIP-NEO (אינו מחליף אבחון VIA מלא רשמי).')
       );
       const ctaBtn = el('button', 'hexaco-cta-btn', 'התחל שאלון חוזקות (60 שאלות · כ-6 דק\')');

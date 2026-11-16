@@ -1,6 +1,6 @@
 {
   "version": "ipip-via-r-60-he-1.0.0",
-  "name": "שאלון חוזקות האופי המשוקלל (IPIP-VIA-R · 60)",
+  "name": "שאלון חוזקות אופי (60 היגדים, בהשראת IPIP-VIA-R)",
   "reference": "Bluemke, Partsch, Saucier, & Lechner (2021); McGrath, Hall-Simmonds, & Goldberg (2020); Partsch, Olaru, & Lechner (2024)",
   "description": "60 היגדים מאוזנים (2 חיוביים ו-2 הפוכים לכל סולם) שנכתבו עבור האתר בהשראת סולמות IPIP-VIA-R (Bluemke et al., 2021). רובם אינם תרגום של 96 הפריטים הרשמיים של המאגר, והם לא תוקפו מחקרית. הם מודדים ישירות את 15 החוזקות שבהן ל-Big Five יש פערי כיסוי, ומשתלבים בשקלול מהימנות (Precision-Weighted Composite) עם 30 תחומי המשנה של IPIP-NEO כדי להעריך את כל 24 חוזקות האופי ו-3 כוחות העל.",
   "scale": [

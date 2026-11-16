@@ -36,8 +36,8 @@ ofiLab הוא אתר שאלוני אישיות לפי מודל חמשת הגור
 | **שאלונים** | IPIP-NEO-120 (כ־10–15 דקות) או IPIP-NEO-300 (כ־30–45 דקות). מי שסיים 120 יכול להמשיך ל־300 עם התשובות שכבר נתן. |
 | **ציונים** | ציון 0–100 ואחוזון לכל תכונה ולכל תחום משנה, עם טווח סמך (IRT GRM לתחומי המשנה). |
 | **איכות המענה** | זיהוי מענה אחיד, מענה אקראי והטיית הסכמה, ובדיקת עקביות פנימית. כשאיכות המענה נמוכה, הפירושים לא מוצגים. |
-| **מודלים נוספים** | מודל קיברנטי (DeYoung), UPPS, מעגל בין־אישי, סגנונות NEO, אומדן ארבע אותיות (לא אבחון MBTI). |
-| **שאלונים משלימים** | כנות וענווה (HEXACO-H), חוזקות אופי (IPIP-VIA-R), סגנון היקשרות (ECR-RS). |
+| **מודלים נוספים** | מודל קיברנטי (DeYoung), UPPS, מעגל בין־אישי, גרפי סגנון, אומדן ארבע אותיות (לא אבחון MBTI). |
+| **שאלונים משלימים** | כנות וענווה (HEXACO-H), חוזקות אופי (בהשראת IPIP-VIA-R), סגנון היקשרות (ECR-RS). |
 | **שמירה** | קישור שמירה, קישור מוצפן בסיסמה, קוד QR, קובץ תוצאות שאפשר לטעון מחדש. |
 | **ייצוא** | דוח טקסט מלא או מקוצר, PDF, קובץ JSON, גיבוי של כל התשובות, כרטיס שיתוף. |
 | **נגישות ותצוגה** | מצב בהיר וכהה, טלפון ומחשב, ניווט מקלדת, כיבוד „הפחתת תנועה”. |
@@ -50,7 +50,7 @@ ofiLab הוא אתר שאלוני אישיות לפי מודל חמשת הגור
 **מקומית:**
 
 ```bash
-git clone https://github.com/avraham-david/ofilab.git
+git clone https://github.com/avraham-d/OfiLab.git
 cd ofilab
 php -S 127.0.0.1:8765
 # http://127.0.0.1:8765/index.php
@@ -87,7 +87,7 @@ ofilab/
     ├── empirical-norms.js         אחוזונים, טווחי סמך ותובנות מול המדגם
     ├── experience.js              דף התוצאות: תחומי משנה, תמצית, ניווט והגדרות
     ├── experience-validity.js     בדיקות איכות המענה
-    ├── experience-models.js       המודלים הנוספים (קיברנטי, UPPS, מעגל בין־אישי, סגנונות NEO)
+    ├── experience-models.js       המודלים הנוספים (קיברנטי, UPPS, מעגל בין־אישי, גרפי סגנון)
     ├── experience-quizzes.js      שלושת השאלונים המשלימים
     ├── four-letter-estimate.js    אומדן ארבע אותיות
     ├── profile-executive.js       תמצית הפרופיל במילים
@@ -183,7 +183,7 @@ ofiLab ניתן **לשימוש חופשי לטובת אנשים, ולא למטר
 - ההיגדים המקוריים באנגלית (IPIP), שהם נחלת הכלל.
 - רכיבי צד שלישי, שנשארים ברישיונות שלהם ([THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt)).
 
-לבקשת אישור לשימוש אחר, כולל שימוש מסחרי: [פתחו issue](https://github.com/avraham-david/ofilab/issues).
+לבקשת אישור לשימוש אחר, כולל שימוש מסחרי: [פתחו issue](https://github.com/avraham-d/OfiLab/issues).
 
 ---
 
@@ -197,7 +197,7 @@ ofiLab ניתן **לשימוש חופשי לטובת אנשים, ולא למטר
 - The IPIP-NEO-120 and IPIP-NEO-300 questionnaires.
 - 0–100 scores and empirical percentiles for 5 domains and 30 facets, against N=410,376 and N=145,388 respondents.
 - IRT-based confidence intervals and response-validity checks.
-- Supplementary questionnaires: HEXACO-H, IPIP-VIA-R and ECR-RS.
+- Supplementary questionnaires: Honesty-Humility (HEXACO model), character strengths (inspired by IPIP-VIA-R) and ECR-RS.
 - Encrypted save links and full exports: text, PDF, JSON and a share card.
 
 No accounts, no database, and answers never reach the server.

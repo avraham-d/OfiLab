@@ -441,7 +441,9 @@
       </div>
 
       <ul style="padding-inline-start:20px; line-height:1.8; color:var(--calm-ink);">
-        <li><strong>שאלוני IPIP ומפתחות הניקוד:</strong> שאלון <a href="https://ipip.ori.org/30FacetNEO-PI-RItems.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-120</a> ומפתח <a href="https://ipip.ori.org/newNEOKey.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-300</a>. כל היגדי IPIP נמצאים בנחלת הכלל (Public Domain).</li>
+        <li><strong>שאלוני IPIP ומפתחות הניקוד:</strong> שאלון <a href="https://ipip.ori.org/30FacetNEO-PI-RItems.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-120</a> ומפתח <a href="https://ipip.ori.org/newNEOKey.htm" target="_blank" rel="noopener noreferrer">IPIP-NEO-300</a>. כל היגדי IPIP נמצאים בנחלת הכלל (Public Domain). Goldberg, L. R., et al. (2006). <em>The International Personality Item Pool and the future of public-domain personality measures</em>. Journal of Research in Personality, 40, 84–96.</li>
+        <li><strong>שאלונים משלימים:</strong> כנות וענווה — לפי ממד ה־Honesty-Humility של מודל HEXACO (Lee &amp; Ashton, 2004); חלק מההיגדים מבוססים על היגדי ה־HEXACO-PI-R, שזכויותיו שמורות למחבריו. סגנון היקשרות — תרגום היגדי ה־ECR-RS (Fraley, Heffernan, Vicary &amp; Brumbaugh, 2011). חוזקות אופי — היגדים שנכתבו לאתר בהשראת סולמות IPIP-VIA-R (Bluemke et al., 2021; McGrath et al., 2020). היגדים אלה אינם חלק מרישיון האתר.</li>
+        <li><strong>מודלים נוספים:</strong> Cybernetic Big Five Theory (DeYoung, 2015); UPPS (Whiteside &amp; Lynam, 2001); גרפי סגנון בהשראת Costa &amp; McCrae (1992). אומדן ארבע האותיות אינו MBTI; ‏MBTI הוא סימן מסחרי של The Myers-Briggs Company, ו־NEO PI-R של PAR, ואין ל־ofiLab קשר אליהן.</li>
         <li><strong>מחקר 10 האספקטים:</strong> DeYoung, C. G., Quilty, L. C., & Peterson, J. B. (2007). <em>Between facets and domains: 10 aspects of the Big Five</em>. Journal of Personality and Social Psychology, 93(5), 880–896.</li>
         <li><strong>מאגרי הנתונים הפתוחים:</strong> מאגר ג'ונסון <a href="https://osf.io/tbmh5/" target="_blank" rel="noopener noreferrer">IPIP-NEO-120 ב־OSF</a> ומאגר <a href="https://huggingface.co/datasets/ecorbari/IPIP300-SCORES" target="_blank" rel="noopener noreferrer">IPIP-NEO-300 ב־HuggingFace</a>.</li>
         <li><strong>קובצי הנורמות באתר:</strong> טבלאות השכיחות המלאות זמינות ישירות בקבצים <a href="./data/empirical-norms.json">empirical-norms.json (120)</a> ו־<a href="./data/empirical-norms-300.json">empirical-norms-300.json (300)</a>.</li>
@@ -455,12 +457,45 @@
     </div>
   </main>
   
-  <footer class="page-footer" style="max-width:1040px; margin:auto; padding:24px 20px;">
-    <div>
-      <span class="footer-brand"><bdi>ofiLab</bdi> · מעבדת האישיות הפתוחה</span>
-      <span>120 או 300 שאלות · 100% חישוב מקומי בדפדפן · שמירה מאובטחת</span>
+  <footer class="page-footer calm-quiet-footer ofi-site-footer" aria-label="קישורי האתר">
+    <div class="ofi-footer-inner">
+      <div class="ofi-footer-top">
+        <div class="footer-brand-stack ofi-footer-brand">
+          <a class="footer-ofilab" href="./" aria-label="ofiLab — חזרה לדף הבית">
+            <img src="./assets/logo-mark.png" alt="" width="38" height="38" decoding="async">
+            <span><strong dir="ltr">ofiLab</strong><small>מעבדת האישיות</small></span>
+          </a>
+          <p class="ofi-footer-tagline">שאלוני Big Five בעברית, עם השוואה למדגמים של מאות אלפי משיבים. החישוב כולו נעשה בדפדפן, והתשובות לא נשלחות לשרת.</p>
+        </div>
+        <nav class="ofi-footer-col" aria-labelledby="footerSiteTitle">
+          <p class="ofi-footer-title" id="footerSiteTitle">האתר</p>
+          <ul>
+            <li><a href="./">שאלון 120 שאלות</a></li>
+            <li><a href="./?len=300">שאלון 300 שאלות</a></li>
+            <li><a href="./about.html">אודות והשיטה</a></li>
+          </ul>
+        </nav>
+        <nav class="ofi-footer-col" aria-labelledby="footerSourceTitle">
+          <p class="ofi-footer-title" id="footerSourceTitle">קוד מקור</p>
+          <ul>
+            <li><a href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>GitHub</a></li>
+            <li><a href="https://github.com/avraham-d/OfiLab/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">רישיון שימוש</a></li>
+          </ul>
+        </nav>
+        <nav class="ofi-footer-col" aria-labelledby="footerSupportTitle">
+          <p class="ofi-footer-title" id="footerSupportTitle">תמיכה והקשבה</p>
+          <ul>
+            <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, טלפון 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
+            <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · סיוע ברשת</a></li>
+            <li class="ofi-footer-note">במצב חירום: מד״א 101</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ofi-footer-bottom">
+        <p>© 2026 <span dir="ltr">ofiLab</span> · כלי להיכרות עצמית, לא אבחון</p>
+        <a class="ofi-footer-avd" href="https://avrahamd.ovh/" target="_blank" rel="noopener noreferrer" aria-label="AVD, מעבר לאתר avrahamd.ovh"><span dir="ltr">AVD · avrahamd.ovh</span></a>
+      </div>
     </div>
-    <a href="./" style="text-decoration:none; color:var(--calm-accent); font-weight:650;">חזרה למבחן</a>
   </footer>
 </body>
 </html>
