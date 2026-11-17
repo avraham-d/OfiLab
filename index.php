@@ -968,8 +968,8 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <p class="ofi-footer-tagline">שאלוני Big Five בעברית, עם השוואה למדגמים של מאות אלפי משיבים. החישוב כולו נעשה בדפדפן, והתשובות לא נשלחות לשרת.</p>
       </div>
       <div class="ofi-footer-cta">
-        <a class="ofi-footer-btn is-primary" href="./"><strong>שאלון 120</strong><small>היכרות מהירה</small></a>
-        <a class="ofi-footer-btn" href="./?len=300"><strong>שאלון 300</strong><small>תמונה מעמיקה</small></a>
+        <a class="ofi-footer-btn" href="./" data-inventory="120"><strong>שאלון 120</strong><small>היכרות מהירה</small></a>
+        <a class="ofi-footer-btn" href="./?len=300" data-inventory="300"><strong>שאלון 300</strong><small>תמונה מעמיקה</small></a>
       </div>
     </div>
     <ul class="ofi-footer-badges" aria-label="עקרונות האתר">
@@ -1000,12 +1000,11 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <ul class="ofi-footer-chips">
           <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
           <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · ברשת</a></li>
-          <li><span class="is-urgent">חירום · מד״א 101</span></li>
         </ul>
       </nav>
     </div>
     <div class="ofi-footer-bottom">
-      <p>© <?= date('Y') ?> <span dir="ltr">ofiLab</span> · כלי להיכרות עצמית, לא אבחון</p>
+      <p>© <?= date('Y') ?> <span dir="ltr">ofiLab</span>. השאלון נועד להיכרות עצמית ואינו מחליף אבחון של איש מקצוע.</p>
       <a class="ofi-footer-avd" href="https://avrahamd.ovh/" target="_blank" rel="noopener noreferrer" aria-label="AVD, מעבר לאתר avrahamd.ovh"><span dir="ltr">AVD · avrahamd.ovh</span></a>
     </div>
   </div>
@@ -1483,6 +1482,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
   <script src="./assets/extended-journey.js"></script>
   <script src="./assets/password-strength.js"></script>
   <script src="./assets/peer-compare.js"></script>
+  <script src="./assets/footer-status.js"></script>
   <script src="./assets/personality.js"></script>
   <script src="./assets/qrcode-generator.js"></script>
   <script>if(typeof qrcode==="function")window.qrcode=qrcode;</script>

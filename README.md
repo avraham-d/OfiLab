@@ -106,6 +106,7 @@ ofilab/
     ├── protected-link-routing.js  זיהוי השאלון מתוך קישור מוצפן
     ├── results-files.js           קובץ התוצאות: הורדה וטעינה מחדש
     ├── peer-compare.js            השוואה לאדם אחר (מקישור או מקובץ)
+    ├── footer-status.js           כפתורי השאלונים בפוטר: מציגים התקדמות שמורה
     ├── results-share-link.js      קוד QR ושיתוף
     ├── qrcode-generator.js        יצירת QR (צד שלישי)
     ├── export-markdown.js         הדוחות בטקסט

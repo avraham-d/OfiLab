@@ -608,11 +608,23 @@ html[data-ai="off"] :is(.ai-inline-action,#resultsAiFab,#openResultsAiMain,#resu
    brand and the two questionnaires, principle badges, three cards (site, source code, support)
    and a bottom bar. Used on index.php and about.html; the same look in light and dark. */
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer{
-  --ff-ink:#fff;--ff-soft:rgba(255,255,255,.74);--ff-faint:rgba(255,255,255,.52);
-  --ff-line:rgba(255,255,255,.14);--ff-glass:rgba(255,255,255,.07);--ff-glass-2:rgba(255,255,255,.12);
+  --ff-ink:#2b2140;--ff-soft:#5d5170;--ff-faint:#7b7090;
+  --ff-line:rgba(70,48,110,.12);--ff-line-strong:rgba(111,80,138,.45);
+  --ff-glass:rgba(255,255,255,.62);--ff-glass-2:rgba(255,255,255,.9);--ff-dot:rgba(70,48,110,.07);
   display:block;width:auto;max-width:none;margin:clamp(40px,6vw,72px) clamp(10px,2.5vw,28px) clamp(10px,2.5vw,24px);padding:0;
   position:relative;overflow:hidden;isolation:isolate;text-align:start;color:var(--ff-soft);
-  border:0;border-radius:clamp(22px,3vw,32px);box-shadow:0 18px 50px -24px rgba(30,16,60,.55);
+  border:1px solid var(--ff-line);border-radius:clamp(22px,3vw,32px);box-shadow:0 18px 50px -30px rgba(70,48,110,.35);
+  background:
+    radial-gradient(60% 80% at 100% 0%,rgba(154,92,214,.20),transparent 60%),
+    radial-gradient(50% 70% at 0% 100%,rgba(38,166,154,.16),transparent 62%),
+    radial-gradient(40% 50% at 15% 10%,rgba(247,140,72,.14),transparent 60%),
+    linear-gradient(150deg,#f7f1fb 0%,#f3edf8 55%,#eef5f5 100%);
+}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] footer.page-footer.ofi-site-footer{
+  --ff-ink:#fff;--ff-soft:rgba(255,255,255,.74);--ff-faint:rgba(255,255,255,.52);
+  --ff-line:rgba(255,255,255,.14);--ff-line-strong:rgba(255,255,255,.4);
+  --ff-glass:rgba(255,255,255,.07);--ff-glass-2:rgba(255,255,255,.12);--ff-dot:rgba(255,255,255,.07);
+  border-color:transparent;box-shadow:0 18px 50px -24px rgba(30,16,60,.55);
   background:
     radial-gradient(60% 80% at 100% 0%,rgba(146,92,214,.55),transparent 60%),
     radial-gradient(50% 70% at 0% 100%,rgba(38,166,154,.35),transparent 62%),
@@ -620,7 +632,7 @@ html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer{
     linear-gradient(150deg,#2a1d46 0%,#22183a 55%,#172a36 100%);
 }
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;
+  background-image:radial-gradient(var(--ff-dot) 1px,transparent 1px);background-size:22px 22px;
   mask-image:linear-gradient(180deg,#000,transparent 70%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-inner{display:block;width:min(1180px,100%);margin:0 auto;padding:clamp(26px,4vw,48px) clamp(18px,4vw,48px) 0;box-sizing:border-box;}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer a{color:var(--ff-ink);text-decoration:none;}
@@ -638,10 +650,7 @@ html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-foote
   transition:background-color .15s ease,transform .15s ease,border-color .15s ease;}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn strong{font-size:15px;font-weight:750;color:var(--ff-ink);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn small{font-size:12px;color:var(--ff-soft);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.is-primary{background:#fff;border-color:#fff;}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.is-primary strong{color:#2a1d46;}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.is-primary small{color:#5b4d78;}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn:is(:hover,:focus-visible){transform:translateY(-2px);border-color:rgba(255,255,255,.4);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn:is(:hover,:focus-visible){transform:translateY(-2px);border-color:var(--ff-line-strong);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-badges{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none;}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-badges li{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--ff-line);
   font-size:12.5px;color:var(--ff-soft);background:rgba(255,255,255,.04);}
@@ -655,22 +664,21 @@ html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-foote
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-links a:is(:hover,:focus-visible){background:var(--ff-glass-2);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-links a:is(:hover,:focus-visible)::after{transform:translateX(-3px);color:var(--ff-ink);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo{display:flex;align-items:center;gap:12px;margin:0 0 6px;padding:10px 12px;border-radius:14px;background:var(--ff-glass-2);border:1px solid var(--ff-line);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo:is(:hover,:focus-visible){border-color:rgba(255,255,255,.4);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo:is(:hover,:focus-visible){border-color:var(--ff-line-strong);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo .ofi-footer-icon{flex:none;width:22px;height:22px;fill:currentColor;color:var(--ff-ink);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo span{display:flex;flex-direction:column;line-height:1.3;}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo strong{font-size:14.5px;color:var(--ff-ink);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-repo small{font-size:12px;color:var(--ff-soft);text-align:start;}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-support-lead{margin:0 0 10px;font-size:13.5px;line-height:1.6;color:var(--ff-soft);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none;}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips :is(a,span){display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips a{display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;
   color:var(--ff-ink);background:var(--ff-glass-2);border:1px solid var(--ff-line);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips a:is(:hover,:focus-visible){border-color:rgba(255,255,255,.45);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips .is-urgent{background:rgba(247,140,72,.18);border-color:rgba(247,140,72,.45);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-chips a:is(:hover,:focus-visible){border-color:var(--ff-line-strong);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;margin:26px 0 0;padding:18px 0 22px;border-top:1px solid var(--ff-line);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-bottom p{margin:0;font-size:13px;color:var(--ff-faint);}
 html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-avd{font-size:13px;color:var(--ff-soft);padding:4px 10px;border-radius:999px;border:1px solid var(--ff-line);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-avd:is(:hover,:focus-visible){color:var(--ff-ink);border-color:rgba(255,255,255,.4);}
-html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer :focus-visible{outline:2px solid #fff;outline-offset:2px;}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-avd:is(:hover,:focus-visible){color:var(--ff-ink);border-color:var(--ff-line-strong);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer :focus-visible{outline:2px solid var(--ff-ink);outline-offset:2px;}
 @media (max-width:900px){
   html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-cards{grid-template-columns:1fr 1fr;}
   html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-card.is-support{grid-column:1 / -1;}
@@ -859,3 +867,12 @@ html[data-ofilab-design="calm-v2"] .peer-again{justify-self:start;min-height:44p
 }
 html[data-ofilab-design="calm-v2"] .peer-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;}
 html[data-ofilab-design="calm-v2"] .peer-list-vals{margin-inline-start:auto;}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.has-progress{border-color:var(--ff-line-strong);background:var(--ff-glass-2);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.has-progress small{display:inline-flex;align-items:center;gap:6px;color:var(--ff-ink);}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.has-progress small::before{content:"";width:7px;height:7px;border-radius:50%;background:#4cc2b6;}
+@media (max-width:560px){
+  html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-badges{display:grid;grid-template-columns:1fr 1fr;}
+  html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-badges li{justify-content:center;}
+}
+html[data-ofilab-design="calm-v2"] footer.page-footer.ofi-site-footer .ofi-footer-btn.has-progress small::before{background:#2b8f86;}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] footer.page-footer.ofi-site-footer .ofi-footer-btn.has-progress small::before{background:#4cc2b6;}
