@@ -874,3 +874,43 @@ html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done 
 html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-title{display:none;}
 html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-icon-done{display:block;}
 html[data-ofilab-design="calm-v2"] #resultScreen .rsr-done-text strong{color:var(--calm-ink);}
+
+/* Disclosures (<details>): one look everywhere instead of the browser's triangle. A thin chevron
+   at the end of the summary that turns over when open, and the content opens smoothly where the
+   browser supports it. Disclosures that already have their own control are left alone. */
+html[data-ofilab-design="calm-v2"] details:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card) > summary{
+  list-style:none;position:relative;cursor:pointer;padding-inline-end:calc(var(--sum-pe,0px) + 30px);
+  -webkit-tap-highlight-color:transparent;
+}
+html[data-ofilab-design="calm-v2"] details > summary::-webkit-details-marker{display:none;}
+html[data-ofilab-design="calm-v2"] details:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card) > summary::after{
+  content:"";position:absolute;inset-inline-end:calc(var(--sum-pe,0px) + 4px);top:50%;
+  width:8px;height:8px;border:solid var(--brand-primary,#6f508a);border-width:0 2px 2px 0;border-radius:1px;
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s cubic-bezier(.22,1,.36,1);
+}
+html[data-ofilab-design="calm-v2"] details[open]:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card) > summary::after{
+  transform:translateY(-25%) rotate(-135deg);
+}
+html[data-ofilab-design="calm-v2"] details:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card) > summary:focus-visible{
+  outline:2px solid var(--brand-primary,#6f508a);outline-offset:3px;border-radius:8px;
+}
+/* Keep each summary's own end padding; the chevron sits inside it. */
+html[data-ofilab-design="calm-v2"] .result-disclosure{--sum-pe:24px;}
+html[data-ofilab-design="calm-v2"] :is(.norm-full-disclosure,.norm-method-disclosure,.facet-domain-group){--sum-pe:16px;}
+html[data-ofilab-design="calm-v2"] .ai-suggestion-fold{--sum-pe:4px;}
+/* Smooth opening (Chromium today; elsewhere the content simply appears). */
+@supports (interpolate-size:allow-keywords){
+  html[data-ofilab-design="calm-v2"]{interpolate-size:allow-keywords;}
+}
+@media (prefers-reduced-motion:no-preference){
+  html[data-ofilab-design="calm-v2"] details:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card)::details-content{
+    block-size:0;overflow-y:clip;
+    transition:block-size .3s cubic-bezier(.22,1,.36,1),content-visibility .3s allow-discrete;
+  }
+  html[data-ofilab-design="calm-v2"] details[open]:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card)::details-content{block-size:auto;}
+  html[data-ofilab-design="calm-v2"] details[open]:not(.header-save-menu,.results-share-more,.profile-summary-more,.domain-card,.facet-explorer-card) > :not(summary){
+    animation:ofiDisclosureIn .3s ease both;
+  }
+}
+@keyframes ofiDisclosureIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+@media print{html[data-ofilab-design="calm-v2"] details > summary::after{display:none;}}
