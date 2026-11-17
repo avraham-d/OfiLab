@@ -108,7 +108,7 @@
    art.className='ai-empty-icon';
    art.setAttribute('aria-hidden','true');
    // Reuse our conversation symbol instead of the former oversized sparkle.
-   const icon=resultsFab?.querySelector('.results-ai-icon')?.cloneNode(true);
+   const icon=resultsFab?.querySelector('.results-ai-icon,svg.icon')?.cloneNode(true);
    if(icon)art.append(icon);
    else art.textContent='o';
    const title=document.createElement('h3');
@@ -301,7 +301,7 @@
    $('aiDialogSubtitle').textContent=active.mode==='question'?'אפשר לשאול חופשי, בלי תשובה נכונה מראש':'מקשיב לשאלה שלך ומסביר לפי התוצאות';
    $('aiContextEyebrow').textContent=active.mode==='question'?'השאלה שלך · '+active.number:'מפת האישיות שלך';
    $('aiContextText').textContent=active.description;
-   $('aiChatInput').placeholder=active.mode==='question'?'תשאל חופשי על השאלה…':'שאל כל שאלה על התוצאות... (למשל: מה החוזקות שלי?)';
+   $('aiChatInput').placeholder=active.mode==='question'?'תשאל חופשי על השאלה…':'שאלה על התוצאות שלך…';
  }
  function open(which,launcher=null){
    if(working||dialog.open)return;
@@ -313,7 +313,7 @@
    contextUi();dialog.dataset.chatMode=which;renderThread();
    $('aiSuggestionDetails').open=false;
    $('aiChatInput').value='';updateCounter();adjustHeight();
-   setStatus('Enter לשליחה · Shift+Enter לשורה חדשה',false);
+   setStatus(window.matchMedia?.('(pointer:coarse)').matches?'עד 700 תווים בהודעה':'Enter לשליחה · Shift+Enter לשורה חדשה',false);
    suggestions(active.entries.length>0);
    floatingLauncher=launcher;
    dialog.dataset.presentation='modal';

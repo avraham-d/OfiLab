@@ -137,7 +137,7 @@
     const note=$('protectedSaveState');
     if(note)note.textContent=protectedMode?'מצב מוגן: התשובות מוצפנות בקישור ובגיבוי המקומי.':'שמירה רגילה: כל מי שמחזיק בקישור יכול לקרוא את התשובות.';
     const fileNote=$('resultsFileNote');
-    if(fileNote)fileNote.textContent=protectedMode?'הקובץ יישמר מוצפן. לפתיחתו דרך טעינת תוצאות במסך הראשי תידרש הסיסמה.':'הקובץ כולל תשובות ומאפשר טעינה מחדש במסך הראשי. קובץ רגיל אינו מוצפן.';
+    if(fileNote)fileNote.textContent=protectedMode?'🔒 הקבצים נוצרים במכשיר שלך ולא נשלחים לשרת. קובץ התוצאות יישמר מוצפן, ולפתיחתו תידרש הסיסמה.':'🔒 הקבצים נוצרים במכשיר שלך ולא נשלחים לשרת. קובץ התוצאות וקובץ השאלות כוללים את התשובות שלך ואינם מוצפנים.';
   }
   function persist(){
     if(securing){saveIndicator('pending','מעביר לשמירה מוגנת…');return Promise.resolve(false);}
@@ -1510,6 +1510,20 @@
     $('copyResults').addEventListener('click',copyLink);
     $('downloadResults').addEventListener('click',safelyDownload);
     $('downloadResultsMain')?.addEventListener('click',safelyDownload);
+    // Results actions: two tiles (downloads, compare), each opening a panel of clearly described options.
+    const actionPanels=[['resultsDownloadsToggle','resultsDownloadsPanel'],['resultsCompareToggle','resultsComparePanel']];
+    const closeActionPanels=except=>{for(const [t,p] of actionPanels){if(t===except)continue;const tb=$(t),pn=$(p);if(tb)tb.setAttribute('aria-expanded','false');if(pn)pn.hidden=true;}};
+    for(const [t,p] of actionPanels){
+      $(t)?.addEventListener('click',()=>{
+        const panel=$(p),open=panel.hidden;
+        closeActionPanels(t);
+        panel.hidden=!open;$(t).setAttribute('aria-expanded',String(open));
+      });
+    }
+    document.querySelectorAll('#resultsDownloadsPanel .results-action-option,#openPeerCompare').forEach(b=>b.addEventListener('click',()=>closeActionPanels()));
+    $('rciCompareInput')?.addEventListener('change',()=>closeActionPanels());
+    $('downloadPdfMain')?.addEventListener('click',()=>{const pb=$('printReport');if(pb)pb.click();else window.print();});
+    $('downloadCsvMain')?.addEventListener('click',()=>$('normExport')?.click());
     $('continueTo300')?.addEventListener('click',continueTo300);
     $('downloadRawQuestions')?.addEventListener('click',downloadRawQuestions);
     $('downloadRawQuestionsMain')?.addEventListener('click',downloadRawQuestions);

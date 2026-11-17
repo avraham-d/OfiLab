@@ -31,7 +31,7 @@ $deprecated50 = (isset($_GET['len']) && (int)$_GET['len'] === 50)
 $reqLen = isset($_GET['len']) ? ((int)$_GET['len'] === 300 ? 300 : 120) : (isset($_GET['inventory']) && $_GET['inventory'] === 'ipip-neo-300' ? 300 : 120);
 $initInventory = $reqLen === 300 ? 'ipip-neo-300' : 'ipip-neo-120';
 
-// Optional AI assistant: ai-config.php (not part of the open-source tree, see ai-config.example.php)
+// Optional AI assistant: ai-config.php (not part of the public repository, see ai-config.example.php)
 // returns ['endpoint' => '/same-origin/path']. Without it the assistant is hidden.
 $aiEndpoint = '';
 if (is_file(__DIR__ . '/ai-config.php')) {
@@ -115,6 +115,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4m0 16h16M8 15l4-4 3 2 5-7"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 20a6.5 6.5 0 0 0-3-5.5"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></symbol>
     <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-4 4 4-4 4 4M4 16v4h16v-4"/></symbol>
     <symbol id="i-print" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
@@ -397,15 +398,26 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <p class="emotional-stability-note">המדד מחושב כהיפוך ציון הרגישות הרגשית בשאלון (<bdi>100 − N</bdi>). הוא אינו מבחן עצמאי לחוסן, להתמודדות עם לחץ או לבריאות נפשית.</p>
         <button type="button" class="emotional-stability-detail secondary" id="emotionalStabilityDetails">לניתוח התכונה ותחומי המשנה</button>
       </section>
-      <div class="results-file-actions" aria-label="פעולות על התוצאות">
-        <button id="downloadResultsMain" class="primary" type="button" data-icon-button><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>הורדת תוצאות</button>
-          <button id="downloadMarkdownMain" class="secondary" type="button" data-icon-button><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>דוח טקסט מלא</button>
-          <button id="downloadMarkdownSummaryMain" class="secondary" type="button" data-icon-button><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>תקציר טקסט</button>
-        <label class="secondary file-picker" data-icon-button><input type="file" id="rciCompareInput" accept=".json"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>השוואה למבחן קודם</label>
-        <button id="downloadRawQuestionsMain" class="secondary" type="button" data-icon-button><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>גיבוי שאלות ותשובות</button>
-        <button id="openResultsShareMain" class="secondary results-mobile-only" type="button"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>שמירה ושיתוף</button>
-        <button id="openResultsAiMain" class="secondary results-mobile-only" type="button"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>שיחה על הדוח</button>
-        <p id="resultsFileNote">🔒 פרטיות מלאה: הקובץ נשמר מקומית במכשירך בלבד ואינו מועלה לשרת. הוא כולל תשובות ומאפשר טעינה מחדש במסך הראשי.</p>
+      <div class="results-file-actions results-actions" aria-label="פעולות על התוצאות">
+        <div class="results-action-tiles">
+          <button id="resultsDownloadsToggle" class="results-action-tile is-primary" type="button" aria-expanded="false" aria-controls="resultsDownloadsPanel"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span class="results-action-tile-text"><strong>הורדות</strong><small>דוח, תקציר וקבצים</small></span><svg class="icon results-action-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <button id="resultsCompareToggle" class="results-action-tile" type="button" aria-expanded="false" aria-controls="resultsComparePanel"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span class="results-action-tile-text"><strong>השוואה</strong><small>למבחן קודם או לאדם אחר</small></span><svg class="icon results-action-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <button id="openResultsShareMain" class="results-action-tile results-mobile-only" type="button"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg><span class="results-action-tile-text"><strong>שמירה ושיתוף</strong><small>קישור, סיסמה או QR</small></span></button>
+          <button id="openResultsAiMain" class="results-action-tile results-mobile-only" type="button"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span class="results-action-tile-text"><strong>שיחה על הדוח</strong><small>שאלות חופשיות ל־AI</small></span></button>
+        </div>
+        <div id="resultsDownloadsPanel" class="results-action-panel" role="group" aria-label="מה להוריד" hidden>
+          <button id="downloadMarkdownMain" class="results-action-option" type="button"><span class="results-action-option-kind">MD</span><span class="results-action-option-text"><strong>הדוח המלא</strong><small>כל מה שמוצג בעמוד, כקובץ טקסט לקריאה או להדבקה בצ'אט</small></span></button>
+          <button id="downloadMarkdownSummaryMain" class="results-action-option" type="button"><span class="results-action-option-kind">MD</span><span class="results-action-option-text"><strong>תקציר קצר</strong><small>התכונות העיקריות והממצאים הבולטים בעמוד אחד</small></span></button>
+          <button id="downloadPdfMain" class="results-action-option" type="button"><span class="results-action-option-kind">PDF</span><span class="results-action-option-text"><strong>דוח להדפסה</strong><small>הדוח מעוצב להדפסה או לשמירה כ־PDF</small></span></button>
+          <button id="downloadResultsMain" class="results-action-option" type="button"><span class="results-action-option-kind">JSON</span><span class="results-action-option-text"><strong>קובץ תוצאות לשמירה</strong><small>לטעינה מחדש באתר, ולהשוואה במבחן הבא</small></span></button>
+          <button id="downloadRawQuestionsMain" class="results-action-option" type="button"><span class="results-action-option-kind">JSON</span><span class="results-action-option-text"><strong>השאלות והתשובות</strong><small>כל היגד, התשובה שבחרת והניקוד שלו</small></span></button>
+          <button id="downloadCsvMain" class="results-action-option" type="button"><span class="results-action-option-kind">CSV</span><span class="results-action-option-text"><strong>טבלת ציונים</strong><small>35 הציונים והאחוזונים, לאקסל</small></span></button>
+        </div>
+        <div id="resultsComparePanel" class="results-action-panel" role="group" aria-label="השוואה" hidden>
+          <label class="results-action-option file-picker"><input type="file" id="rciCompareInput" accept=".json"><span class="results-action-option-kind"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><span class="results-action-option-text"><strong>מול מבחן קודם שלי</strong><small>טעינת קובץ התוצאות מהפעם הקודמת: מה השתנה באמת ומה בטווח הטעות</small></span></label>
+          <button id="openPeerCompare" class="results-action-option" type="button"><span class="results-action-option-kind"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span class="results-action-option-text"><strong>מול אדם אחר</strong><small>חבר, בן משפחה או שותף: איפה אתם דומים ואיפה שונים</small></span></button>
+        </div>
+        <p id="resultsFileNote">🔒 הקבצים נוצרים במכשיר שלך ולא נשלחים לשרת. קובץ התוצאות וקובץ השאלות כוללים את התשובות שלך ואינם מוצפנים.</p>
         <p id="resultsFileStatus" role="status" aria-live="polite"></p>
       </div>
       <section id="resultsQuickGuide" class="results-quick-guide" aria-labelledby="resultsQuickGuideTitle"><h2 id="resultsQuickGuideTitle">מבט מהיר על הדוח</h2><p id="resultsQuickGuideText"></p></section>
@@ -657,10 +669,10 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <div class="results-footer-bottom-bar">
           <div class="results-footer-nav-links">
             <span class="results-footer-nav-label">ניווט מהיר בדוח:</span>
-            <button type="button" data-scroll="traitOverview" class="results-footer-nav-link">01 · חמש התכונות</button>
-            <button type="button" data-scroll="facetExplorer" class="results-footer-nav-link">04 · תחומי המשנה</button>
-            <button type="button" data-scroll="normPanel" class="results-footer-nav-link">05 · השוואה למדגם</button>
-            <button type="button" data-scroll="mbtiDisclosure" class="results-footer-nav-link">06 · סגנון 4 אותיות</button>
+            <button type="button" data-scroll="traitOverview" class="results-footer-nav-link">חמש התכונות</button>
+            <button type="button" data-scroll="facetExplorer" class="results-footer-nav-link">תחומי המשנה</button>
+            <button type="button" data-scroll="normPanel" class="results-footer-nav-link">השוואה למדגם</button>
+            <button type="button" data-scroll="mbtiDisclosure" class="results-footer-nav-link">סגנון 4 אותיות</button>
           </div>
           <button type="button" id="resultsFooterRestart" class="ghost results-footer-restart-btn">
             <svg width="16" height="16" class="icon" aria-hidden="true"><use href="#i-restart"/></svg>
@@ -814,6 +826,39 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
     </div>
   </div>
 </dialog>
+<dialog id="peerCompareDialog" class="ofi-modal peer-compare-dialog" aria-labelledby="peerCompareTitle">
+  <div class="ofi-modal-container ofi-modal-container--wide">
+    <header class="ofi-modal-header">
+      <h2 id="peerCompareTitle" class="ofi-modal-title">השוואה לאדם אחר</h2>
+      <button id="closePeerCompare" type="button" class="ofi-modal-close" aria-label="סגירת ההשוואה"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="ofi-modal-body">
+      <form id="peerCompareForm" class="peer-form" autocomplete="off" novalidate>
+        <p class="peer-lead">בקשו מהאדם השני לשלוח לכם את קישור השמירה שלו (בכפתור "שמירה ושיתוף") או את קובץ התוצאות שלו. ההשוואה מחושבת במכשיר הזה בלבד, ושום דבר לא נשמר ולא נשלח.</p>
+        <div class="peer-field">
+          <label for="peerName">איך לקרוא לו/ה בהשוואה? <small>(לא חובה)</small></label>
+          <input id="peerName" type="text" maxlength="24" placeholder="למשל: יוסי">
+        </div>
+        <div class="peer-field">
+          <label for="peerLink">הקישור של האדם השני</label>
+          <input id="peerLink" type="text" dir="ltr" inputmode="url" spellcheck="false" placeholder="https://ofilab.avrahamd.ovh/#p=…">
+        </div>
+        <div class="peer-or" aria-hidden="true"><span>או</span></div>
+        <div class="peer-field peer-file-row">
+          <label class="peer-file"><input type="file" id="peerFile" accept=".json,application/json"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg><span>בחירת קובץ תוצאות (JSON)</span></label>
+          <span id="peerFileName" class="peer-file-name" dir="ltr"></span>
+        </div>
+        <div id="peerPasswordRow" class="peer-field" hidden>
+          <label for="peerPassword">הנתונים מוצפנים. הסיסמה שקיבלתם:</label>
+          <input id="peerPassword" type="password" autocomplete="off">
+        </div>
+        <p id="peerError" class="peer-error" role="alert" hidden></p>
+        <button type="submit" class="primary peer-submit" id="peerSubmit">השוואה</button>
+      </form>
+      <div id="peerResult" class="peer-result" aria-live="polite" hidden></div>
+    </div>
+  </div>
+</dialog>
 <dialog id="shareCardDialog" class="keepsake-dialog" aria-labelledby="shareCardTitle">
     <div class="keepsake-dialog-head"><div><span class="eyebrow">המפה שלך, בדרך שלך</span><h2 id="shareCardTitle">כרטיס לשיתוף</h2></div><button type="button" id="closeShareCard" class="review-close" aria-label="סגירת כרטיס השיתוף">×</button></div>
     <label class="share-format">גודל התמונה<select id="shareCardFormat"><option value="story">סטורי · 1080 × 1920</option><option value="square">ריבוע · 1080 × 1080</option><option value="wide">לרוחב · 1200 × 630</option></select></label>
@@ -914,35 +959,48 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
   </dialog>
   <footer class="page-footer calm-quiet-footer ofi-site-footer" aria-label="קישורי האתר">
   <div class="ofi-footer-inner">
-    <div class="ofi-footer-top">
+    <div class="ofi-footer-hero">
       <div class="footer-brand-stack ofi-footer-brand">
         <a class="footer-ofilab" href="./" aria-label="ofiLab — חזרה לדף הבית">
-          <img src="./assets/logo-mark.png" alt="" width="38" height="38" decoding="async">
+          <img src="./assets/logo-mark.png" alt="" width="44" height="44" decoding="async">
           <span><strong dir="ltr">ofiLab</strong><small>מעבדת האישיות</small></span>
         </a>
         <p class="ofi-footer-tagline">שאלוני Big Five בעברית, עם השוואה למדגמים של מאות אלפי משיבים. החישוב כולו נעשה בדפדפן, והתשובות לא נשלחות לשרת.</p>
       </div>
-      <nav class="ofi-footer-col" aria-labelledby="footerSiteTitle">
+      <div class="ofi-footer-cta">
+        <a class="ofi-footer-btn is-primary" href="./"><strong>שאלון 120</strong><small>היכרות מהירה</small></a>
+        <a class="ofi-footer-btn" href="./?len=300"><strong>שאלון 300</strong><small>תמונה מעמיקה</small></a>
+      </div>
+    </div>
+    <ul class="ofi-footer-badges" aria-label="עקרונות האתר">
+      <li>בלי הרשמה</li>
+      <li>החישוב בדפדפן</li>
+      <li>קוד מקור גלוי</li>
+      <li>נורמות אמפיריות</li>
+    </ul>
+    <div class="ofi-footer-cards">
+      <nav class="ofi-footer-card" aria-labelledby="footerSiteTitle">
         <p class="ofi-footer-title" id="footerSiteTitle">האתר</p>
-        <ul>
-          <li><a href="./">שאלון 120 שאלות</a></li>
-          <li><a href="./?len=300">שאלון 300 שאלות</a></li>
+        <ul class="ofi-footer-links">
           <li><a href="./about.html">אודות והשיטה</a></li>
+          <li><a href="./about.html#privacy-crypto">פרטיות והצפנה</a></li>
+          <li><a href="./about.html#instruments">השאלונים והמקורות</a></li>
         </ul>
       </nav>
-      <nav class="ofi-footer-col" aria-labelledby="footerSourceTitle">
-        <p class="ofi-footer-title" id="footerSourceTitle">קוד מקור</p>
-        <ul>
-          <li><a href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>GitHub</a></li>
+      <nav class="ofi-footer-card" aria-labelledby="footerSourceTitle">
+        <p class="ofi-footer-title" id="footerSourceTitle">קוד המקור</p>
+        <a class="ofi-footer-repo" href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg><span><strong>GitHub</strong><small dir="ltr">avraham-d/OfiLab</small></span></a>
+        <ul class="ofi-footer-links">
           <li><a href="https://github.com/avraham-d/OfiLab/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">רישיון שימוש</a></li>
         </ul>
       </nav>
-      <nav class="ofi-footer-col" aria-labelledby="footerSupportTitle">
+      <nav class="ofi-footer-card is-support" aria-labelledby="footerSupportTitle">
         <p class="ofi-footer-title" id="footerSupportTitle">תמיכה והקשבה</p>
-        <ul>
-          <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, טלפון 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
-          <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · סיוע ברשת</a></li>
-          <li class="ofi-footer-note">במצב חירום: מד״א 101</li>
+        <p class="ofi-footer-support-lead">אם קשה עכשיו, אפשר לדבר עם מישהו.</p>
+        <ul class="ofi-footer-chips">
+          <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
+          <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · ברשת</a></li>
+          <li><span class="is-urgent">חירום · מד״א 101</span></li>
         </ul>
       </nav>
     </div>
@@ -1424,6 +1482,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
   <script src="./assets/experience-quizzes.js"></script>
   <script src="./assets/extended-journey.js"></script>
   <script src="./assets/password-strength.js"></script>
+  <script src="./assets/peer-compare.js"></script>
   <script src="./assets/personality.js"></script>
   <script src="./assets/qrcode-generator.js"></script>
   <script>if(typeof qrcode==="function")window.qrcode=qrcode;</script>

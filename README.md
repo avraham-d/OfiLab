@@ -39,6 +39,7 @@ ofiLab הוא אתר שאלוני אישיות לפי מודל חמשת הגור
 | **מודלים נוספים** | מודל קיברנטי (DeYoung), UPPS, מעגל בין־אישי, גרפי סגנון, אומדן ארבע אותיות (לא אבחון MBTI). |
 | **שאלונים משלימים** | כנות וענווה (HEXACO-H), חוזקות אופי (בהשראת IPIP-VIA-R), סגנון היקשרות (ECR-RS). |
 | **שמירה** | קישור שמירה, קישור מוצפן בסיסמה, קוד QR, קובץ תוצאות שאפשר לטעון מחדש. |
+| **השוואה** | למבחן קודם (מה השתנה מעבר לטעות המדידה), או לאדם אחר מתוך הקישור או הקובץ שלו: איפה אתם דומים ואיפה שונים. הכל מחושב בדפדפן. |
 | **ייצוא** | דוח טקסט מלא או מקוצר, PDF, קובץ JSON, גיבוי של כל התשובות, כרטיס שיתוף. |
 | **נגישות ותצוגה** | מצב בהיר וכהה, טלפון ומחשב, ניווט מקלדת, כיבוד „הפחתת תנועה”. |
 | **עוזר AI** | אופציונלי וכבוי כברירת מחדל ([הפעלה](#עוזר-ai-אופציונלי)). |
@@ -104,6 +105,7 @@ ofilab/
     ├── password-strength.js       מד חוזק הסיסמה
     ├── protected-link-routing.js  זיהוי השאלון מתוך קישור מוצפן
     ├── results-files.js           קובץ התוצאות: הורדה וטעינה מחדש
+    ├── peer-compare.js            השוואה לאדם אחר (מקישור או מקובץ)
     ├── results-share-link.js      קוד QR ושיתוף
     ├── qrcode-generator.js        יצירת QR (צד שלישי)
     ├── export-markdown.js         הדוחות בטקסט
@@ -161,7 +163,7 @@ ofilab/
 
 ## רישיון
 
-ofiLab ניתן **לשימוש חופשי לטובת אנשים, ולא למטרת רווח**, לפי [רישיון הקהילה של ofiLab](LICENSE). הרישיון חל על הקוד ועל התוכן בעברית.
+ofiLab ניתן **לשימוש חופשי לטובת אנשים, ולא למטרת רווח**, לפי [רישיון הקהילה של ofiLab](LICENSE). הרישיון חל על הקוד ועל התוכן בעברית. זה קוד מקור גלוי (source-available) ולא קוד פתוח: אפשר לעיין, ללמוד ולשנות, אבל לא להשתמש בו למטרת רווח.
 
 **מותר, בחינם:**
 - שימוש אישי, מחקר והוראה, גם במוסד לימודים שגובה שכר לימוד, כל עוד לא גובים תשלום על השאלון או על התוצאות.
@@ -209,7 +211,7 @@ No accounts, no database, and answers never reach the server.
   - `assets/`: plain JavaScript modules and CSS, loaded in order by `index.php`.
 - **AI assistant:** optional and off by default. Copy `ai-config.example.php` to `ai-config.php`, point it at your own same-origin endpoint, and keep API keys on the server.
 - **Limitations:** the Hebrew item translations are experimental. This is a self-exploration tool, not a diagnostic instrument.
-- **License:** [ofiLab Community License](LICENSE). Free for the benefit of people, not for profit; it covers both the code and the Hebrew content.
+- **License:** [ofiLab Community License](LICENSE). Free for the benefit of people, not for profit; it covers both the code and the Hebrew content. This is source-available software, not open source: the license does not allow commercial use.
   - **Allowed:** personal use, research, teaching (including at tuition-charging institutions), nonprofits and public bodies, and professionals with their clients, as long as nobody is charged for the questionnaire or its results.
   - **No income of any kind** from the site or any version of it.
   - **Required:** a visible credit line with a link, the same license and published source for modified versions, and your own name and logo.

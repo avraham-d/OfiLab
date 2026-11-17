@@ -535,7 +535,14 @@
         prompt:'נתח לעומק בנקודות את הניגודים והפערים הבולטים בתוך תתי-התכונות שלי לעומת הציונים הכלליים, והסבר איך השילובים האלה מתבטאים בפועל.'
       }}));
     });
-    aiActions.append(aiMainBtn,aiGapBtn);
+    // Free conversation: opens the chat empty, without sending a ready-made prompt.
+    const aiChatBtn=el('button','profile-ai-summary-sub profile-ai-summary-chat','💬 שיחה חופשית על הדוח');
+    aiChatBtn.type='button';
+    aiChatBtn.addEventListener('click',()=>{
+      $('askAiResults')?.click();
+      setTimeout(()=>$('aiChatInput')?.focus(),60);
+    });
+    aiActions.append(aiMainBtn,aiGapBtn,aiChatBtn);
     aiSummaryBar.append(aiLead,aiActions);
 
     shell.append(headerRow,desc);
