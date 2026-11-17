@@ -460,27 +460,19 @@
   
   <footer class="page-footer calm-quiet-footer ofi-site-footer" aria-label="קישורי האתר">
   <div class="ofi-footer-inner">
-    <div class="ofi-footer-hero">
+    <div class="ofi-footer-main">
       <div class="footer-brand-stack ofi-footer-brand">
         <a class="footer-ofilab" href="./" aria-label="ofiLab — חזרה לדף הבית">
-          <img src="./assets/logo-mark.png" alt="" width="44" height="44" decoding="async">
+          <img src="./assets/logo-mark.png" alt="" width="40" height="40" decoding="async">
           <span><strong dir="ltr">ofiLab</strong><small>מעבדת האישיות</small></span>
         </a>
         <p class="ofi-footer-tagline">שאלוני Big Five בעברית, עם השוואה למדגמים של מאות אלפי משיבים. החישוב כולו נעשה בדפדפן, והתשובות לא נשלחות לשרת.</p>
+        <div class="ofi-footer-cta">
+          <a class="ofi-footer-btn" href="./" data-inventory="120"><strong>שאלון 120</strong><small>היכרות מהירה</small></a>
+          <a class="ofi-footer-btn" href="./?len=300" data-inventory="300"><strong>שאלון 300</strong><small>תמונה מעמיקה</small></a>
+        </div>
       </div>
-      <div class="ofi-footer-cta">
-        <a class="ofi-footer-btn" href="./" data-inventory="120"><strong>שאלון 120</strong><small>היכרות מהירה</small></a>
-        <a class="ofi-footer-btn" href="./?len=300" data-inventory="300"><strong>שאלון 300</strong><small>תמונה מעמיקה</small></a>
-      </div>
-    </div>
-    <ul class="ofi-footer-badges" aria-label="עקרונות האתר">
-      <li>בלי הרשמה</li>
-      <li>החישוב בדפדפן</li>
-      <li>קוד מקור גלוי</li>
-      <li>נורמות אמפיריות</li>
-    </ul>
-    <div class="ofi-footer-cards">
-      <nav class="ofi-footer-card" aria-labelledby="footerSiteTitle">
+      <nav class="ofi-footer-col" aria-labelledby="footerSiteTitle">
         <p class="ofi-footer-title" id="footerSiteTitle">האתר</p>
         <ul class="ofi-footer-links">
           <li><a href="./about.html">אודות והשיטה</a></li>
@@ -488,19 +480,20 @@
           <li><a href="./about.html#instruments">השאלונים והמקורות</a></li>
         </ul>
       </nav>
-      <nav class="ofi-footer-card" aria-labelledby="footerSourceTitle">
+      <nav class="ofi-footer-col" aria-labelledby="footerSourceTitle">
         <p class="ofi-footer-title" id="footerSourceTitle">קוד המקור</p>
-        <a class="ofi-footer-repo" href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg><span><strong>GitHub</strong><small dir="ltr">avraham-d/OfiLab</small></span></a>
         <ul class="ofi-footer-links">
+          <li><a href="https://github.com/avraham-d/OfiLab" target="_blank" rel="noopener noreferrer" aria-label="קוד המקור ב־GitHub (נפתח בחלון חדש)"><svg class="ofi-footer-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>GitHub</a></li>
           <li><a href="https://github.com/avraham-d/OfiLab/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">רישיון שימוש</a></li>
+          <li class="ofi-footer-note">קוד מקור גלוי, לשימוש שלא למטרת רווח</li>
         </ul>
       </nav>
-      <nav class="ofi-footer-card is-support" aria-labelledby="footerSupportTitle">
+      <nav class="ofi-footer-col" aria-labelledby="footerSupportTitle">
         <p class="ofi-footer-title" id="footerSupportTitle">תמיכה והקשבה</p>
-        <p class="ofi-footer-support-lead">אם קשה עכשיו, אפשר לדבר עם מישהו.</p>
-        <ul class="ofi-footer-chips">
+        <ul class="ofi-footer-links">
           <li><a href="https://www.eran.org.il/online-emotional-help/" target="_blank" rel="noopener noreferrer" aria-label="ער״ן, 1201 — מעבר לאתר סיוע חיצוני">ער״ן · 1201</a></li>
-          <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · ברשת</a></li>
+          <li><a href="https://sahar.org.il/" target="_blank" rel="noopener noreferrer" aria-label="סה״ר — מעבר לאתר סיוע חיצוני">סה״ר · סיוע ברשת</a></li>
+          <li class="ofi-footer-note">אם קשה עכשיו, אפשר לדבר עם מישהו.</li>
         </ul>
       </nav>
     </div>
