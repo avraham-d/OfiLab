@@ -184,6 +184,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         </div>
       </div>
       <section class="qf-cover-notes" aria-label="שמירה, גיבוי וההבדל בין הגרסאות">
+<p class="home-save-warning">אין שרת ואין חשבון, ולכן אין שחזור. בסיום שמרו קישור או קובץ.</p>
 <details class="home-save-note">
   <summary>התשובות נשמרות בדפדפן הזה בלבד · איך מגבים?</summary>
   <p>כדי לחזור גם ממכשיר אחר או אחרי ניקוי נתוני גלישה, שמרו קישור או קובץ גיבוי. בזמן המבחן השתמשו ב״קישור שמירה״, ובסיום ב״שמירה ושיתוף״. אין אצלנו עותק לשחזור.</p>
@@ -397,6 +398,18 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <p id="emotionalStabilityContext" class="emotional-stability-context"></p>
         <p class="emotional-stability-note">המדד מחושב כהיפוך ציון הרגישות הרגשית בשאלון (<bdi>100 − N</bdi>). הוא אינו מבחן עצמאי לחוסן, להתמודדות עם לחץ או לבריאות נפשית.</p>
         <button type="button" class="emotional-stability-detail secondary" id="emotionalStabilityDetails">לניתוח התכונה ותחומי המשנה</button>
+      </section>
+      <section id="resultsSaveReminder" class="results-save-reminder" aria-labelledby="resultsSaveReminderTitle">
+        <div class="rsr-icon" aria-hidden="true"><svg class="icon rsr-icon-warn" width="22" height="22"><use href="#i-info"/></svg><svg class="icon rsr-icon-done" width="22" height="22"><use href="#i-check"/></svg></div>
+        <div class="rsr-body">
+          <strong id="resultsSaveReminderTitle" class="rsr-title">התוצאות שמורות רק בדפדפן הזה</strong>
+          <p class="rsr-text">אין לנו עותק בשרת. ניקוי הדפדפן, גלישה בסתר או מעבר למכשיר אחר, והן אבדו. כדי לשמור אותן:</p>
+          <p class="rsr-done-text"><strong>שמרת עותק.</strong> אפשר לחזור לדוח מהקישור או מהקובץ, גם ממכשיר אחר.</p>
+        </div>
+        <div class="rsr-actions">
+          <button type="button" id="saveReminderCopy" class="primary"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-link"/></svg>העתקת קישור</button>
+          <button type="button" id="saveReminderFile" class="secondary"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-download"/></svg>הורדת קובץ</button>
+        </div>
       </section>
       <div class="results-file-actions results-actions" aria-label="פעולות על התוצאות">
         <div class="results-action-tiles">

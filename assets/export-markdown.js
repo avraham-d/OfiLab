@@ -279,7 +279,7 @@
   // ---------------------------------------------------------------------
   const SKIP = 'script,style,template,button,select,option,input,textarea,label,nav,dialog,canvas,noscript,meter,progress,'
     + '[hidden],[aria-hidden="true"],.sr-only,.visually-hidden,.hidden,'
-    + '#resultsFileStatus,#additionalQuizzesSection,#resultsReportFooter,#resultsMobileMenu,#resultsMobileTrigger,'
+    + '#resultsFileStatus,#resultsSaveReminder,#additionalQuizzesSection,#resultsReportFooter,#resultsMobileMenu,#resultsMobileTrigger,'
     + '.results-mobile-picker-trigger,.report-rail-action,#resultsBackToTop,#askAiResults,'
     + '.results-metric-switch,.metric-pills,.facet-explorer-controls,.profile-ai-summary-actions,'
     // On-screen only: navigation, the AI-chat invitation, file notices, axis tick labels and the

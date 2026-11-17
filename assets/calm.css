@@ -839,3 +839,38 @@ html[data-ofilab-design="calm-v2"] .peer-again{justify-self:start;min-height:44p
 html[data-ofilab-design="calm-v2"] .peer-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;}
 html[data-ofilab-design="calm-v2"] .peer-list-vals{margin-inline-start:auto;}
 html[data-ofilab-design="calm-v2"] .peer-head.is-flagged{background:color-mix(in srgb,#c2410c 9%,var(--bg-card));}
+
+/* Results: the answers live only in this browser. A clear reminder with the two ways to keep a
+   copy; it shrinks to a confirmation once a link was copied or a file downloaded. */
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 16px;margin:18px 0 0;padding:16px 18px;
+  border-radius:18px;border:1px solid color-mix(in srgb,#c2410c 30%,transparent);
+  background:color-mix(in srgb,#f59e0b 10%,var(--bg-card));color:var(--calm-ink);
+}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,#f59e0b 22%,transparent);color:#9a3412;}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] #resultScreen .rsr-icon{color:#fdba74;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-body{display:grid;gap:3px;min-width:0;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-title{font-size:15px;font-weight:750;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-text,html[data-ofilab-design="calm-v2"] #resultScreen .rsr-done-text{margin:0;max-width:none;font-size:13.5px;line-height:1.6;color:var(--text-secondary);}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-done-text{display:none;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-actions{display:flex;flex-wrap:wrap;gap:8px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:8px 16px;border-radius:14px;font-size:14px;white-space:nowrap;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done{border-color:color-mix(in srgb,#2b8f86 35%,transparent);background:color-mix(in srgb,#2b8f86 8%,var(--bg-card));padding:12px 16px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-icon{background:color-mix(in srgb,#2b8f86 20%,transparent);color:#1f6f68;}
+html[data-ofilab-design="calm-v2"][data-theme="dark"] #resultScreen .results-save-reminder.is-done .rsr-icon{color:#7fd6cc;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-title{font-size:14px;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-text{display:none;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-done-text{display:block;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-actions{display:none;}
+@media (max-width:640px){
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder{grid-template-columns:auto 1fr;}
+  html[data-ofilab-design="calm-v2"] #resultScreen .rsr-actions{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;}
+  html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-actions{display:none;}
+}
+@media print{html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder{display:none;}}
+html[data-ofilab-design="calm-v2"] .home-save-warning{margin:0 0 8px;font-size:14px;font-weight:600;color:var(--calm-ink);}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-icon-done{display:none;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-icon-warn,
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-title{display:none;}
+html[data-ofilab-design="calm-v2"] #resultScreen .results-save-reminder.is-done .rsr-icon-done{display:block;}
+html[data-ofilab-design="calm-v2"] #resultScreen .rsr-done-text strong{color:var(--calm-ink);}

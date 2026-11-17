@@ -155,7 +155,7 @@
         replaceSavedHash('e',token);
         const ok=secure.saveLocal(token);
         if(revision!==saveRevision)return ok;
-        if(ok){saveIndicator('saved','שמירה מוצפנת במכשיר');saveWarningShown=false;}
+        if(ok){saveIndicator('saved','נשמר מוצפן, בדפדפן הזה בלבד');saveWarningShown=false;}
         else saveIndicator('error','לא נשמר במכשיר — העתק קישור מוגן');
         return ok;
       }).catch(()=>{
@@ -169,7 +169,7 @@
     catch(e){saved=Promise.resolve(false);}
     saved.then(ok=>{
       if(revision!==saveRevision)return;
-      if(ok){saveIndicator('saved','נשמר במכשיר');saveWarningShown=false;}
+      if(ok){saveIndicator('saved','נשמר בדפדפן הזה בלבד');saveWarningShown=false;}
       else{
         saveIndicator('error','לא נשמר במכשיר — שמור קישור');
         if(!saveWarningShown){toast('השמירה במכשיר חסומה. אפשר להעתיק את קישור השמירה.');saveWarningShown=true;}
@@ -958,6 +958,7 @@
       const resultHeading=result.querySelector('h1');if(resultHeading){resultHeading.tabIndex=-1;resultHeading.focus({preventScroll:true});}
     }
     if(window.OfiVisuals)window.OfiVisuals.render(scores,{total:TOTAL,instrument:bank.instrument});
+    refreshSaveReminder();
     // Local UI modules receive in-memory profile, item bank, and answer-edit callback (never sent to any server).
     if(typeof window.dispatchEvent==='function'&&typeof CustomEvent==='function')
       window.dispatchEvent(new CustomEvent('ofilab:results',{detail:{profile:scores,total:TOTAL,bank:bank,answers:[...answers],setAnswer:(idx,val)=>{if(idx>=0&&idx<answers.length&&val>=1&&val<=5){answers[idx]=val;persist();showResults({preserveSavedLink:false,preserveScroll:true});toast('התשובה עודכנה והציונים חושבו מחדש.');}}}}));
@@ -1060,6 +1061,7 @@
     }
     const blob=new Blob([JSON.stringify(report,null,2)],{type:'application/json;charset=utf-8'});
     const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=extendedForm?'personality-ipip-neo-300-he.json':'personality-ipip-neo-120-he.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);
+    markBackedUp();
     if(status)status.textContent=protectedMode?'הקובץ המוצפן הוכן להורדה. שמור את הסיסמה בנפרד.':'הקובץ הוכן להורדה. ניתן לטעון אותו במסך הראשי.';
     }catch(e){if(status)status.textContent='לא ניתן להוריד את הקובץ. '+e.message;}
     finally{buttons.forEach(b=>b.disabled=false);}
@@ -1125,6 +1127,7 @@
       a.download=extendedForm?'personality-ipip-neo-300-raw-questions.json':'personality-ipip-neo-120-raw-questions.json';
       document.body.append(a);a.click();a.remove();
       setTimeout(()=>URL.revokeObjectURL(u),1500);
+      markBackedUp();
       if(status)status.textContent='קובץ השאלות (JSON RAW) הוכן להורדה. ניתן לטעון אותו במסך הראשי.';
       toast('קובץ השאלות (JSON RAW) הורד בהצלחה! ניתן לטעון אותו במסך הראשי.');
     }catch(e){
@@ -1133,6 +1136,16 @@
       buttons.forEach(b=>b.disabled=false);
     }
   }
+  // The results reminder shrinks once a copy exists outside this browser (a copied link or a
+  // downloaded file) for the current answers. Only a 32-bit hash is stored, never the answers.
+  const BACKUP_KEY='ofilab-backed-up:'+'v1';
+  function answersHash(){let h=0x811c9dc5;const t=TOTAL+':'+answers.join('');for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}return h.toString(36);}
+  function backedUp(){try{return (localStorage.getItem(BACKUP_KEY)||'').split(',').includes(answersHash());}catch(e){return false;}}
+  function markBackedUp(){
+    try{const list=(localStorage.getItem(BACKUP_KEY)||'').split(',').filter(Boolean);const h=answersHash();if(!list.includes(h))list.push(h);localStorage.setItem(BACKUP_KEY,list.slice(-6).join(','));}catch(e){}
+    refreshSaveReminder();
+  }
+  function refreshSaveReminder(){const card=$('resultsSaveReminder');if(card)card.classList.toggle('is-done',backedUp());}
   async function copyLink(){
     try{
       if(protectedMode){
@@ -1150,10 +1163,11 @@
       const text=link();
       if(!navigator.clipboard||!window.isSecureContext)throw Error('Clipboard unavailable');
       await navigator.clipboard.writeText(text);
+      markBackedUp();
       toast(protectedMode?'הקישור המוצפן הועתק. יש לשמור בנפרד גם את הסיסמה.':'הקישור הועתק בהצלחה! התוצאות שמורות בקישור בלבד (ללא שרת).');
     }catch(e){
       if(protectedMode&&!encryptedToken){showError('לא ניתן ליצור קישור מוצפן: '+e.message);return;}
-      window.prompt('העתק את הקישור ושמור אותו במקום בטוח:',link());
+      if(window.prompt('העתק את הקישור ושמור אותו במקום בטוח:',link())!==null)markBackedUp();
     }
   }
   function updatePasswordMeter(){
@@ -1522,6 +1536,8 @@
     $('copyResults').addEventListener('click',copyLink);
     $('downloadResults').addEventListener('click',safelyDownload);
     $('downloadResultsMain')?.addEventListener('click',safelyDownload);
+    $('saveReminderCopy')?.addEventListener('click',copyLink);
+    $('saveReminderFile')?.addEventListener('click',safelyDownload);
     // Results actions: two tiles (downloads, compare), each opening a panel of clearly described options.
     const actionPanels=[['resultsDownloadsToggle','resultsDownloadsPanel'],['resultsCompareToggle','resultsComparePanel']];
     const closeActionPanels=except=>{for(const [t,p] of actionPanels){if(t===except)continue;const tb=$(t),pn=$(p);if(tb)tb.setAttribute('aria-expanded','false');if(pn)pn.hidden=true;}};
