@@ -25,7 +25,16 @@ function scoreAnswers(answers){
   const bank=JSON.parse($('data-bank-'+n).textContent);
   const core=root['AVDPersonalityCore'+n];
   const raw=core.calculate(bank,answers);
-  return root.OfiEmpirical?.enrich?root.OfiEmpirical.enrich(raw,bank,answers,core):raw;
+  const prof=root.OfiEmpirical?.enrich?root.OfiEmpirical.enrich(raw,bank,answers,core):raw;
+  // The same response-quality checks as the person's own report.
+  if(typeof root.computeResponseValidityFeatures==='function')prof.validityFeatures=root.computeResponseValidityFeatures(answers,bank,prof);
+  return prof;
+}
+// Same rule as the report: low quality, severe straight-lining or suspected random answering
+// suspends interpretation.
+function lowQuality(p){
+  const v=p&&p.validityFeatures;
+  return Boolean(v&&(v.validityLevel==='low'||v.isSevereStraightline||v.isSuspectedRandomResponding));
 }
 function tokenFrom(text){
   const s=String(text||'').trim();
@@ -55,15 +64,10 @@ async function profileFromLink(text,password){
   return scoreAnswers(Array.from(state.answers));
 }
 async function profileFromFile(text,password){
-  let parsed=null;
-  try{parsed=root.OfiLabResultsFiles.parse(text);}
-  catch(e){
-    if(e?.code==='LEGACY_50_DEPRECATED')throw e;
-    let json=null;try{json=JSON.parse(text);}catch(_){/* not JSON */}
-    const prof=json?.profile||json;
-    if(prof?.domains&&KEYS.every(k=>prof.domains[k]?.facets?.length===6))return prof;
-    throw e;
-  }
+  // Only files that carry the answers themselves: the comparison is scored and quality-checked
+  // here, never taken from scores written in a file.
+  const parsed=root.OfiLabResultsFiles.parse(text);
+  if(!parsed.encryptedToken&&!Array.isArray(parsed.answers))throw Error('הקובץ אינו כולל את התשובות עצמן. בקשו את קובץ התוצאות או את קישור השמירה.');
   if(parsed.encryptedToken)return scoreAnswers(await decrypt(parsed.encryptedToken,password));
   return scoreAnswers(Array.from(parsed.answers));
 }
@@ -98,7 +102,10 @@ function render(other,name){
     md.facets.forEach((f,i)=>facets.push({domain:md.label,label:f.label,me:pct(f),them:pct(od.facets[i])}));
   }
   const r=pearson(facets.map(f=>f.me),facets.map(f=>f.them));
-  const [title,lead]=similarityWords(r);
+  const flagged=[lowQuality(mine)?'שלך':null,lowQuality(other)?'של '+them:null].filter(Boolean);
+  const [title,lead]=flagged.length
+    ?['אין לפרש את הדמיון','בדיקת איכות המענה '+flagged.join(' ו')+' מצאה מענה אחיד או אקראי. המספרים מוצגים, אבל ייתכן שהם משקפים את אופן המענה ולא את האישיות.']
+    :similarityWords(r);
 
   const head=el('div','peer-head');
   const legend=el('div','peer-legend');
@@ -107,6 +114,7 @@ function render(other,name){
   sim.append(el('span','peer-sim-eyebrow','דמיון בצורת הפרופיל'),el('strong','peer-sim-title',title),el('p','peer-sim-lead',lead),
     el('span','peer-sim-meta','מתאם בין 30 תחומי המשנה: r = '+r.toFixed(2)));
   head.append(sim,legend);
+  if(flagged.length)head.classList.add('is-flagged');
 
   const domains=el('div','peer-domains');
   domains.append(el('h3','peer-h','חמש התכונות'));
@@ -114,7 +122,7 @@ function render(other,name){
     const md=mine.domains[k],od=other.domains[k],a=pct(md),b=pct(od),d=a-b;
     const row=el('div','peer-row');
     const top=el('div','peer-row-top');
-    const verdict=Math.abs(d)<10?'קרובים':(d>0?'גבוה יותר אצלי':'גבוה יותר אצל '+them);
+    const verdict=flagged.length?'ללא פירוש':Math.abs(d)<10?'קרובים':(d>0?'גבוה יותר אצלי':'גבוה יותר אצל '+them);
     top.append(el('strong',null,md.label),el('span','peer-tag'+(Math.abs(d)<10?' is-close':''),verdict));
     const bars=el('div','peer-bars');
     const l1=el('div','peer-bar-line');l1.append(el('span','peer-bar-who','אני'),bar(a,'is-me'),el('span','peer-bar-val',String(round(a))));
@@ -207,5 +215,5 @@ function init(){
   });
 }
 if(doc.readyState==='loading')doc.addEventListener('DOMContentLoaded',init);else init();
-root.OfiPeerCompare={tokenFrom,pearson,similarityWords};
+root.OfiPeerCompare={tokenFrom,pearson,similarityWords,lowQuality};
 })(typeof window!=='undefined'?window:globalThis);

@@ -838,3 +838,4 @@ html[data-ofilab-design="calm-v2"] .peer-again{justify-self:start;min-height:44p
 }
 html[data-ofilab-design="calm-v2"] .peer-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;}
 html[data-ofilab-design="calm-v2"] .peer-list-vals{margin-inline-start:auto;}
+html[data-ofilab-design="calm-v2"] .peer-head.is-flagged{background:color-mix(in srgb,#c2410c 9%,var(--bg-card));}

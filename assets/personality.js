@@ -34,6 +34,9 @@
   let guidance=null,reviewOrigin='quiz',reviewOpener=null,reviewChanged=false;
   let reviewSearchTerm='',reviewFilterValue='all',reviewLimit=40;
   let stateFromUrl=false,protectedMode=false,encryptedToken=null,pendingProtectedToken=null,saveDialogMode='create',needsUnlock=false,securing=false;
+  // A protected 120 session carried into the 300 form: nothing may be written in plain text
+  // until the new password is chosen. Cancelling the password dialog cancels the carry-over.
+  let awaitingProtection=false;
   let sessionEpoch=0;
   let helpPosition=null,helpOpener=null;
   const funnelStarted={},funnelCompleted={};
@@ -141,6 +144,7 @@
   }
   function persist(){
     if(securing){saveIndicator('pending','מעביר לשמירה מוגנת…');return Promise.resolve(false);}
+    if(awaitingProtection&&!protectedMode){saveIndicator('pending','ממתין לבחירת סיסמה · עדיין לא נשמר');return Promise.resolve(false);}
     const revision=++saveRevision;
     saveIndicator('pending',protectedMode?'מצפין ושומר…':'שומר…');
     if(protectedMode){
@@ -1231,6 +1235,14 @@
       hint.textContent=len===0?'לפחות 8 תווים, מומלץ 12–16.':len<8?'נדרשים עוד '+(8-len)+' תווים לפחות.':'אורך הסיסמה תקין. מומלץ לבחור ניסוח ייחודי שקשה לנחש.';
     });
     $('unlockProtectedAgain').addEventListener('click',()=>{if(pendingProtectedToken)openSaveDialog('unlock',pendingProtectedToken);});
+    $('protectedSaveDialog').addEventListener('close',()=>{
+      if(!awaitingProtection||protectedMode)return;
+      // The carried answers were never written. Drop them and return to the protected 120 save.
+      awaitingProtection=false;
+      answers.fill(0);cursor=0;
+      switchInventory(120,false);
+      toast('ההעברה לשאלון 300 בוטלה. התשובות של שאלון 120 נשארו מוצפנות.');
+    });
     $('protectedSaveDialog').addEventListener('cancel',event=>{
       if(needsUnlock){event.preventDefault();$('protectedSaveDialog').close();visible(intro);}
     });
@@ -1296,7 +1308,7 @@
           const supp=currentSuppTokens();
           const token=await secure.create(password,stateToken(),supp);
           if(opEpoch!==sessionEpoch)return;
-          saveRevision++;protectedMode=true;encryptedToken=token;
+          saveRevision++;protectedMode=true;encryptedToken=token;awaitingProtection=false;
           if(typeof window.setOfiLabProtectedMode==='function')window.setOfiLabProtectedMode(true);
           if(safeStore)await safeStore.clear();
           const backedUp=secure.saveLocal(token);
@@ -1718,6 +1730,7 @@
     const wasProtected=protectedMode||needsUnlock||prevHash.startsWith('#e=');
     stateFromUrl=false;
     protectedMode=false;
+    awaitingProtection=false;
     encryptedToken=null;
     pendingProtectedToken=null;
     needsUnlock=false;
@@ -1871,6 +1884,7 @@
       return;
     }
     if(needsUnlock){needsUnlock=false;pendingProtectedToken=null;$('unlockProtectedAgain').hidden=true;secure.lock();secure.clearLocal();}
+    if(wasProtected)awaitingProtection=true;
     answers.fill(0);
     for(const m of map)answers[m.number300-1]=carried[m.number120-1];
     cursor=answers.indexOf(0);
@@ -1959,8 +1973,12 @@
         $('shareTop').hidden=false;$('protectSaveTop').hidden=false;
         if(count()===TOTAL)showResults({preserveSavedLink:true});else{visible(quiz);question();}
       }else if(window.location.search.includes('start=1')||window.location.hash==='#start'||window.location.hash==='#quiz'){
+        // A start link never erases anything by itself: the flag is removed so a reload cannot
+        // repeat it, and finished results stay until the person chooses to start over (startFresh asks).
+        try{const u=new URL(window.location.href);u.searchParams.delete('start');if(u.hash==='#start'||u.hash==='#quiz')u.hash='';history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(_e){}
         if(count()===TOTAL){
-          answers.fill(0);cursor=0;persist();visible(quiz);question();
+          visible(intro);
+          toast('יש לך תוצאות שמורות בשאלון הזה. אפשר לפתוח אותן, או להתחיל מחדש מהכפתור במסך.');
         } else {
           goToQuiz();
         }
@@ -2018,9 +2036,14 @@
           if(pastTotal&&pastTotal!==TOTAL){
             throw Error('קובץ העבר הוא של שאלון '+pastTotal+' שאלות, בעוד השאלון הנוכחי הוא של '+TOTAL+' שאלות. להשוואת RCI תקפה יש להשוות מול אותה גרסת שאלון.');
           }
-          const pastHasFacets=Boolean(pastProfile.domains.N?.facets?.length===6);
+          const pastHasFacets=['N','E','O','A','C'].every(k=>pastProfile.domains[k]?.facets?.length===6);
           if(!pastHasFacets){
             throw Error('מבנה תחומי המשנה בקובץ העבר אינו תואם לגרסת השאלון הנוכחית.');
+          }
+          // A file without answers is used only if every score is a plain 0–100 number.
+          const inRange=x=>{const v=Number(x?.rangeScore??x?.score);return Number.isFinite(v)&&v>=0&&v<=100;};
+          if(!['N','E','O','A','C'].every(k=>inRange(pastProfile.domains[k])&&pastProfile.domains[k].facets.every(inRange))){
+            throw Error('הציונים בקובץ העבר אינם תקינים. אפשר להשוות רק לקובץ תוצאות של ofiLab.');
           }
         }
 

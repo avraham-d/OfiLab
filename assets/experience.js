@@ -445,7 +445,7 @@
     const gItem2=el('div','guide-item');
     gItem2.append(
       el('strong','guide-item-title','אחוזון במדגם: '),
-      el('span',null,'מציג את מיקומך היחסי בהשוואה לקבוצת הנורמה (למשל: אחוזון 70 פירושו ש־70% ממשתתפי המדגם קיבלו ציון נמוך משלך).')
+      el('span',null,'מציג את מיקומך היחסי במדגם ההשוואה (למשל: אחוזון 70 פירושו שכ־70% מהמשיבים במדגם קיבלו ציון נמוך משלך; מי שקיבל ציון זהה נספר בחצי).')
     );
 
     guideGrid.append(gItem1,gItem2);
@@ -598,7 +598,7 @@
       list.append(card);
     }
     const footer=el('div','paradox-preview-footer');
-    const linkBtn=el('button','secondary','לצפייה בהשוואה המלאה לאוכלוסייה ↓');
+    const linkBtn=el('button','secondary','לצפייה בהשוואה המלאה למדגם ↓');
     linkBtn.type='button';
     linkBtn.addEventListener('click',()=>{
       const nav=journeyButtons.find(b=>b.dataset.scroll==='normPanel');
@@ -617,7 +617,7 @@
     const helper=$('resultsMetricHelp');
     if(helper){
       helper.textContent=val==='percentile'
-        ?'מציג את מיקומך ביחס לאוכלוסייה (לדוגמה: אחוזון 78 = גבוה מ־78% מהנבדקים במחקר).'
+        ?'מציג את מיקומך ביחס למדגם ההשוואה (לדוגמה: אחוזון 78 = כ־78% מהמשיבים במדגם קיבלו ציון נמוך משלך).'
         :'מציג את עוצמת ההסכמה שלך לשאלות המבחן (ממוצע התשובות שלך מתוך 100).';
     }
   }

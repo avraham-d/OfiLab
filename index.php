@@ -373,7 +373,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
             <h2 class="section-title">חמש התכונות ותחומי המשנה</h2>
             <p class="body-copy">בשאלוני 120 ו־300 מוצג לכל תכונה גם פיזור 6 תחומי המשנה שלה. פתח תכונה כדי לחקור את הפירוט המלא.</p>
           </div>
-          <div class="results-metric-switch" role="group" aria-label="בחירת יחידת תצוגה"><span class="results-metric-label">תצוגת ציונים:</span><div class="results-metric-pills"><button type="button" class="metric-pill active" data-metric="percentile" aria-pressed="true"><span class="metric-pill-title">אחוזון במדגם</span><span class="metric-pill-hint">השוואה לאוכלוסייה</span></button><button type="button" class="metric-pill" data-metric="score" aria-pressed="false"><span class="metric-pill-title">ציון שאלון (0–100)</span><span class="metric-pill-hint">טווח התשובות</span></button></div><label for="resultsMetric" class="sr-only" hidden>הצגת התכונות ותחומי המשנה</label><select id="resultsMetric" hidden aria-hidden="true"><option value="percentile" selected>אחוזון במדגם</option><option value="score">ציון השאלון / 100</option></select><p id="resultsMetricHelp">אחוזון מתאר מיקום במדגם ההשוואה; ציון 0–100 מתאר את התשובות לשאלון.</p></div>
+          <div class="results-metric-switch" role="group" aria-label="בחירת יחידת תצוגה"><span class="results-metric-label">תצוגת ציונים:</span><div class="results-metric-pills"><button type="button" class="metric-pill active" data-metric="percentile" aria-pressed="true"><span class="metric-pill-title">אחוזון במדגם</span><span class="metric-pill-hint">השוואה למדגם</span></button><button type="button" class="metric-pill" data-metric="score" aria-pressed="false"><span class="metric-pill-title">ציון שאלון (0–100)</span><span class="metric-pill-hint">טווח התשובות</span></button></div><label for="resultsMetric" class="sr-only" hidden>הצגת התכונות ותחומי המשנה</label><select id="resultsMetric" hidden aria-hidden="true"><option value="percentile" selected>אחוזון במדגם</option><option value="score">ציון השאלון / 100</option></select><p id="resultsMetricHelp">אחוזון מתאר מיקום במדגם ההשוואה; ציון 0–100 מתאר את התשובות לשאלון.</p></div>
         </div>
         <div class="results-grid"><div id="domainResults" class="domains" aria-label="חמש התכונות והציונים"></div></div>
       </div>
@@ -448,7 +448,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <details class="norm-method-disclosure"><summary>איך מחושבים הציון והאחוזון?</summary><div class="norm-method-copy">
           <p>תשובה הפוכה מחושבת כ־<bdi>6 − answer</bdi>. הציון 0–100 הוא <bdi>100 × (mean − 1) / 4</bdi>, מעוגל למספר שלם. ממוצע נמוך מ־2.5 מסווג כנמוך, וגבוה מ־3.5 כגבוה.</p>
           <p>האחוזון מחושב ישירות מהמדגם: <bdi id="normFormula">100 × (מספר הציונים הנמוכים + חצי ממספר הציונים השווים) / N</bdi>, ומעוגל למספר שלם.</p>
-          <p><strong>מהו ציון תקן T?</strong> ציון T מציג את מיקומך בסולם סטנדרטי שבו ממוצע המדגם נקבע תמיד ל־50, וכל סטיית תקן שווה ל־10 נקודות (ציון 60 פירושו סטיית תקן אחת מעל הממוצע; ציון 40 – סטיית תקן אחת מתחתיו). האחוזון מציג כמה אחוזים מהאוכלוסייה קיבלו ציון נמוך משלך.</p>
+          <p><strong>מהו ציון תקן T?</strong> ציון T מציג את מיקומך בסולם סטנדרטי שבו ממוצע המדגם נקבע תמיד ל־50, וכל סטיית תקן שווה ל־10 נקודות (ציון 60 פירושו סטיית תקן אחת מעל הממוצע; ציון 40 – סטיית תקן אחת מתחתיו). האחוזון מציג כמה אחוזים מהמשיבים במדגם ההשוואה קיבלו ציון נמוך משלך (מי שקיבל ציון זהה נספר בחצי).</p>
           <p id="normMethodSource">בגרסאות 120 ו־300 קיימים מדגמי השוואה נפרדים. התוצאות מחושבות לפי אורך המבחן שבוצע.</p>
           <p>המדגם מבוסס על משיבים באינטרנט, בעיקר באנגלית. הוא אינו מדגם מייצג של ישראל. התרגום העברי ניסיוני וטרם תוקף.</p>
           <p><a href="https://bigfive-test.com/tests/ipip-neo-120/about" target="_blank" rel="noopener noreferrer">שיטת אתר Big Five</a> · <a href="https://osf.io/tbmh5/" target="_blank" rel="noopener noreferrer">נתוני Johnson</a> · <a id="normDatasetLink" href="./data/empirical-norms.json">טבלאות השכיחויות ומקורן</a> · <a href="./about.html">על המבחן</a></p>
@@ -461,7 +461,7 @@ if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
         <div class="mbti-title-row">
           <div>
             <h2 id="mbtiTitle" class="section-title">סגנון ארבע האותיות המשוער שלך</h2>
-            <p class="body-copy">שקלול של תחומי המשנה לארבעה צירי העדפה בהשראת MBTI. כל ציר מוצג כרצף עם גבולות אי־ודאות, לצד חלופות קרובות. היציבות הרגשית מוצגת בנפרד מתוך Big Five.</p>
+            <p class="body-copy">שקלול של תחומי המשנה לארבעה צירי העדפה בהשראת MBTI. כל ציר מוצג כרצף עם גבולות אי־ודאות, לצד חלופות קרובות. האחוזים הם הסתברויות לפי הנחות המודל, לא שיעור דיוק שנמדד: אין מדגם שמילא גם את השאלון הזה וגם MBTI. היציבות הרגשית מוצגת בנפרד מתוך Big Five.</p>
           </div>
           <div id="mbtiType" class="mbti-type" dir="ltr" aria-label="סגנון ארבע האותיות המשוער">-----</div>
         </div>
